@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0wll17qwks54"]
+[gd_scene load_steps=15 format=3 uid="uid://b0wll17qwks54"]
 
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/bg_geral.png" id="1_ep5lw"]
 [ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_moeda.png" id="2_jpj0s"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://co66lmm252nkk" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_ofensiva.png" id="4_qlig8"]
 [ext_resource type="Texture2D" uid="uid://kx4xe4iy65p0" path="res://Assets_GODOT/Assets_GODOT/Buttons/botao_mapa.png" id="5_xrbya"]
 [ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://Assets_GODOT/Assets_GODOT/Buttons/config.png" id="6_ommbi"]
+[ext_resource type="Texture2D" uid="uid://dbedh86b8jk0g" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/house.png" id="6_xrbya"]
 [ext_resource type="Texture2D" uid="uid://gg1cmb0nskec" path="res://Assets_GODOT/Assets_GODOT/Buttons/botao_customizacao_personagem.png" id="7_jpj0s"]
+[ext_resource type="Texture2D" uid="uid://c1y611w2u4efy" path="res://Assets_GODOT/Assets_GODOT/Icons/calendar.png" id="7_ommbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf0on"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
 
@@ -17,6 +21,7 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -83,6 +88,38 @@ offset_right = 1204.1289
 offset_bottom = 553.23773
 scale = Vector2(0.5353816, 0.63437825)
 texture = ExtResource("4_qlig8")
+
+[node name="TextureRect" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 136.17612
+offset_top = 606.0
+offset_right = 1160.1761
+offset_bottom = 1630.0
+scale = Vector2(0.80509734, 0.7936535)
+texture = ExtResource("6_xrbya")
+
+[node name="calendar" type="Button" parent="background/TextureRect"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+offset_left = 535.0
+offset_top = 200.0
+offset_right = 635.0
+offset_bottom = 260.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sf0on")
+
+[node name="TextureRect" type="TextureRect" parent="background/TextureRect/calendar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 15.0
+offset_right = 110.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_ommbi")
 
 [node name="config" type="Button" parent="."]
 layout_mode = 1
