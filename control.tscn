@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnrv3q6au201o"]
+
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://Assets_GODOT/Assets_GODOT/Buttons/Botao_geral.png" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://dr04khh6k77y7" path="res://control.gd" id="1_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://c2q287livqaut" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/bg.png" id="2_ee4bf"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://Assets_GODOT/Assets_GODOT/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_qtu10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ee4bf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbped"]
+
+[node name="tela_inicial" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ee4bf")
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ee4bf")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.5
+anchor_right = 0.418
+anchor_bottom = 0.5
+offset_left = -762.8481
+offset_top = -901.33105
+offset_right = 1010.1514
+offset_bottom = -526.33105
+theme_override_colors/font_color = Color(0.99404365, 0.89026034, 0.82260174, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qtu10")
+theme_override_font_sizes/font_size = 131
+text = "A Lista Não 
+Acaba!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="botao_jogar" type="Button" parent="."]
+custom_minimum_size = Vector2(395, 130)
+layout_mode = 1
+offset_left = 297.92108
+offset_top = 973.32446
+offset_right = 692.9211
+offset_bottom = 1103.3245
+scale = Vector2(1.2068255, 1.3772348)
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ee4bf")
+
+[node name="TextureButton" type="TextureButton" parent="botao_jogar"]
+layout_mode = 0
+offset_right = 1068.0
+offset_bottom = 327.0
+scale = Vector2(0.37371302, 0.43037727)
+pivot_offset = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture_normal = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="botao_jogar/TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.5
+anchor_right = 0.418
+anchor_bottom = 0.5
+offset_left = -186.86661
+offset_top = -114.7056
+offset_right = 392.13336
+offset_bottom = 116.2944
+theme_override_colors/font_color = Color(0.6386688, 0.32090986, 0.06082426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qtu10")
+theme_override_font_sizes/font_size = 192
+text = "JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="botao_sair" type="Button" parent="."]
+layout_mode = 1
+offset_left = 379.57385
+offset_top = 1264.5745
+offset_right = 619.57385
+offset_bottom = 1354.5745
+scale = Vector2(1.2068255, 1.3772348)
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kbped")
+
+[node name="TextureButton" type="TextureButton" parent="botao_sair"]
+layout_mode = 0
+offset_right = 1068.0
+offset_bottom = 327.0
+scale = Vector2(0.2335917, 0.2759035)
+pivot_offset = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture_normal = ExtResource("1_0fbet")
+
+[node name="Label" type="Label" parent="botao_sair/TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.5
+anchor_right = 0.418
+anchor_bottom = 0.5
+offset_left = -186.86661
+offset_top = -114.7056
+offset_right = 392.13336
+offset_bottom = 116.2944
+theme_override_colors/font_color = Color(0.6386688, 0.32090986, 0.06082426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qtu10")
+theme_override_font_sizes/font_size = 192
+text = "SAIR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="botao_jogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="botao_sair" to="." method="_on_botao_sair_pressed"]

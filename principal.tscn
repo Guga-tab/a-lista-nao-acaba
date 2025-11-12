@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0wll17qwks54"]
+
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/bg_geral.png" id="1_ep5lw"]
+[ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_moeda.png" id="2_jpj0s"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://Assets_GODOT/Assets_GODOT/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_qlig8"]
+[ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_estrela.png" id="3_vwsrf"]
+[ext_resource type="Texture2D" uid="uid://co66lmm252nkk" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_ofensiva.png" id="4_qlig8"]
+[ext_resource type="Texture2D" uid="uid://kx4xe4iy65p0" path="res://Assets_GODOT/Assets_GODOT/Buttons/botao_mapa.png" id="5_xrbya"]
+[ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://Assets_GODOT/Assets_GODOT/Buttons/config.png" id="6_ommbi"]
+[ext_resource type="Texture2D" uid="uid://gg1cmb0nskec" path="res://Assets_GODOT/Assets_GODOT/Buttons/botao_customizacao_personagem.png" id="7_jpj0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ommbi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 2747.0
+scale = Vector2(1.0133935, 1)
+texture = ExtResource("1_ep5lw")
+
+[node name="coin" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 22.611633
+offset_top = 237.05273
+offset_right = 365.99133
+offset_bottom = 608.6479
+scale = Vector2(0.41237384, 0.41764438)
+texture = ExtResource("2_jpj0s")
+
+[node name="coin_label" type="Label" parent="background/coin"]
+layout_mode = 0
+offset_left = 301.14502
+offset_top = 13.808563
+offset_right = 601.145
+offset_bottom = 313.80856
+theme_override_colors/font_color = Color(0.6901961, 0.5137255, 0.101960786, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qlig8")
+theme_override_font_sizes/font_size = 199
+text = "67"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="star" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 32.47946
+offset_top = 97.130554
+offset_right = 290.47946
+offset_bottom = 355.13055
+scale = Vector2(0.44981647, 0.5386371)
+texture = ExtResource("3_vwsrf")
+
+[node name="star_label" type="Label" parent="background/star"]
+layout_mode = 0
+offset_left = 243.07774
+offset_top = -30.058472
+offset_right = 543.07776
+offset_bottom = 269.94153
+theme_override_colors/font_color = Color(0.69, 0.51405, 0.103499986, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qlig8")
+theme_override_font_sizes/font_size = 199
+text = "67"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ofensiva" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 893.21484
+offset_top = 214.80115
+offset_right = 1204.1289
+offset_bottom = 553.23773
+scale = Vector2(0.5353816, 0.63437825)
+texture = ExtResource("4_qlig8")
+
+[node name="config" type="Button" parent="."]
+layout_mode = 1
+offset_left = 804.6167
+offset_top = 88.45232
+offset_right = 897.6167
+offset_bottom = 131.45232
+scale = Vector2(2.9670353, 3.3958406)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
+
+[node name="TextureButton" type="TextureButton" parent="config"]
+layout_mode = 0
+offset_left = -5.8654785
+offset_right = 458.13452
+offset_bottom = 217.0
+scale = Vector2(0.20994882, 0.20448692)
+mouse_filter = 2
+texture_normal = ExtResource("6_ommbi")
+
+[node name="botao_mapa" type="Button" parent="."]
+layout_mode = 1
+offset_left = -5.5213923
+offset_top = 1557.5023
+offset_right = 204.47859
+offset_bottom = 1787.5023
+scale = Vector2(1.4297929, 1.5997959)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ommbi")
+
+[node name="TextureButton" type="TextureButton" parent="botao_mapa"]
+layout_mode = 0
+offset_right = 604.0
+offset_bottom = 694.0
+scale = Vector2(0.34690732, 0.3421596)
+mouse_filter = 2
+texture_normal = ExtResource("5_xrbya")
+
+[node name="botao_personagem" type="Button" parent="."]
+layout_mode = 0
+offset_left = 829.1018
+offset_top = 1507.6929
+offset_right = 1129.1018
+offset_bottom = 2007.6929
+scale = Vector2(0.845225, 0.8064058)
+pivot_offset = Vector2(60, 100)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qlig8")
+
+[node name="TextureButton" type="TextureButton" parent="botao_personagem"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6685962, 0.7230768)
+mouse_filter = 2
+texture_normal = ExtResource("7_jpj0s")
