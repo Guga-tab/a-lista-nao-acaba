@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0wll17qwks54"]
+[gd_scene load_steps=16 format=3 uid="uid://b0wll17qwks54"]
 
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/bg_geral.png" id="1_ep5lw"]
+[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://principal.gd" id="1_ommbi"]
 [ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_moeda.png" id="2_jpj0s"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://Assets_GODOT/Assets_GODOT/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_qlig8"]
 [ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://Assets_GODOT/Assets_GODOT/Icons/icone_estrela.png" id="3_vwsrf"]
@@ -26,12 +27,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ommbi")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 2747.0
 scale = Vector2(1.0133935, 1)
+mouse_filter = 2
 texture = ExtResource("1_ep5lw")
 
 [node name="coin" type="TextureRect" parent="background"]
@@ -96,9 +99,10 @@ offset_top = 606.0
 offset_right = 1160.1761
 offset_bottom = 1630.0
 scale = Vector2(0.80509734, 0.7936535)
+mouse_filter = 2
 texture = ExtResource("6_xrbya")
 
-[node name="calendar" type="Button" parent="background/TextureRect"]
+[node name="CalendarButton" type="Button" parent="background/TextureRect"]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 1
 offset_left = 535.0
@@ -107,7 +111,7 @@ offset_right = 635.0
 offset_bottom = 260.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sf0on")
 
-[node name="TextureRect" type="TextureRect" parent="background/TextureRect/calendar"]
+[node name="TextureRect" type="TextureRect" parent="background/TextureRect/CalendarButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,9 +123,10 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
+mouse_filter = 2
 texture = ExtResource("7_ommbi")
 
-[node name="config" type="Button" parent="."]
+[node name="configButton" type="Button" parent="."]
 layout_mode = 1
 offset_left = 804.6167
 offset_top = 88.45232
@@ -130,7 +135,7 @@ offset_bottom = 131.45232
 scale = Vector2(2.9670353, 3.3958406)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
 
-[node name="TextureButton" type="TextureButton" parent="config"]
+[node name="TextureButton" type="TextureButton" parent="configButton"]
 layout_mode = 0
 offset_left = -5.8654785
 offset_right = 458.13452
@@ -139,7 +144,7 @@ scale = Vector2(0.20994882, 0.20448692)
 mouse_filter = 2
 texture_normal = ExtResource("6_ommbi")
 
-[node name="botao_mapa" type="Button" parent="."]
+[node name="mapaButton" type="Button" parent="."]
 layout_mode = 1
 offset_left = -5.5213923
 offset_top = 1557.5023
@@ -148,7 +153,7 @@ offset_bottom = 1787.5023
 scale = Vector2(1.4297929, 1.5997959)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ommbi")
 
-[node name="TextureButton" type="TextureButton" parent="botao_mapa"]
+[node name="TextureButton" type="TextureButton" parent="mapaButton"]
 layout_mode = 0
 offset_right = 604.0
 offset_bottom = 694.0
@@ -156,7 +161,7 @@ scale = Vector2(0.34690732, 0.3421596)
 mouse_filter = 2
 texture_normal = ExtResource("5_xrbya")
 
-[node name="botao_personagem" type="Button" parent="."]
+[node name="personagemButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 829.1018
 offset_top = 1507.6929
@@ -166,10 +171,15 @@ scale = Vector2(0.845225, 0.8064058)
 pivot_offset = Vector2(60, 100)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qlig8")
 
-[node name="TextureButton" type="TextureButton" parent="botao_personagem"]
+[node name="TextureButton" type="TextureButton" parent="personagemButton"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.6685962, 0.7230768)
 mouse_filter = 2
 texture_normal = ExtResource("7_jpj0s")
+
+[node name="VBoxTarefas" type="VBoxContainer" parent="."]
+layout_mode = 0
+
+[connection signal="pressed" from="background/TextureRect/CalendarButton" to="." method="_on_calendar_button_pressed"]

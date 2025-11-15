@@ -1,10 +1,24 @@
 extends Control
 
-func _ready():
-	# conecta os sinais manualmente
-	$botao_jogar.pressed.connect(_on_botao_jogar_pressed)
-	$botao_sair.pressed.connect(_on_botao_sair_pressed)
+# ========================
+# Botões da tela inicial
+# ========================
+@onready var botao_jogar = $botao_jogar
+@onready var botao_sair = $botao_sair
 
+func _ready():
+	# Conectar sinais apenas se ainda não estiverem conectados
+	var jogar_callable = Callable(self, "_on_botao_jogar_pressed")
+	if not botao_jogar.pressed.is_connected(jogar_callable):
+		botao_jogar.pressed.connect(jogar_callable)
+	
+	var sair_callable = Callable(self, "_on_botao_sair_pressed")
+	if not botao_sair.pressed.is_connected(sair_callable):
+		botao_sair.pressed.connect(sair_callable)
+
+# ========================
+# Funções dos botões
+# ========================
 func _on_botao_jogar_pressed():
 	print("Botão JOGAR clicado!")
 	get_tree().change_scene_to_file("res://principal.tscn")
