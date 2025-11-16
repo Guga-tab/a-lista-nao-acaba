@@ -1,3 +1,20 @@
-# Ignorar bancos de dados
-/database/*.db
-/database/*.sql
+# --- Godot ---
+.import/
+export_presets.cfg
+*.translation
+
+# Banco de dados local
+database/*.db
+database/*.sql
+
+# Plugin Godot-SQLite (arquivos gigantes)
+addons/godot-sqlite/bin/
+addons/godot-sqlite/bin/*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
