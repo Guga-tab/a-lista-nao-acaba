@@ -29,6 +29,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
+[gui]
+
+theme/custom_font="uid://dncemyjponlf"
+
 [physics]
 
 2d/default_gravity=987.2349999999996

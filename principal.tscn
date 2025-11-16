@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0wll17qwks54"]
+[gd_scene load_steps=19 format=3 uid="uid://b0wll17qwks54"]
 
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/bg_geral.png" id="1_ep5lw"]
 [ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://principal.gd" id="1_ommbi"]
@@ -11,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dbedh86b8jk0g" path="res://Assets_GODOT/Assets_GODOT/Backgrounds/house.png" id="6_xrbya"]
 [ext_resource type="Texture2D" uid="uid://gg1cmb0nskec" path="res://Assets_GODOT/Assets_GODOT/Buttons/botao_customizacao_personagem.png" id="7_jpj0s"]
 [ext_resource type="Texture2D" uid="uid://c1y611w2u4efy" path="res://Assets_GODOT/Assets_GODOT/Icons/calendar.png" id="7_ommbi"]
+[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://Assets_GODOT/Assets_GODOT/fontes/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="12_sf0on"]
+
+[sub_resource type="Theme" id="Theme_sf0on"]
+default_font = ExtResource("12_sf0on")
+default_font_size = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf0on"]
 
@@ -20,6 +25,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
 
+[sub_resource type="Theme" id="Theme_ommbi"]
+default_font = ExtResource("12_sf0on")
+default_font_size = 50
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -27,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_sf0on")
 script = ExtResource("1_ommbi")
 
 [node name="background" type="TextureRect" parent="."]
@@ -52,11 +62,12 @@ offset_left = 301.14502
 offset_top = 13.808563
 offset_right = 601.145
 offset_bottom = 313.80856
+scale = Vector2(1.1167434, 1.0889981)
 theme_override_colors/font_color = Color(0.6901961, 0.5137255, 0.101960786, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qlig8")
 theme_override_font_sizes/font_size = 199
-text = "67"
+text = "21"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -79,7 +90,7 @@ theme_override_colors/font_color = Color(0.69, 0.51405, 0.103499986, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qlig8")
 theme_override_font_sizes/font_size = 199
-text = "67"
+text = "11"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -91,6 +102,20 @@ offset_right = 1204.1289
 offset_bottom = 553.23773
 scale = Vector2(0.5353816, 0.63437825)
 texture = ExtResource("4_qlig8")
+
+[node name="ofensiva_label" type="Label" parent="background/ofensiva"]
+layout_mode = 0
+offset_left = -177.26982
+offset_top = 49.180202
+offset_right = 122.73018
+offset_bottom = 349.1802
+theme_override_colors/font_color = Color(0.9019608, 0.43529412, 0.30588236, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qlig8")
+theme_override_font_sizes/font_size = 199
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="background"]
 layout_mode = 0
@@ -180,6 +205,8 @@ mouse_filter = 2
 texture_normal = ExtResource("7_jpj0s")
 
 [node name="VBoxTarefas" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 0
+theme = SubResource("Theme_ommbi")
 
 [connection signal="pressed" from="background/TextureRect/CalendarButton" to="." method="_on_calendar_button_pressed"]
