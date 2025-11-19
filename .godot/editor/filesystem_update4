@@ -1,6 +1,6 @@
 res://principal.tscn
 res://button.gdshader
+res://control.gd
+res://Database.gd
 res://principal.gd
 res://TarefaService.gd
-res://UserService.gd
-res://Database.gd

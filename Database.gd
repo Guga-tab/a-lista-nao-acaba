@@ -13,17 +13,14 @@ func _ready():
 	db.query("PRAGMA foreign_keys = ON;")
 	print("DB carregado com sucesso:", db.path)
 
-# Executa INSERT / UPDATE / DELETE
 func exec(sql: String, params := []):
 	return db.query_with_bindings(sql, params)
 
-# Retorna lista de linhas
 func fetch_all(sql: String, params := []):
 	if not db.query_with_bindings(sql, params):
 		return []
 	return db.query_result
 
-# Retorna só uma linha (ou null)
 func fetch_one(sql: String, params := []):
 	if not db.query_with_bindings(sql, params):
 		return null

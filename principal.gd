@@ -109,7 +109,6 @@ func _on_calendar_pressed():
 	descricao_input.custom_minimum_size = Vector2(0, 45)
 	vbox.add_child(descricao_input)
 
-	# ------- BOTÃO CRIAR ----------
 	var btn_confirm = Button.new()
 	btn_confirm.text = "Criar"
 	btn_confirm.custom_minimum_size = Vector2(0, 55)
@@ -125,9 +124,6 @@ func _on_calendar_pressed():
 	popup.popup_centered()
 
 
-# ===============================
-# CRIAR NOVA TAREFA
-# ===============================
 func _criar_tarefa(titulo_input: LineEdit, descricao_input: LineEdit, tarefas_container: VBoxContainer):
 	var titulo = titulo_input.text.strip_edges()
 	var descricao = descricao_input.text.strip_edges()
@@ -141,15 +137,11 @@ func _criar_tarefa(titulo_input: LineEdit, descricao_input: LineEdit, tarefas_co
 	titulo_input.text = ""
 	descricao_input.text = ""
 
-	# Atualiza lista popup
 	tarefa_service.atualizar_lista(tarefas_container, self)
 
 	print("Tarefa criada:", titulo)
 
 
-# =====================================================
-#   CHAMADO PELO TarefaService QUANDO UMA TAREFA CONCLUIR
-# =====================================================
 func on_tarefa_concluida():
 	atualizar_coin_label()
 	tarefa_service.atualizar_lista(vbox_tarefas, self)

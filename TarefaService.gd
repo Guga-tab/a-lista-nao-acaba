@@ -1,9 +1,7 @@
 extends Node
 
-# Carrega UserService
 var user_service := preload("res://UserService.gd").new()
 
-# Referência para a cena principal (Control)
 var main_scene: Node = null
 
 
@@ -11,16 +9,10 @@ func _ready():
 	add_child(user_service)
 
 
-# ==========================================================
-#  SET principal (para atualizar coins)
-# ==========================================================
 func set_main(main_ref: Node):
 	main_scene = main_ref
 
 
-# ==========================================================
-#  CRIAR TAREFA
-# ==========================================================
 func criar_tarefa(titulo: String, descricao: String) -> void:
 	if titulo.strip_edges() == "":
 		push_error("Título não pode ser vazio")
@@ -29,7 +21,6 @@ func criar_tarefa(titulo: String, descricao: String) -> void:
 	user_service.carregar_ou_criar_usuario()
 	var ids = user_service.get_user_ids()
 
-	# Cada tarefa dá 1 coin (pode mudar depois)
 	var recompensa := 1
 
 	Database.exec("""
@@ -54,10 +45,6 @@ func criar_tarefa(titulo: String, descricao: String) -> void:
 
 	print("[TAREFA] Criada:", titulo)
 
-
-# ==========================================================
-#  CONCLUIR TAREFA
-# ==========================================================
 func concluir_tarefa(id_tarefa: int) -> void:
 	user_service.carregar_ou_criar_usuario()
 
@@ -92,10 +79,6 @@ func concluir_tarefa(id_tarefa: int) -> void:
 	if main_scene != null:
 		main_scene.on_tarefa_concluida()
 
-
-# ==========================================================
-#  LISTAR TAREFAS NA UI
-# ==========================================================
 func atualizar_lista(vbox: VBoxContainer, main_ref: Node = null) -> void:
 	if main_ref != null:
 		main_scene = main_ref
@@ -117,8 +100,7 @@ func atualizar_lista(vbox: VBoxContainer, main_ref: Node = null) -> void:
 		ids.id_usuario,
 		ids.id_avatar
 	])
-
-	# Limpa UI
+	
 	for child in vbox.get_children():
 		child.queue_free()
 
@@ -128,13 +110,11 @@ func atualizar_lista(vbox: VBoxContainer, main_ref: Node = null) -> void:
 		linha.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		linha.custom_minimum_size = Vector2(0, 50)
 
-		# ----------- TÍTULO ----------
 		var label_t = Label.new()
 		label_t.text = t["titulo"]
 		label_t.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		label_t.add_theme_font_size_override("font_size", 22)
 
-		# ----------- DESCRIÇÃO ----------
 		var label_d = Label.new()
 		label_d.text = t["descricao"]
 		label_d.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -158,9 +138,6 @@ func atualizar_lista(vbox: VBoxContainer, main_ref: Node = null) -> void:
 		vbox.add_child(linha)
 
 
-# ==========================================================
-#  HANDLER: botão ✔ clicado
-# ==========================================================
 func _on_concluir_tarefa(id_tarefa: int, vbox: VBoxContainer):
 	concluir_tarefa(id_tarefa)
 	atualizar_lista(vbox)
