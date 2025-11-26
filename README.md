@@ -132,7 +132,7 @@ Este projeto está vinculado ao **Trabalho de Conclusão de Curso (TCC)**:
 
 * **Instituição:** Centro Estadual de Educação Tecnológica Paula Souza – Fatec Praia Grande
 * **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas
-* **Título do Trabalho:** *Sistema de Gamificação para Tarefas Domésticas: A louça é sua!*
+* **Título do Trabalho:** *Sistema de Gamificação para Tarefas Domésticas: A lista não acaba!*
 * **Autores:**
 
   * Gustavo Machado dos Santos
@@ -150,7 +150,7 @@ O relatório técnico aborda:
 
 ---
 
-## 📚 Referências (seleção)
+## 📚 Referências
 
 Algumas das principais referências utilizadas no embasamento teórico do projeto:
 
