@@ -8,16 +8,20 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="a lista nao acaba"
 run/main_scene="uid://bnrv3q6au201o"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Database="*res://Database.gd"
+Database="*res://scripts/Database.gd"
 
 [display]
 
