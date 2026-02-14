@@ -17,7 +17,7 @@ func _ready():
 
 func _on_botao_jogar_pressed():
 	print("Botão JOGAR clicado!")
-	get_tree().change_scene_to_file("res://principal.tscn")
+	get_tree().change_scene_to_file("res://scenes/principal.tscn")
 
 func _on_botao_sair_pressed():
 	print("Botão SAIR clicado!")

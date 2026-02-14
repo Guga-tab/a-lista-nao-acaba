@@ -1,6 +1,6 @@
 extends Node
 
-var user_service := preload("res://UserService.gd").new()
+var user_service := preload("res://scripts/UserService.gd").new()
 
 var main_scene: Node = null
 

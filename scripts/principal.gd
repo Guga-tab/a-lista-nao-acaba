@@ -3,8 +3,8 @@ extends Control
 # ========================
 # Serviços
 # ========================
-@onready var tarefa_service = preload("res://TarefaService.gd").new()
-@onready var user_service   = preload("res://UserService.gd").new()
+@onready var tarefa_service = preload("res://scripts/TarefaService.gd").new()
+@onready var user_service   = preload("res://scripts/UserService.gd").new()
 
 # ========================
 # Nós da cena
