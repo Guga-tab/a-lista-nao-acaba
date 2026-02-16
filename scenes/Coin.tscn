@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://batf4mdu3hhrd"]
+
+[ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://sprites/Icons/icone_moeda.png" id="1_kyq3r"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5twpi"]
+
+[node name="coin" type="TextureRect" unique_id=671021650]
+offset_left = 22.611633
+offset_top = 237.05273
+offset_right = 365.99133
+offset_bottom = 608.6479
+scale = Vector2(0.41237384, 0.41764438)
+texture = ExtResource("1_kyq3r")
+
+[node name="coin_label" type="Label" parent="." unique_id=60545834]
+layout_mode = 0
+offset_left = 301.14502
+offset_top = 13.808563
+offset_right = 601.145
+offset_bottom = 313.80856
+scale = Vector2(1.1167434, 1.0889981)
+theme_override_colors/font_color = Color(0.6901961, 0.5137255, 0.101960786, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5twpi")
+theme_override_font_sizes/font_size = 199
+text = "21"
+horizontal_alignment = 1
+vertical_alignment = 1

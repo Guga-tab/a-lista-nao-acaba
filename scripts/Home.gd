@@ -9,10 +9,9 @@ extends Control
 # ========================
 # Nós da cena
 # ========================
-@onready var btn_calendar = $background/TextureRect/CalendarButton
+@onready var btn_calendar = $Bg/room/CalendarButton
 @onready var vbox_tarefas = $VBoxTarefas
-@onready var coin_label   = $background/coin/coin_label
-
+@onready var coin_label   = $Bg/coin/coin_label
 
 func _ready():
 	# Sobe serviços

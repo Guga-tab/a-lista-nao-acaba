@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckifu2pos7a0i"]
+
+[ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://sprites/Buttons/ConfigButton.png" id="1_2o5jp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
+
+[node name="configButton" type="Button" unique_id=624023024]
+offset_left = 804.6167
+offset_top = 88.45232
+offset_right = 897.6167
+offset_bottom = 131.45232
+scale = Vector2(2.9670353, 3.3958406)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1525833253]
+layout_mode = 0
+offset_left = -5.8654785
+offset_right = 458.13452
+offset_bottom = 217.0
+scale = Vector2(0.20994882, 0.20448692)
+mouse_filter = 2
+texture_normal = ExtResource("1_2o5jp")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sgangyh26dly"
-path="res://.godot/imported/Botao_geral.png-15be724ac225daa5e7c27dd5ee2cd85c.ctex"
+uid="uid://gg1cmb0nskec"
+path="res://.godot/imported/Character.png-6d5324423255883dda99f2eb3abbb237.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Buttons/Botao_geral.png"
-dest_files=["res://.godot/imported/Botao_geral.png-15be724ac225daa5e7c27dd5ee2cd85c.ctex"]
+source_file="res://sprites/Buttons/Character.png"
+dest_files=["res://.godot/imported/Character.png-6d5324423255883dda99f2eb3abbb237.ctex"]
 
 [params]
 

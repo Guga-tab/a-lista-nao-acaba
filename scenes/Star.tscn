@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dw8683kdkjrsd"]
+
+[ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://sprites/Icons/icone_estrela.png" id="1_t7biv"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_xpnm2"]
+
+[node name="star" type="TextureRect" unique_id=1961716797]
+offset_left = 32.47946
+offset_top = 97.130554
+offset_right = 290.47946
+offset_bottom = 355.13055
+scale = Vector2(0.44981647, 0.5386371)
+texture = ExtResource("1_t7biv")
+
+[node name="star_label" type="Label" parent="." unique_id=4753887]
+layout_mode = 0
+offset_left = 243.07774
+offset_top = -30.058472
+offset_right = 543.07776
+offset_bottom = 269.94153
+theme_override_colors/font_color = Color(0.69, 0.51405, 0.103499986, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xpnm2")
+theme_override_font_sizes/font_size = 199
+text = "11"
+horizontal_alignment = 1
+vertical_alignment = 1

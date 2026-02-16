@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dr04khh6k77y7" path="res://scripts/TitleScreen.gd" id="1_a88dj"]
 [ext_resource type="Texture2D" uid="uid://c2q287livqaut" path="res://sprites/Backgrounds/bg.png" id="2_nwylw"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_ucmnd"]
-[ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/Button.tscn" id="4_d07el"]
+[ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/DefaultButton.tscn" id="4_d07el"]
 
 [node name="TitleScreen" type="Control" unique_id=26364525]
 layout_mode = 3

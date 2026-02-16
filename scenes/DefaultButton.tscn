@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cofoos0b4poqc"]
 
-[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://sprites/Buttons/Botao_geral.png" id="1_rhj8v"]
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://sprites/Buttons/DefaultButton.png" id="1_rhj8v"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_3q610"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ee4bf"]
 
-[node name="Button" type="Button" unique_id=137207077]
+[node name="DefaultButton" type="Button" unique_id=137207077]
 custom_minimum_size = Vector2(395, 130)
 offset_left = 297.92108
 offset_top = 973.32446

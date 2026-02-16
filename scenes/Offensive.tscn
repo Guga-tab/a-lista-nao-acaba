@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://civos6uapbs02"]
+
+[ext_resource type="Texture2D" uid="uid://co66lmm252nkk" path="res://sprites/Icons/icone_ofensiva.png" id="1_mhavm"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_iw5cj"]
+
+[node name="offensive" type="TextureRect" unique_id=136825866]
+offset_left = 893.21484
+offset_top = 214.80115
+offset_right = 1204.1289
+offset_bottom = 553.23773
+scale = Vector2(0.5353816, 0.63437825)
+texture = ExtResource("1_mhavm")
+
+[node name="offensive_label" type="Label" parent="." unique_id=643569194]
+layout_mode = 0
+offset_left = -177.26982
+offset_top = 49.180202
+offset_right = 122.73018
+offset_bottom = 349.1802
+theme_override_colors/font_color = Color(0.9019608, 0.43529412, 0.30588236, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_iw5cj")
+theme_override_font_sizes/font_size = 199
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1

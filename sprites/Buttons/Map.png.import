@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gg1cmb0nskec"
-path="res://.godot/imported/botao_customizacao_personagem.png-7b534d189a55a8d93fa32b54a7e881d8.ctex"
+uid="uid://kx4xe4iy65p0"
+path="res://.godot/imported/Map.png-dcb1122dfe84ec4010b5004e7a6576c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Buttons/botao_customizacao_personagem.png"
-dest_files=["res://.godot/imported/botao_customizacao_personagem.png-7b534d189a55a8d93fa32b54a7e881d8.ctex"]
+source_file="res://sprites/Buttons/Map.png"
+dest_files=["res://.godot/imported/Map.png-dcb1122dfe84ec4010b5004e7a6576c1.ctex"]
 
 [params]
 

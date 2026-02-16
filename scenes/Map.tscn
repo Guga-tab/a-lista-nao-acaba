@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://japv55g355ky"]
+
+[ext_resource type="Texture2D" uid="uid://kx4xe4iy65p0" path="res://sprites/Buttons/Map.png" id="1_5hauk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ommbi"]
+
+[node name="Map" type="Button" unique_id=578311879]
+offset_left = -5.5213923
+offset_top = 1557.5023
+offset_right = 204.47859
+offset_bottom = 1787.5023
+scale = Vector2(1.4297929, 1.5997959)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ommbi")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=880479241]
+layout_mode = 0
+offset_right = 604.0
+offset_bottom = 694.0
+scale = Vector2(0.34690732, 0.3421596)
+mouse_filter = 2
+texture_normal = ExtResource("1_5hauk")

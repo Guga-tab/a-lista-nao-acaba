@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://b0wll17qwks54"]
+
+[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_wa5vk"]
+[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/Home.gd" id="2_x5c8i"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://sprites/Backgrounds/bg_geral.png" id="3_dch01"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/Coin.tscn" id="4_mlk18"]
+[ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/Star.tscn" id="5_wa5vk"]
+[ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/Offensive.tscn" id="6_x5c8i"]
+[ext_resource type="Texture2D" uid="uid://dbedh86b8jk0g" path="res://sprites/Backgrounds/house.png" id="8_biiq1"]
+[ext_resource type="Texture2D" uid="uid://c1y611w2u4efy" path="res://sprites/Icons/calendar.png" id="9_6g2ad"]
+[ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/Map.tscn" id="10_dch01"]
+[ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/ConfigButton.tscn" id="10_wa5vk"]
+[ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/Character.tscn" id="11_1idv1"]
+
+[sub_resource type="Theme" id="Theme_sf0on"]
+default_font = ExtResource("1_wa5vk")
+default_font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf0on"]
+
+[sub_resource type="Theme" id="Theme_ommbi"]
+default_font = ExtResource("1_wa5vk")
+default_font_size = 50
+
+[node name="Home" type="Control" unique_id=336287379]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sf0on")
+script = ExtResource("2_x5c8i")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1567050482]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 2747.0
+scale = Vector2(1.0133935, 1)
+mouse_filter = 2
+texture = ExtResource("3_dch01")
+
+[node name="coin" parent="Bg" unique_id=671021650 instance=ExtResource("4_mlk18")]
+layout_mode = 0
+offset_left = 32.563858
+offset_top = 229.99998
+offset_right = 375.94354
+offset_bottom = 601.59515
+
+[node name="star" parent="Bg" unique_id=1961716797 instance=ExtResource("5_wa5vk")]
+layout_mode = 0
+offset_left = 42.43169
+offset_top = 101.0
+offset_right = 300.4317
+offset_bottom = 359.0
+
+[node name="offensive" parent="Bg" unique_id=136825866 instance=ExtResource("6_x5c8i")]
+layout_mode = 0
+offset_left = 896.9861
+offset_top = 211.00002
+offset_right = 1207.9001
+offset_bottom = 549.4366
+
+[node name="room" type="TextureRect" parent="Bg" unique_id=679648907]
+layout_mode = 0
+offset_left = 136.17612
+offset_top = 606.0
+offset_right = 1160.1761
+offset_bottom = 1630.0
+scale = Vector2(0.80509734, 0.7936535)
+mouse_filter = 2
+texture = ExtResource("8_biiq1")
+
+[node name="CalendarButton" type="Button" parent="Bg/room" unique_id=1093566574]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 1
+offset_left = 535.0
+offset_top = 200.0
+offset_right = 635.0
+offset_bottom = 260.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sf0on")
+
+[node name="calendar" type="TextureRect" parent="Bg/room/CalendarButton" unique_id=1031061825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 15.0
+offset_right = 110.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+mouse_filter = 2
+texture = ExtResource("9_6g2ad")
+
+[node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("10_wa5vk")]
+layout_mode = 0
+offset_left = 809.0
+offset_top = 91.0
+offset_right = 902.0
+offset_bottom = 134.0
+
+[node name="Map" parent="." unique_id=578311879 instance=ExtResource("10_dch01")]
+layout_mode = 0
+offset_left = -12.999998
+offset_top = 1577.0001
+offset_right = 196.99998
+offset_bottom = 1807.0001
+
+[node name="Character" parent="." unique_id=1596499005 instance=ExtResource("11_1idv1")]
+layout_mode = 0
+offset_left = 832.99994
+offset_top = 1508.0
+offset_right = 1133.0
+offset_bottom = 2008.0
+
+[node name="VBoxTarefas" type="VBoxContainer" parent="." unique_id=938742341]
+visible = false
+layout_mode = 0
+theme = SubResource("Theme_ommbi")
+
+[connection signal="pressed" from="Bg/room/CalendarButton" to="." method="_on_calendar_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bkmn5k25awrpd"]
+
+[ext_resource type="Texture2D" uid="uid://gg1cmb0nskec" path="res://sprites/Buttons/Character.png" id="1_53v7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
+
+[node name="personagemButton" type="Button" unique_id=1596499005]
+offset_left = 829.1018
+offset_top = 1507.6929
+offset_right = 1129.1018
+offset_bottom = 2007.6929
+scale = Vector2(0.845225, 0.8064058)
+pivot_offset = Vector2(60, 100)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qlig8")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=775916247]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6685962, 0.7230768)
+mouse_filter = 2
+texture_normal = ExtResource("1_53v7d")
