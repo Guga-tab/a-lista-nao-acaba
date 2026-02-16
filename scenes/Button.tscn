@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cofoos0b4poqc"]
+
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://sprites/Buttons/Botao_geral.png" id="1_rhj8v"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_3q610"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ee4bf"]
+
+[node name="Button" type="Button" unique_id=137207077]
+custom_minimum_size = Vector2(395, 130)
+offset_left = 297.92108
+offset_top = 973.32446
+offset_right = 697.9211
+offset_bottom = 1113.3245
+scale = Vector2(1.2068255, 1.3772348)
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ee4bf")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=596365539]
+layout_mode = 0
+offset_right = 1068.0
+offset_bottom = 327.0
+scale = Vector2(0.37371302, 0.43037727)
+pivot_offset = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture_normal = ExtResource("1_rhj8v")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=131968436]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.5
+anchor_right = 0.418
+anchor_bottom = 0.5
+offset_left = -416.04526
+offset_top = -122.531525
+offset_right = 573.9547
+offset_bottom = 108.468475
+theme_override_colors/font_color = Color(0.6386688, 0.32090986, 0.06082426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3q610")
+theme_override_font_sizes/font_size = 192
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
