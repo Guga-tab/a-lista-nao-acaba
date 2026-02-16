@@ -2,31 +2,37 @@
 # 🧩 A Lista Não Acaba  
 _Sistema de gamificação para tarefas domésticas_
 
-> Protótipo de jogo eletrônico voltado a pessoas com TDAH, que transforma tarefas domésticas em uma experiência gamificada, com foco em motivação, organização e participação familiar.
+> Protótipo de jogo eletrônico que transforma tarefas domésticas em uma experiência gamificada,
+com foco em motivação, organização e participação familiar
 
 ---
 
 ## 🎯 Visão Geral
 
-**A Lista Não Acaba** é um jogo desenvolvido em **Godot Engine** que utiliza elementos de **gamificação** para incentivar a realização de tarefas domésticas, especialmente por pessoas com **Transtorno de Déficit de Atenção e Hiperatividade (TDAH)**.
+**A Lista Não Acaba** é um jogo desenvolvido em **Godot Engine** que utiliza elementos de
+**gamificação** para incentivar a realização de tarefas domésticas, especialmente por pessoas
+com **Transtorno de Déficit de Atenção no geral**.
 
-O projeto faz parte do **Trabalho de Conclusão de Curso (TCC)** do curso de **Tecnologia em Análise e Desenvolvimento de Sistemas** da **Fatec Praia Grande**.
+O projeto faz parte do **Trabalho de Conclusão de Curso (TCC)** do curso de
+**Tecnologia em Análise e Desenvolvimento de Sistemas** da **Fatec Praia Grande**.
 
 ---
 
 ## 🧠 Motivação
 
-Pessoas com TDAH costumam enfrentar:
+Muitas pessoas enfrentam desafios como:
 
-- Dificuldade em manter foco em tarefas rotineiras  
-- Problemas de organização e gestão do tempo  
-- Tendência à procrastinação e frustração com tarefas não recompensadoras  
+Dificuldade em manter o foco em tarefas rotineiras;
+Problemas de organização e gestão do tempo;
+Tendência à procrastinação;
+Desmotivação diante de atividades pouco atrativas.
 
-A proposta do sistema é usar **mecânicas de jogos** (pontuação, recompensas, progressão, avatares e decoração de ambientes) para:
+A proposta do sistema é utilizar mecânicas de jogos (pontuação, recompensas, progressão, avatares e personalização de ambientes) para:
 
-- Tornar as tarefas domésticas mais atrativas  
-- Facilitar a organização pessoal e familiar  
-- Reforçar comportamentos positivos de forma lúdica  
+Tornar as tarefas domésticas mais atrativas;
+Facilitar a organização pessoal e familiar;
+Incentivar a conclusão consistente de atividades;
+Reforçar comportamentos produtivos de forma lúdica.
 
 ---
 
@@ -34,7 +40,8 @@ A proposta do sistema é usar **mecânicas de jogos** (pontuação, recompensas,
 
 O sistema foi pensado para:
 
-> **Estimular a realização de tarefas domésticas por pessoas com TDAH**, por meio de uma interface lúdica, recompensas visuais e mecânicas de jogo, ajudando na organização, foco e conclusão das tarefas por todos os membros da família.
+> **Estimular a realização de tarefas domésticas** por meio de uma interface lúdica e mecânicas de jogo,
+promovendo organização, engajamento e conclusão das atividades por todos os membros da família.
 
 ---
 
@@ -136,31 +143,17 @@ Este projeto está vinculado ao **Trabalho de Conclusão de Curso (TCC)**:
 * **Autores:**
 
   * Gustavo Machado dos Santos
-  * João Vitor de Oliveira Mendes
+  * Gustavo de Souza Carlos
   * Roberto Neiva Corvino
 * **Orientador:** Prof. Bruno Baruffi Esteves
 * **Ano:** 2025
 
 O relatório técnico aborda:
 
-* Conceitos de TDAH, procrastinação e desinteresse por tarefas cotidianas
+* Conceitos de procrastinação e desinteresse por tarefas cotidianas
 * Gamificação como estratégia para aumentar foco e motivação
 * Metodologia de pesquisa mista (revisão bibliográfica + questionário quantitativo)
 * Proposição e desenvolvimento de um protótipo de aplicativo móvel gamificado
-
----
-
-## 📚 Referências
-
-Algumas das principais referências utilizadas no embasamento teórico do projeto:
-
-* DUMAS, J. E. *Psicopatologia da infância e da adolescência*. 3. ed. Porto Alegre: Artmed, 2011.
-* MCGONIGAL, J. *Realidade em jogo: por que os games nos tornam melhores e como eles podem mudar o mundo*. Rio de Janeiro: Best Seller, 2012.
-* NAVARRO, G. *Gamificação: a transformação do conceito do termo jogo no contexto da pós-modernidade*. CELACC/ECA – USP, 2013.
-* SILVA, S. C. R. *A psicopedagogia como forma de intervenção em crianças com TDAH*. UFPB, 2015.
-* MENDES, B. A. *Os jogos digitais como recurso pedagógico na aprendizagem de alunos com TDAH*. 2021.
-* COSTA, M. A. S. et al. *Utilização de Técnicas de Gamificação para Motivar a Realização de Atividades Complementares em Ambiente Universitário*. SBC, 2023.
-* OLIVEIRA, K. S.; LIMA, C. S.; COUTO, F. P. *Jogos digitais e funções executivas em escolares com TDAH*. 2019.
 
 ---
 
@@ -169,13 +162,14 @@ Algumas das principais referências utilizadas no embasamento teórico do projet
 * Hub social familiar mais completo (rankings, desafios em grupo)
 * Mais opções de **cosméticos** e **decoração de ambientes**
 * Mecanismos mais avançados de dificuldade adaptativa
-* Melhorias de acessibilidade específicas para TDAH (ex.: timers visuais, modos de foco)
+* Melhorias de acessibilidade específicas para pessoas com déficit de atenção (ex.: timers visuais, modos de foco)
 * Sistema de notificações integrado com Android
 
 
 ## 📩 Contato
 
-Para dúvidas, sugestões ou colaborações relacionadas ao projeto/TCC, entre em contato com os autores via canais pessoais/academicamente combinados (e-mails institucionais ou GitHub dos autores).
+Para dúvidas, sugestões ou colaborações relacionadas ao projeto/TCC, entre em contato
+com os autores via canais pessoais/academicamente combinados (e-mails institucionais ou GitHub dos autores).
 
 ---
 
