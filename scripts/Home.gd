@@ -1,66 +1,63 @@
 extends Control
 
 # ========================
-# Serviços
+# Services
 # ========================
-@onready var tarefa_service = preload("res://scripts/TarefaService.gd").new()
+@onready var task_service = preload("res://scripts/TaskService.gd").new()
 @onready var user_service   = preload("res://scripts/UserService.gd").new()
 
 # ========================
-# Nós da cena
+# Nodes of scene
 # ========================
 @onready var btn_calendar = $Bg/room/CalendarButton
-@onready var vbox_tarefas = $VBoxTarefas
+@onready var vbox_tasks = $VBoxTasks
 @onready var coin_label   = $Bg/coin/coin_label
 
 func _ready():
-	# Sobe serviços
+	# Up services
 	add_child(user_service)
-	add_child(tarefa_service)
+	add_child(task_service)
 
-	user_service.carregar_ou_criar_usuario()
+	user_service.load_or_create_user()
 
 	if btn_calendar == null:
 		push_error("CalendarButton não encontrado!")
 		return
-	if vbox_tarefas == null:
+	if vbox_tasks == null:
 		push_error("VBoxTarefas não encontrado!")
 		return
 	if coin_label == null:
 		push_error("coin_label não encontrado!")
 		return
 
-	# ------- ESTILO DO VBOX PRINCIPAL --------
-	_estilizar_vbox(vbox_tarefas)
+	# ------- MAIN VBOX STYLE --------
+	_stylize_vbox(vbox_tasks)
 
-	# Conecta calendário
-	btn_calendar.pressed.connect(Callable(self, "_on_calendar_pressed"))
+	# Connect calendar
+	btn_calendar.pressed.connect(_on_calendar_pressed)
 
-	# Atualiza UI inicial
-	atualizar_coin_label()
-	tarefa_service.atualizar_lista(vbox_tarefas, self)
-
+	# Update main UI
+	update_coin_label()
+	task_service.update_list(vbox_tasks, self)
 
 # ===============================
-# FUNÇÃO: Estilizar container
+# FUNCTION: Stylize container
 # ===============================
-func _estilizar_vbox(vbox: VBoxContainer):
+func _stylize_vbox(vbox: VBoxContainer):
 	vbox.custom_minimum_size = Vector2(800, 500)
 	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vbox.add_theme_constant_override("separation", 16)
 
-
 # ===============================
-# ATUALIZA COINS NA TELA
+# UPDATE COINS ON SCREEN
 # ===============================
-func atualizar_coin_label():
+func update_coin_label():
 	var coins = user_service.get_coins()
 	coin_label.text = str(coins)
 
-
 # ===============================
-# POPUP DE TAREFAS
+# POPUP TASKS
 # ===============================
 func _on_calendar_pressed():
 	var popup = AcceptDialog.new()
@@ -73,7 +70,7 @@ func _on_calendar_pressed():
 	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vbox.custom_minimum_size = Vector2(400, 440)
 
-	_estilizar_vbox(vbox)
+	_stylize_vbox(vbox)
 	popup.add_child(vbox)
 
 	# ------- LABEL ----------
@@ -82,31 +79,31 @@ func _on_calendar_pressed():
 	info_label.add_theme_font_size_override("font_size", 26)
 	vbox.add_child(info_label)
 
-	# ------- LISTA DE TAREFAS ----------
-	var tarefas_container = VBoxContainer.new()
-	_estilizar_vbox(tarefas_container)
-	vbox.add_child(tarefas_container)
+	# ------- TASKS LIST ----------
+	var tasks_container = VBoxContainer.new()
+	_stylize_vbox(tasks_container)
+	vbox.add_child(tasks_container)
 
-	# Carrega lista atual
-	tarefa_service.atualizar_lista(tarefas_container, self)
+	# Load current list
+	task_service.update_list(tasks_container, self)
 
-	# ------- INPUT NOVA TAREFA ----------
-	var nova_label = Label.new()
-	nova_label.text = "\nCriar nova tarefa:"
-	nova_label.add_theme_font_size_override("font_size", 26)
-	vbox.add_child(nova_label)
+	# ------- INPUT NEW TASK ----------
+	var new_label = Label.new()
+	new_label.text = "\nCriar nova tarefa:"
+	new_label.add_theme_font_size_override("font_size", 26)
+	vbox.add_child(new_label)
 
-	var titulo_input = LineEdit.new()
-	titulo_input.placeholder_text = "Título da tarefa"
-	titulo_input.add_theme_font_size_override("font_size", 22)
-	titulo_input.custom_minimum_size = Vector2(0, 45)
-	vbox.add_child(titulo_input)
+	var title_input = LineEdit.new()
+	title_input.placeholder_text = "Título da tarefa"
+	title_input.add_theme_font_size_override("font_size", 22)
+	title_input.custom_minimum_size = Vector2(0, 45)
+	vbox.add_child(title_input)
 
-	var descricao_input = LineEdit.new()
-	descricao_input.placeholder_text = "Descrição"
-	descricao_input.add_theme_font_size_override("font_size", 22)
-	descricao_input.custom_minimum_size = Vector2(0, 45)
-	vbox.add_child(descricao_input)
+	var desc_input = LineEdit.new()
+	desc_input.placeholder_text = "Descrição"
+	desc_input.add_theme_font_size_override("font_size", 22)
+	desc_input.custom_minimum_size = Vector2(0, 45)
+	vbox.add_child(desc_input)
 
 	var btn_confirm = Button.new()
 	btn_confirm.text = "Criar"
@@ -114,33 +111,31 @@ func _on_calendar_pressed():
 	btn_confirm.add_theme_font_size_override("font_size", 24)
 
 	btn_confirm.pressed.connect(
-		Callable(self, "_criar_tarefa")
-		.bind(titulo_input, descricao_input, tarefas_container)
+		Callable(self, "_create_task")
+		.bind(title_input, desc_input, tasks_container)
 	)
 
 	vbox.add_child(btn_confirm)
 
 	popup.popup_centered()
 
+func _create_task(title_input: LineEdit, desc_input: LineEdit, tasks_container: VBoxContainer):
+	var title = title_input.text.strip_edges()
+	var desc = desc_input.text.strip_edges()
 
-func _criar_tarefa(titulo_input: LineEdit, descricao_input: LineEdit, tarefas_container: VBoxContainer):
-	var titulo = titulo_input.text.strip_edges()
-	var descricao = descricao_input.text.strip_edges()
-
-	if titulo == "":
+	if title == "":
 		push_error("Título não pode ser vazio!")
 		return
 
-	tarefa_service.criar_tarefa(titulo, descricao)
+	task_service.create_task(title, desc)
 
-	titulo_input.text = ""
-	descricao_input.text = ""
+	title_input.text = ""
+	desc_input.text = ""
 
-	tarefa_service.atualizar_lista(tarefas_container, self)
+	task_service.update_list(tasks_container, self)
 
-	print("Tarefa criada:", titulo)
+	print("Tarefa criada:", title)
 
-
-func on_tarefa_concluida():
-	atualizar_coin_label()
-	tarefa_service.atualizar_lista(vbox_tarefas, self)
+func on_task_complete():
+	update_coin_label()
+	task_service.update_list(vbox_tasks, self)

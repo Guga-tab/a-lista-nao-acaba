@@ -13,10 +13,10 @@ func _ready():
 	button_play_label.text = "JOGAR"
 	button_exit_label.text = "SAIR"
 
-func _on_botao_jogar_pressed():
+func _on_button_play_pressed() -> void:
 	print("Botão JOGAR clicado!")
 	get_tree().change_scene_to_file("res://scenes/Home.tscn")
 
-func _on_botao_sair_pressed():
+func _on_button_exit_pressed() -> void:
 	print("Botão SAIR clicado!")
 	get_tree().quit()
