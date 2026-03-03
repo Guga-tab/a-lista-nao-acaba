@@ -1,52 +1,19 @@
 extends Node
 
-const DB_PATH := "user://database.json"
-
-var db := {}
+@onready var Database = preload("res://scripts/DatabaseJSON.gd").new()
 
 var user_id: int = -1
 var avatar_id: int = -1
 
-
 func _ready():
-	load_db()
-
-# ================================
-# Carregamento do JSON
-# ================================
-func load_db():
-	if FileAccess.file_exists(DB_PATH):
-		var f = FileAccess.open(DB_PATH, FileAccess.READ)
-		var txt = f.get_as_text()
-		f.close()
-
-		var parsed = JSON.parse_string(txt)
-		if typeof(parsed) == TYPE_DICTIONARY:
-			db = parsed
-		else:
-			db = {}
-	else:
-		db = {}
-
-	_ensure_structure()
-
-func save_db():
-	var f = FileAccess.open(DB_PATH, FileAccess.WRITE)
-	f.store_string(JSON.stringify(db, "\t"))
-	f.close()
-
-func _ensure_structure():
-	if not db.has("USUARIO_AVATAR"):
-		db["USUARIO_AVATAR"] = []
-
-	if not db.has("TAREFA"):
-		db["TAREFA"] = []
-
-	save_db()
+	add_child(Database)
+	load_or_create_user()
 
 func load_or_create_user():
-	if db["USUARIO_AVATAR"].size() > 0:
-		var u = db["USUARIO_AVATAR"][0]
+	var users = Database.get_users()
+
+	if users.size() > 0:
+		var u = users[0]
 		user_id = int(u["id_usuario"])
 		avatar_id = int(u["id_avatar"])
 		return
@@ -54,36 +21,39 @@ func load_or_create_user():
 	var user = {
 		"id_usuario": 1,
 		"id_avatar": 1,
-		"nivel_atual": 1,
-		"xp_atual": 0,
 		"coins": 0,
 		"estrelas": 0,
 		"nome": "User",
 		"data_criacao_conta": Time.get_unix_time_from_system()
 	}
 
-	db["USUARIO_AVATAR"].append(user)
-	save_db()
+	users.append(user)
+	Database.save_users(users)
 
 	user_id = 1
 	avatar_id = 1
 
-func get_user_ids():
+func get_user_ids() -> Dictionary:
 	return {
 		"user_id": user_id,
 		"avatar_id": avatar_id
 	}
 
-func add_coins(qtd: int):
-	for u in db["USUARIO_AVATAR"]:
-		if int(u["id_usuario"]) == user_id and int(u["id_avatar"]) == avatar_id:
-			u["coins"] = int(u["coins"]) + qtd
-			save_db()
-			return
+func add_coins(amount: int):
+	var users = Database.get_users()
 
+	for u in users:
+		if int(u["id_usuario"]) == user_id and int(u["id_avatar"]) == avatar_id:
+			u["coins"] = int(u["coins"]) + amount
+			break
+
+	Database.save_users(users)
 
 func get_coins() -> int:
-	for u in db["USUARIO_AVATAR"]:
+	var users = Database.get_users()
+
+	for u in users:
 		if int(u["id_usuario"]) == user_id and int(u["id_avatar"]) == avatar_id:
 			return int(u["coins"])
+
 	return 0
