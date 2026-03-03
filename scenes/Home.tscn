@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0wll17qwks54"]
 
 [ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://sprites/fontes/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_wa5vk"]
-[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/Home.gd" id="2_x5c8i"]
+[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/home.gd" id="2_x5c8i"]
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://sprites/Backgrounds/bg_geral.png" id="3_dch01"]
 [ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/Coin.tscn" id="4_mlk18"]
 [ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/Star.tscn" id="5_wa5vk"]
