@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dkksi682m1crl"]
+
+[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://sprites/backgrounds/popup_painting.png" id="1_cpc1a"]
+[ext_resource type="Texture2D" uid="uid://bq660nbdrskjv" path="res://sprites/backgrounds/background_popup.jpg" id="1_gxv0h"]
+[ext_resource type="Texture2D" uid="uid://bg4y5cwe1rhg5" path="res://sprites/buttons/x_button.png" id="3_ofmyw"]
+
+[node name="PopUp" type="Control" unique_id=446378054]
+z_index = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -596.0
+offset_top = -325.0
+offset_right = 596.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Painting" type="TextureRect" parent="." unique_id=149846687]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_cpc1a")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=388407439]
+z_index = -1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 92.0
+offset_right = 888.0
+offset_bottom = 557.0
+texture = ExtResource("1_gxv0h")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=716391373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TextureButton" type="TextureButton" parent="Button" unique_id=1027522562]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 126.0
+offset_right = 78.49048
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ofmyw")
+ignore_texture_size = true
+stretch_mode = 0

@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dw8683kdkjrsd"]
 
 [ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://sprites/icons/star_icon.png" id="1_t7biv"]
-[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_xpnm2"]
+[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_j6vao"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6vao"]
+font = ExtResource("2_j6vao")
+font_size = 199
+font_color = Color(0.8892706, 0.6696652, 0.17154637, 1)
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Star" type="TextureRect" unique_id=1961716797]
 offset_left = 32.47946
@@ -17,10 +24,7 @@ offset_left = 243.07774
 offset_top = -30.058472
 offset_right = 543.07776
 offset_bottom = 269.94153
-theme_override_colors/font_color = Color(0.69, 0.51405, 0.103499986, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_xpnm2")
-theme_override_font_sizes/font_size = 199
 text = "11"
+label_settings = SubResource("LabelSettings_j6vao")
 horizontal_alignment = 1
 vertical_alignment = 1

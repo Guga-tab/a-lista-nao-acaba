@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://batf4mdu3hhrd"]
 
 [ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://sprites/icons/coin_icon.png" id="1_kyq3r"]
-[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://sprites/fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5twpi"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5twpi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i64fm"]
+font_size = 199
+font_color = Color(0.8901961, 0.67058825, 0.17254902, 1)
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Coin" type="TextureRect" unique_id=671021650]
 offset_left = 22.611633
@@ -23,5 +29,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5twpi")
 theme_override_font_sizes/font_size = 199
 text = "21"
+label_settings = SubResource("LabelSettings_i64fm")
 horizontal_alignment = 1
 vertical_alignment = 1
