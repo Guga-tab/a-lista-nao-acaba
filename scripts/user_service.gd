@@ -1,6 +1,6 @@
 extends Node
 
-@onready var Database = preload("res://scripts/DatabaseJSON.gd").new()
+@onready var Database = preload("res://scripts/database.gd").new()
 
 var user_id: int = -1
 var avatar_id: int = -1
