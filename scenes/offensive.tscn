@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://civos6uapbs02"]
 
-[ext_resource type="Texture2D" uid="uid://co66lmm252nkk" path="res://sprites/icons/offensive_icon.png" id="1_mhavm"]
+[ext_resource type="Texture2D" uid="uid://co66lmm252nkk" path="res://assets/icons/offensive_icon.png" id="1_mhavm"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_mdfjy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v81jl"]

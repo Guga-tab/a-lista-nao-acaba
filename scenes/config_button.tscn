@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckifu2pos7a0i"]
 
-[ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://sprites/buttons/config_button.png" id="1_2o5jp"]
+[ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://assets/buttons/config_button.png" id="1_2o5jp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
 

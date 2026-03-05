@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biok07wnb7yfb"
-path="res://.godot/imported/character.png-8839be7538ce696d80261ee87590c654.ctex"
+uid="uid://cu22sw8hkstto"
+path="res://.godot/imported/star_icon.png-2cba96a36eb570ce2a97a23869877ff8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/buttons/character.png"
-dest_files=["res://.godot/imported/character.png-8839be7538ce696d80261ee87590c654.ctex"]
+source_file="res://assets/icons/star_icon.png"
+dest_files=["res://.godot/imported/star_icon.png-2cba96a36eb570ce2a97a23869877ff8.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dw8683kdkjrsd"]
 
-[ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://sprites/icons/star_icon.png" id="1_t7biv"]
+[ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://assets/icons/star_icon.png" id="1_t7biv"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_j6vao"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6vao"]

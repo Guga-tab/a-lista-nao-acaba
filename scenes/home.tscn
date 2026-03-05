@@ -2,18 +2,19 @@
 
 [ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_wa5vk"]
 [ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/home.gd" id="2_x5c8i"]
-[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://sprites/backgrounds/bg_default.png" id="3_dch01"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="3_dch01"]
 [ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/coin.tscn" id="4_mlk18"]
 [ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/star.tscn" id="5_wa5vk"]
 [ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/offensive.tscn" id="6_x5c8i"]
-[ext_resource type="Texture2D" uid="uid://dbedh86b8jk0g" path="res://sprites/backgrounds/house.png" id="8_biiq1"]
-[ext_resource type="Texture2D" uid="uid://c1y611w2u4efy" path="res://sprites/icons/calendar.png" id="9_6g2ad"]
+[ext_resource type="Texture2D" uid="uid://dbs53i0vanfji" path="res://assets/backgrounds/house.png" id="8_biiq1"]
+[ext_resource type="Texture2D" uid="uid://d1ob5or76hajv" path="res://assets/icons/calendar.png" id="9_6g2ad"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_gi00y"]
 [ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="9_ip4d6"]
-[ext_resource type="Texture2D" uid="uid://b3rgi08m0vdga" path="res://sprites/backgrounds/datetime_box.png" id="9_yu5fn"]
+[ext_resource type="Texture2D" uid="uid://b3rgi08m0vdga" path="res://assets/backgrounds/datetime_box.png" id="9_yu5fn"]
 [ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/map.tscn" id="10_dch01"]
 [ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/config_button.tscn" id="10_wa5vk"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/character.tscn" id="11_1idv1"]
+[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="15_rpgsi"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
 default_font = ExtResource("1_wa5vk")
@@ -171,5 +172,8 @@ offset_bottom = 2008.0
 visible = false
 layout_mode = 0
 theme = SubResource("Theme_ommbi")
+
+[node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
+stream = ExtResource("15_rpgsi")
 
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]

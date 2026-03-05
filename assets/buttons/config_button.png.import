@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3rgi08m0vdga"
-path="res://.godot/imported/datetime_box.png-f0f765ea5c046407e68397445f835086.ctex"
+uid="uid://cufquagonbqkw"
+path="res://.godot/imported/config_button.png-1f7de979beb830a739b00b9f766cd331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/datetime_box.png"
-dest_files=["res://.godot/imported/datetime_box.png-f0f765ea5c046407e68397445f835086.ctex"]
+source_file="res://assets/buttons/config_button.png"
+dest_files=["res://.godot/imported/config_button.png-1f7de979beb830a739b00b9f766cd331.ctex"]
 
 [params]
 

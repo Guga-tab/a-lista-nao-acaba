@@ -13,6 +13,7 @@ extends Control
 @onready var vbox_tasks = $VBoxTasks
 @onready var coin_label = $Bg/Coin/CoinLabel
 @onready var text_black_bar = $Bg/TextBlackBar
+@onready var click_sound = $click_sound
 
 func _ready():
 	# Up services
@@ -65,6 +66,7 @@ func update_coin_label():
 # ===============================
 func _on_calendar_pressed():
 	var popup = AcceptDialog.new()
+	click_sound.play()
 	popup.title = "Tarefas"
 	popup.min_size = Vector2(420, 460)
 	add_child(popup)
@@ -113,6 +115,7 @@ func _on_calendar_pressed():
 	btn_confirm.text = "Criar"
 	btn_confirm.custom_minimum_size = Vector2(0, 55)
 	btn_confirm.add_theme_font_size_override("font_size", 24)
+	btn_confirm.pressed.connect(click_sound.play)
 
 	btn_confirm.pressed.connect(
 		Callable(self, "_create_task")

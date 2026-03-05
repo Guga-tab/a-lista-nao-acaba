@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dkksi682m1crl"]
 
-[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://sprites/backgrounds/popup_painting.png" id="1_cpc1a"]
-[ext_resource type="Texture2D" uid="uid://bq660nbdrskjv" path="res://sprites/backgrounds/background_popup.jpg" id="1_gxv0h"]
-[ext_resource type="Texture2D" uid="uid://bg4y5cwe1rhg5" path="res://sprites/buttons/x_button.png" id="3_ofmyw"]
+[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="1_cpc1a"]
+[ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="1_gxv0h"]
+[ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="3_ofmyw"]
 
 [node name="PopUp" type="Control" unique_id=446378054]
 z_index = 2

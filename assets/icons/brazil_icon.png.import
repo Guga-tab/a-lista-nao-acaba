@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1mcvdnwgt5pv"
-path="res://.godot/imported/bg.png-c41c9add351264e83bdff6e950ba9fe5.ctex"
+uid="uid://c7m5gysjelqbp"
+path="res://.godot/imported/brazil_icon.png-c731d2d27ca0dc9a56e129fcc9e9f0b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/bg.png"
-dest_files=["res://.godot/imported/bg.png-c41c9add351264e83bdff6e950ba9fe5.ctex"]
+source_file="res://assets/icons/brazil_icon.png"
+dest_files=["res://.godot/imported/brazil_icon.png-c731d2d27ca0dc9a56e129fcc9e9f0b0.ctex"]
 
 [params]
 

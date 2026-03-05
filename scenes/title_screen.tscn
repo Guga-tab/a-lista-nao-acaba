@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bnrv3q6au201o"]
 
 [ext_resource type="Script" uid="uid://dr04khh6k77y7" path="res://scripts/title_screen.gd" id="1_mgrm8"]
-[ext_resource type="Texture2D" uid="uid://c2q287livqaut" path="res://sprites/backgrounds/bg.png" id="2_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://d1mcvdnwgt5pv" path="res://assets/backgrounds/bg.png" id="2_dc4i4"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/default_button.tscn" id="4_3yumr"]
 [ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/config_button.tscn" id="5_dc4i4"]
+[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="6_e54dn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s4lrb"]
 font = ExtResource("3_mgrm8")
@@ -82,6 +83,9 @@ offset_top = -192.0
 offset_right = 124.0
 offset_bottom = -149.0
 grow_vertical = 0
+
+[node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=1624226236]
+stream = ExtResource("6_e54dn")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm3nabjrlt5js"
-path="res://.godot/imported/popup_painting.png-b3020110c7cc6e39b4876eb7b177477f.ctex"
+uid="uid://davmviu62b87o"
+path="res://.godot/imported/background_popup.jpg-2727fdf5cfbee30c42b2643e56b1ad7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/backgrounds/popup_painting.png"
-dest_files=["res://.godot/imported/popup_painting.png-b3020110c7cc6e39b4876eb7b177477f.ctex"]
+source_file="res://assets/backgrounds/background_popup.jpg"
+dest_files=["res://.godot/imported/background_popup.jpg-2727fdf5cfbee30c42b2643e56b1ad7f.ctex"]
 
 [params]
 

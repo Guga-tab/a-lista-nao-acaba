@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7m5gysjelqbp"
-path="res://.godot/imported/brazil_icon.png-bcfb0b4ff5beaca44a16191e441e0a16.ctex"
+uid="uid://sgangyh26dly"
+path="res://.godot/imported/default_button.png-7df2289e188afc8edcd3a9d31c4c1f6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/brazil_icon.png"
-dest_files=["res://.godot/imported/brazil_icon.png-bcfb0b4ff5beaca44a16191e441e0a16.ctex"]
+source_file="res://assets/buttons/default_button.png"
+dest_files=["res://.godot/imported/default_button.png-7df2289e188afc8edcd3a9d31c4c1f6c.ctex"]
 
 [params]
 

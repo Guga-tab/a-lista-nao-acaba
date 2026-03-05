@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtq2h20osrdc7"
-path="res://.godot/imported/coin_icon.png-a54596c84bb91a18a7b87d7d29f08213.ctex"
+uid="uid://d1ob5or76hajv"
+path="res://.godot/imported/calendar.png-6d6a96a1256c7bfe6521d1c090d029fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/coin_icon.png"
-dest_files=["res://.godot/imported/coin_icon.png-a54596c84bb91a18a7b87d7d29f08213.ctex"]
+source_file="res://assets/icons/calendar.png"
+dest_files=["res://.godot/imported/calendar.png-6d6a96a1256c7bfe6521d1c090d029fa.ctex"]
 
 [params]
 

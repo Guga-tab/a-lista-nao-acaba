@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ob5or76hajv"
-path="res://.godot/imported/calendar.png-9ffd323dc3453b8551cbf85516a6950e.ctex"
+uid="uid://dbs53i0vanfji"
+path="res://.godot/imported/house.png-328a9c6d23eca595cb8964980bbe52d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icons/calendar.png"
-dest_files=["res://.godot/imported/calendar.png-9ffd323dc3453b8551cbf85516a6950e.ctex"]
+source_file="res://assets/backgrounds/house.png"
+dest_files=["res://.godot/imported/house.png-328a9c6d23eca595cb8964980bbe52d2.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cofoos0b4poqc"]
 
-[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://sprites/buttons/default_button.png" id="1_rhj8v"]
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://assets/buttons/default_button.png" id="1_rhj8v"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_3q610"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ee4bf"]

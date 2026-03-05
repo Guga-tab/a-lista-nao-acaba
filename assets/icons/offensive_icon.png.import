@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1edbyr0g33j"
-path="res://.godot/imported/map.png-e70227da755e600a7d366e79ef53d6bb.ctex"
+uid="uid://co66lmm252nkk"
+path="res://.godot/imported/offensive_icon.png-cfd361efc634d7d73049684f67963d2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/buttons/map.png"
-dest_files=["res://.godot/imported/map.png-e70227da755e600a7d366e79ef53d6bb.ctex"]
+source_file="res://assets/icons/offensive_icon.png"
+dest_files=["res://.godot/imported/offensive_icon.png-cfd361efc634d7d73049684f67963d2c.ctex"]
 
 [params]
 
