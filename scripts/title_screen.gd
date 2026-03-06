@@ -7,6 +7,7 @@ extends Control
 @onready var button_play_label = $VBoxContainer/PlayButton/TextureButton/Label
 @onready var button_exit_label = $VBoxContainer/ExitButton/TextureButton/Label
 @onready var click_sound = $click_sound
+
 func _ready():
 	#insert text in buttons
 	button_play_label.text = "JOGAR"
@@ -30,3 +31,8 @@ func _on_config_button_pressed() -> void:
 	await click_sound.finished
 	var pop_up = PopUp.instantiate()
 	add_child(pop_up)
+	
+func _on_config_exit_pressed() -> void:
+	click_sound.play()
+	await click_sound.finished
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")

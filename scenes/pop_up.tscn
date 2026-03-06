@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkksi682m1crl"]
 
 [ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="1_cpc1a"]
+[ext_resource type="Script" uid="uid://1drjvgtpxsub" path="res://scripts/pop_up.gd" id="1_cy0db"]
 [ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="1_gxv0h"]
 [ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="3_ofmyw"]
 
@@ -18,6 +19,7 @@ offset_right = 596.0
 offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cy0db")
 
 [node name="Painting" type="TextureRect" parent="." unique_id=149846687]
 layout_mode = 0
@@ -48,7 +50,16 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.039215688, 0, 0.1764706, 1)
+theme_override_font_sizes/font_size = 38
+text = "Desenvolvido por estudantes
+da Faculdade de Tecnologia
+ de Praia Grande (FATEC), 
+com o intuito de ajudar você
+ em suas tarefas do dia a dia."
 flat = true
+autowrap_trim_flags = 0
 
 [node name="TextureButton" type="TextureButton" parent="Button" unique_id=1027522562]
 layout_mode = 1
@@ -66,3 +77,5 @@ grow_vertical = 2
 texture_normal = ExtResource("3_ofmyw")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="Button/TextureButton" to="." method="_on_texture_button_pressed"]

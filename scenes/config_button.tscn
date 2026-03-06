@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckifu2pos7a0i"]
 
-[ext_resource type="Texture2D" uid="uid://cufquagonbqkw" path="res://assets/buttons/config_button.png" id="1_2o5jp"]
+[ext_resource type="Texture2D" uid="uid://cyx4roqklcdff" path="res://assets/buttons/about_us_button.png" id="1_xrnc4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
 
@@ -16,4 +16,5 @@ offset_right = 464.0
 offset_bottom = 217.0
 scale = Vector2(0.20994882, 0.20448692)
 mouse_filter = 2
-texture_normal = ExtResource("1_2o5jp")
+texture_normal = ExtResource("1_xrnc4")
+stretch_mode = 0
