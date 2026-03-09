@@ -44,6 +44,7 @@ func _ready():
 	# Update main UI
 	update_coin_label()
 	TaskService.update_list(vbox_tasks, self)
+	
 
 # ===============================
 # FUNCTION: Stylize container

@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://d1ob5or76hajv" path="res://assets/icons/calendar.png" id="9_6g2ad"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_gi00y"]
 [ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="9_ip4d6"]
-[ext_resource type="Texture2D" uid="uid://b3rgi08m0vdga" path="res://assets/backgrounds/datetime_box.png" id="9_yu5fn"]
 [ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/map.tscn" id="10_dch01"]
 [ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/config_button.tscn" id="10_wa5vk"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/character.tscn" id="11_1idv1"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="15_rpgsi"]
+[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="17_o7pnx"]
+[ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/clock.gd" id="18_snnha"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
 default_font = ExtResource("1_wa5vk")
@@ -30,6 +31,12 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="Theme" id="Theme_ommbi"]
 default_font = ExtResource("1_wa5vk")
 default_font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7pnx"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aish6"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Home" type="Control" unique_id=336287379]
 layout_mode = 3
@@ -134,19 +141,6 @@ grow_horizontal = 2
 texture = ExtResource("9_ip4d6")
 expand_mode = 1
 
-[node name="DatetimeBox" type="TextureRect" parent="Bg" unique_id=646512818]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -152.45801
-offset_top = 321.0
-offset_right = 152.45801
-offset_bottom = 648.0
-grow_horizontal = 2
-texture = ExtResource("9_yu5fn")
-expand_mode = 1
-
 [node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("10_wa5vk")]
 layout_mode = 0
 offset_left = 809.0
@@ -175,5 +169,34 @@ theme = SubResource("Theme_ommbi")
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
 stream = ExtResource("15_rpgsi")
+
+[node name="Node" type="Node" parent="." unique_id=618355643]
+script = ExtResource("18_snnha")
+
+[node name="Clock" type="TextureRect" parent="Node" unique_id=2031594130]
+offset_left = 389.0
+offset_top = 309.0
+offset_right = 889.0
+offset_bottom = 809.0
+scale = Vector2(0.6390822, 0.7046018)
+texture = ExtResource("17_o7pnx")
+
+[node name="Day" type="Label" parent="Node/Clock" unique_id=1381635584]
+layout_mode = 0
+offset_left = 114.22632
+offset_top = 166.05124
+offset_right = 154.22632
+offset_bottom = 186.05124
+scale = Vector2(3.9340332, 3.5279703)
+label_settings = SubResource("LabelSettings_o7pnx")
+
+[node name="Time" type="Label" parent="Node/Clock" unique_id=1607444957]
+layout_mode = 0
+offset_left = 118.92055
+offset_top = 263.97888
+offset_right = 182.92055
+offset_bottom = 306.97888
+scale = Vector2(4.22471, 3.4033787)
+label_settings = SubResource("LabelSettings_aish6")
 
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]
