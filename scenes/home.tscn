@@ -11,9 +11,9 @@
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_gi00y"]
 [ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="9_ip4d6"]
 [ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/map.tscn" id="10_dch01"]
-[ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/config_button.tscn" id="10_wa5vk"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/character.tscn" id="11_1idv1"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="15_rpgsi"]
+[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/config_button.tscn" id="17_aish6"]
 [ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="17_o7pnx"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/clock.gd" id="18_snnha"]
 
@@ -141,13 +141,6 @@ grow_horizontal = 2
 texture = ExtResource("9_ip4d6")
 expand_mode = 1
 
-[node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("10_wa5vk")]
-layout_mode = 0
-offset_left = 809.0
-offset_top = 91.0
-offset_right = 902.0
-offset_bottom = 134.0
-
 [node name="Map" parent="." unique_id=578311879 instance=ExtResource("10_dch01")]
 layout_mode = 0
 offset_left = -12.999998
@@ -199,4 +192,13 @@ offset_bottom = 306.97888
 scale = Vector2(4.22471, 3.4033787)
 label_settings = SubResource("LabelSettings_aish6")
 
+[node name="ConfigButton" parent="." unique_id=885958001 instance=ExtResource("17_aish6")]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 42.0
+offset_right = 1424.0
+offset_bottom = 458.0
+script = null
+
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]
+[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

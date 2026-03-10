@@ -1,20 +1,15 @@
-[gd_scene format=3 uid="uid://ckifu2pos7a0i"]
+[gd_scene format=3 uid="uid://b4o65hf2pwtwi"]
 
-[ext_resource type="Texture2D" uid="uid://cyx4roqklcdff" path="res://assets/buttons/about_us_button.png" id="1_xrnc4"]
+[ext_resource type="Texture2D" uid="uid://dauvochpvnwim" path="res://assets/buttons/options.png" id="1_xrnc4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
+[sub_resource type="GDScript" id="GDScript_xrnc4"]
 
-[node name="ConfigButton" type="Button" unique_id=624023024]
-offset_right = 93.0
-offset_bottom = 43.0
-scale = Vector2(2.9670353, 3.3958406)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
+[node name="Button" type="Button" unique_id=1908190728]
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.43295956, 0.42284745)
+icon = ExtResource("1_xrnc4")
+flat = true
+script = SubResource("GDScript_xrnc4")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1525833253]
-layout_mode = 1
-offset_right = 464.0
-offset_bottom = 217.0
-scale = Vector2(0.20994882, 0.20448692)
-mouse_filter = 2
-texture_normal = ExtResource("1_xrnc4")
-stretch_mode = 0
+[connection signal="pressed" from="." to="." method="_on_pressed"]
