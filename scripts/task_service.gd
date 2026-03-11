@@ -1,8 +1,5 @@
 extends Node
 
-@onready var Database = preload("res://scripts/database.gd").new()
-@onready var user_service = preload("res://scripts/user_service.gd").new()
-
 var main_scene: Node = null
 
 func _ready():
@@ -14,7 +11,7 @@ func set_main(main_ref: Node):
 
 func create_task(title: String, desc: String) -> void:
 	if title.strip_edges() == "":
-		push_error("Título não pode ser vazio")
+		push_error("Título não pode ser vazio") 
 		return
 
 	var ids = user_service.get_user_ids()

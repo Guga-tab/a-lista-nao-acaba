@@ -1,6 +1,7 @@
 extends Node
 
-@onready var Database = preload("res://scripts/database.gd").new()
+signal coins_changed(new_value)
+
 
 var user_id: int = -1
 var avatar_id: int = -1

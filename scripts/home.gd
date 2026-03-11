@@ -12,7 +12,7 @@ extends Control
 @onready var PopUp = preload("res://scenes/config_screen.tscn")
 @onready var btn_calendar = $Bg/Room/CalendarButton
 @onready var vbox_tasks = $VBoxTasks
-@onready var coin_label = $Bg/Coin/CoinLabel
+@onready var coin_label = $CanvasLayer/Label
 @onready var text_black_bar = $Bg/TextBlackBar
 @onready var click_sound = $click_sound
 

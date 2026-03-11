@@ -23,6 +23,8 @@ config/icon="res://icon.svg"
 
 BackgroundSong="*uid://ckn5xa220h6dk"
 ClickSound="*uid://cx3wiwa8jj6ew"
+Database="*res://scripts/database.gd"
+user_service="*uid://72gqjx4oib5d"
 
 [display]
 
