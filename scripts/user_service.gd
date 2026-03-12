@@ -7,7 +7,6 @@ var user_id: int = -1
 var avatar_id: int = -1
 
 func _ready():
-	add_child(Database)
 	load_or_create_user()
 
 func load_or_create_user():

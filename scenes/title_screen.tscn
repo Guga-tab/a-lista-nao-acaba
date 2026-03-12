@@ -24,26 +24,26 @@ func _ready():
 
 func _on_play_button_pressed() -> void:
 	click_sound.play()
-	await click_sound.finished
+	#await click_sound.finished
 	print(\"Botão JOGAR clicado!\")
 	get_tree().change_scene_to_file(\"res://scenes/home.tscn\")
 
 func _on_exit_button_pressed() -> void:
 	click_sound.play()
-	await click_sound.finished
+	#await click_sound.finished
 	print(\"Botão SAIR clicado!\")
 	get_tree().quit()
 
 
 func _on_config_button_pressed() -> void:
 	click_sound.play()
-	await click_sound.finished
+	#await click_sound.finished
 	var pop_up = PopUp.instantiate()
 	add_child(pop_up)
 	
 func _on_config_exit_pressed() -> void:
 	click_sound.play()
-	await click_sound.finished
+	#await click_sound.finished
 	get_tree().change_scene_to_file(\"res://scenes/title_screen.tscn\")
 "
 
@@ -61,6 +61,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 7.0
+offset_right = -4.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -109,9 +113,11 @@ theme_override_constants/separation = 80
 
 [node name="PlayButton" parent="VBoxContainer" unique_id=137207077 instance=ExtResource("4_3yumr")]
 layout_mode = 2
+text = "ASDFSADSADDSA"
 
 [node name="ExitButton" parent="VBoxContainer" unique_id=102119678 instance=ExtResource("4_3yumr")]
 layout_mode = 2
+text = "EXIT"
 
 [node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("5_dc4i4")]
 layout_mode = 1

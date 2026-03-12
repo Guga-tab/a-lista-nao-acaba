@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d4immywd36wp1"
+
+[deps]
+
+files=["res://assets/language/translation.en_US.translation", "res://assets/language/translation.fr.translation", "res://assets/language/translation.es.translation", "res://assets/language/translation.de.translation", "res://assets/language/translation.it.translation", "res://assets/language/translation.pt.translation", "res://assets/language/translation.ru.translation", "res://assets/language/translation.ja.translation", "res://assets/language/translation.zh.translation", "res://assets/language/translation.zh.translation"]
+
+source_file="res://assets/language/translation.csv"
+dest_files=["res://assets/language/translation.en_US.translation", "res://assets/language/translation.fr.translation", "res://assets/language/translation.es.translation", "res://assets/language/translation.de.translation", "res://assets/language/translation.it.translation", "res://assets/language/translation.pt.translation", "res://assets/language/translation.ru.translation", "res://assets/language/translation.ja.translation", "res://assets/language/translation.zh.translation", "res://assets/language/translation.zh.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

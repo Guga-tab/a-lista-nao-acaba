@@ -41,6 +41,10 @@ enabled=PackedStringArray()
 
 theme/custom_font="uid://dncemyjponlf"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/language/translation.de.translation", "res://assets/language/translation.en_US.translation", "res://assets/language/translation.es.translation", "res://assets/language/translation.fr.translation", "res://assets/language/translation.it.translation", "res://assets/language/translation.ja.translation", "res://assets/language/translation.pt.translation", "res://assets/language/translation.ru.translation", "res://assets/language/translation.zh.translation")
+
 [physics]
 
 2d/default_gravity=987.2349999999996
