@@ -43,7 +43,7 @@ theme/custom_font="uid://dncemyjponlf"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/language/translation.de.translation", "res://assets/language/translation.en_US.translation", "res://assets/language/translation.es.translation", "res://assets/language/translation.fr.translation", "res://assets/language/translation.it.translation", "res://assets/language/translation.ja.translation", "res://assets/language/translation.pt.translation", "res://assets/language/translation.ru.translation", "res://assets/language/translation.zh.translation")
+locale/translations=PackedStringArray("res://assets/language/traducao_godot - PolyglotGamedev.csv.de.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.en_US.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.es.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.fr.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.it.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ja.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.pt.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ru.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation")
 
 [physics]
 

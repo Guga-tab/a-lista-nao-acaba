@@ -10,7 +10,7 @@ extends Control
 
 func _ready():
 	#insert text in buttons
-	button_play_label.text = "JOGOR"
+	button_play_label.text = "JOGAR"
 	button_exit_label.text = "SAIR"
 
 func _on_play_button_pressed() -> void:

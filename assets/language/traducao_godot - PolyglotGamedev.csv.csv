@@ -1,0 +1,13 @@
+KEY,en_US,fr,es,de,it,pt,ru,ja,zh_cn,zh_tw
+PLAY,Play,Jouer,Jugar,Spielen,Gioca,Jogar,Играть,プレイ,开始,開始
+EXIT,Exit,Quitter,Salir,Beenden,Esci,Sair,Выход,終了,退出,退出
+WELCOME,Welcome ,Bienvenue ,Bienvenido ,Willkommen ,Benvenuto ,Bem-vindo ,Добро пожаловать ,ようこそ ,欢迎,歡迎 
+LANGUAGE,Language,Langue,Idioma,Sprache,Lingua,Idioma,Язык,言語,语言,語言
+LANGUAGE_NAME,English,Français,Español,Deutsch,Italiano,Português,Русский,日本語,简体中文,繁體中文
+TASKS,Tasks,Tâches,Tareas,Aufgaben,Compiti,Tarefas,Задачи,タスク,任务,任務
+TASK_LIST,To-do list,Liste de tâches,Lista de tareas,Aufgabenliste,Elenco attività,Lista de tarefas,Список дел,ToDoリスト,待办事项列表,待辦事項列表
+TASK_TITLE,Task title,Titre de la tâche,Título de la tarea,Aufgabentitel,Titolo attività,Título da tarefa,Название задачи,タスク名,任务标题,任務標題
+DESCRIPTION,Description,Description,Descripción,Beschreibung,Descrizione,Descrição,Описание,説明,描述,描述
+CREATE,Create,Créer,Crear,Erstellen,Crea,Criar,Создать,作成,创建,創建
+TITLE_ERROR,Title can't be null,Le titre ne peut pas être vide,El título no pode ser nulo,Titel darf nicht leer sein,Il titolo non può essere vuoto,O título não pode ser nulo,Заголовок не может быть пустым,タイトルは空にできません,标题不能为空,標題不能為空
+TASK_CREATED,Task created,Tâche créée,Tarea creada,Aufgabe erstellt,Attività creata,Tarefa criada,Задача создана,タスクが作成されました,任务已创建,任務已創建

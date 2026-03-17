@@ -13,8 +13,8 @@ script/source = "extends Control
 @onready var PopUp = preload(\"res://scenes/pop_up.tscn\")
 
 #labels
-@onready var button_play_label = $VBoxContainer/PlayButton/TextureButton/Label
-@onready var button_exit_label = $VBoxContainer/ExitButton/TextureButton/Label
+@onready var button_play_label = $VBoxContainer/PlayButton
+@onready var button_exit_label = $VBoxContainer/ExitButton
 @onready var click_sound = $click_sound
 
 func _ready():
@@ -55,6 +55,14 @@ outline_size = 25
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 15
 shadow_color = Color(0, 0, 0, 0.5137255)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dc4i4"]
+font_size = 72
+font_color = Color(0.83132297, 0.8872117, 0.24586523, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e54dn"]
+font_size = 72
+font_color = Color(0.83137256, 0.8862745, 0.24705882, 1)
 
 [node name="TitleScreen" type="Control" unique_id=26364525]
 layout_mode = 3
@@ -113,11 +121,43 @@ theme_override_constants/separation = 80
 
 [node name="PlayButton" parent="VBoxContainer" unique_id=137207077 instance=ExtResource("4_3yumr")]
 layout_mode = 2
-text = "ASDFSADSADDSA"
+text = "TEXTO"
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayButton" unique_id=1194344088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -19.5
+offset_right = 47.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_dc4i4")
 
 [node name="ExitButton" parent="VBoxContainer" unique_id=102119678 instance=ExtResource("4_3yumr")]
 layout_mode = 2
 text = "EXIT"
+
+[node name="Label" type="Label" parent="VBoxContainer/ExitButton" unique_id=741820767]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -44.0
+offset_right = 99.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_e54dn")
 
 [node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("5_dc4i4")]
 layout_mode = 1

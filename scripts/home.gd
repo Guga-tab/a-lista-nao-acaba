@@ -34,7 +34,7 @@ func _ready():
 		return
 	
 	#Welcome Player
-	text_black_bar.text += "FULANO"
+	text_black_bar.text
 
 	# ------- MAIN VBOX STYLE --------
 	_stylize_vbox(vbox_tasks)
@@ -69,7 +69,7 @@ func update_coin_label():
 func _on_calendar_pressed():
 	var popup = AcceptDialog.new()
 	click_sound.play()
-	popup.title = "Tarefas"
+	popup.title = tr("TASKS")
 	popup.min_size = Vector2(420, 460)
 	add_child(popup)
 
@@ -83,7 +83,7 @@ func _on_calendar_pressed():
 
 	# ------- LABEL ----------
 	var info_label = Label.new()
-	info_label.text = "Lista de tarefas:"
+	info_label.text = tr("TASK_LIST")
 	info_label.add_theme_font_size_override("font_size", 26)
 	vbox.add_child(info_label)
 
@@ -97,24 +97,24 @@ func _on_calendar_pressed():
 
 	# ------- INPUT NEW TASK ----------
 	var new_label = Label.new()
-	new_label.text = "\nCriar nova tarefa:"
+	new_label.text = "\n" + tr("TASK_LIST")
 	new_label.add_theme_font_size_override("font_size", 26)
 	vbox.add_child(new_label)
 
 	var title_input = LineEdit.new()
-	title_input.placeholder_text = "Título da tarefa"
+	title_input.placeholder_text = tr("TASK_TITLE")
 	title_input.add_theme_font_size_override("font_size", 22)
 	title_input.custom_minimum_size = Vector2(0, 45)
 	vbox.add_child(title_input)
 
 	var desc_input = LineEdit.new()
-	desc_input.placeholder_text = "Descrição"
+	desc_input.placeholder_text = tr("DESCRIPTION")
 	desc_input.add_theme_font_size_override("font_size", 22)
 	desc_input.custom_minimum_size = Vector2(0, 45)
 	vbox.add_child(desc_input)
 
 	var btn_confirm = Button.new()
-	btn_confirm.text = "Criar"
+	btn_confirm.text = tr("CREATE")
 	btn_confirm.custom_minimum_size = Vector2(0, 55)
 	btn_confirm.add_theme_font_size_override("font_size", 24)
 	btn_confirm.pressed.connect(click_sound.play)
@@ -133,7 +133,7 @@ func _create_task(title_input: LineEdit, desc_input: LineEdit, tasks_container: 
 	var desc = desc_input.text.strip_edges()
 
 	if title == "":
-		push_error("Título não pode ser vazio!")
+		push_error(tr("TITLE_ERROR"))
 		return
 
 	TaskService.create_task(title, desc)
@@ -143,7 +143,7 @@ func _create_task(title_input: LineEdit, desc_input: LineEdit, tasks_container: 
 
 	TaskService.update_list(tasks_container, self)
 
-	print("Tarefa criada:", title)
+	print(tr("TASK_CREATED"), title)
 
 func on_task_complete():
 	update_coin_label()
@@ -155,4 +155,7 @@ func on_task_complete():
 func _on_config_button_pressed() -> void:
 	var pop_up = PopUp.instantiate()
 	add_child(pop_up)
+	
+	
+
 	

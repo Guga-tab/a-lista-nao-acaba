@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://d3wr8vs8j17m8"
+
+[deps]
+
+files=["res://assets/language/traducao_godot - PolyglotGamedev.csv.en_US.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.fr.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.es.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.de.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.it.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.pt.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ru.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ja.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation"]
+
+source_file="res://assets/language/traducao_godot - PolyglotGamedev.csv.csv"
+dest_files=["res://assets/language/traducao_godot - PolyglotGamedev.csv.en_US.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.fr.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.es.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.de.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.it.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.pt.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ru.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ja.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
