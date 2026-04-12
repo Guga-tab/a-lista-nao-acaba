@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://assets/icons/coin_icon.png" id="17_e42qu"]
 [ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="17_o7pnx"]
 [ext_resource type="Script" uid="uid://b6y4o7162xqw2" path="res://scripts/coins.gd" id="17_snnha"]
+[ext_resource type="FontFile" uid="uid://noxa3dpws2ju" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="18_aish6"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/clock.gd" id="18_snnha"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
@@ -40,9 +41,9 @@ font_color = Color(0, 0, 0, 1)
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ppa51"]
-font = ExtResource("1_wa5vk")
+font = ExtResource("18_aish6")
 font_size = 90
-font_color = Color(0.90588236, 1, 0, 1)
+font_color = Color(0.61329913, 0.8417012, 1.92523e-06, 1)
 
 [node name="Home" type="Control" unique_id=336287379]
 layout_mode = 3
