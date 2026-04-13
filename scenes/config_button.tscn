@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4o65hf2pwtwi"]
+
+[ext_resource type="Texture2D" uid="uid://dauvochpvnwim" path="res://assets/buttons/options.png" id="1_xrnc4"]
+
+[node name="Button" type="Button" unique_id=1908190728]
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.43295956, 0.42284745)
+icon = ExtResource("1_xrnc4")
+flat = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -21,21 +21,29 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Database="*res://scripts/Database.gd"
+BackgroundSong="*uid://ckn5xa220h6dk"
+ClickSound="*uid://cx3wiwa8jj6ew"
+Database="*res://scripts/database.gd"
+user_service="*uid://72gqjx4oib5d"
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
 theme/custom_font="uid://dncemyjponlf"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/language/traducao_godot - PolyglotGamedev.csv.de.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.en_US.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.es.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.fr.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.it.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ja.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.pt.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.ru.translation", "res://assets/language/traducao_godot - PolyglotGamedev.csv.zh.translation")
 
 [physics]
 
@@ -45,4 +53,5 @@ theme/custom_font="uid://dncemyjponlf"
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 2d/shadow_atlas/size=2040
