@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b06icfjf4mlp7"]
+
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_v3nvf"]
+[ext_resource type="Texture2D" uid="uid://dpcey3ef6bi70" path="res://assets/backgrounds/mission_room.png" id="2_v3nvf"]
+
+[node name="Mission" type="Control" unique_id=1842973118]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=823901568]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.412078, 1.4009519)
+texture = ExtResource("1_v3nvf")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1463548266]
+layout_mode = 0
+offset_left = -64.44403
+offset_top = 503.94302
+offset_right = 612.55597
+offset_bottom = 872.9431
+scale = Vector2(1.2415404, 1.7912706)
+texture = ExtResource("2_v3nvf")

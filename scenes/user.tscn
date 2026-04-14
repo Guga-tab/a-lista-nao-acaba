@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cvonflvslbdrx"]
+
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_3uhnw"]
+[ext_resource type="Script" uid="uid://b6mx2eysepopw" path="res://scripts/user_screen.gd" id="1_tryab"]
+[ext_resource type="Texture2D" uid="uid://dkhjuq51jx3jv" path="res://assets/buttons/inventory_button.png" id="2_s8n3g"]
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://assets/buttons/default_button.png" id="3_dekx4"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="4_tryab"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/coin.tscn" id="5_dekx4"]
+[ext_resource type="Texture2D" uid="uid://c3q5i7f76onr7" path="res://assets/icons/character_right.png" id="5_om7f1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mxbg"]
+font_size = 216
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwv4j"]
+font_size = 216
+
+[sub_resource type="LabelSettings" id="LabelSettings_vflsi"]
+font_size = 116
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8n3g"]
+font_size = 128
+font_color = Color(0.26666668, 0.1764706, 0.22745098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dekx4"]
+font_size = 160
+
+[node name="User" type="Control" unique_id=753229718]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tryab")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1201759937]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.990794, 0.6984585)
+texture = ExtResource("1_3uhnw")
+
+[node name="Inv" type="Button" parent="TextureRect" unique_id=20698481]
+layout_mode = 0
+offset_left = 446.10687
+offset_top = 306.38892
+offset_right = 2088.107
+offset_bottom = 924.3889
+scale = Vector2(0.35873908, 0.3901533)
+icon = ExtResource("2_s8n3g")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Inv" unique_id=1354764620]
+layout_mode = 0
+offset_left = 253.20976
+offset_top = 176.1432
+offset_right = 1434.2097
+offset_bottom = 436.1432
+text = "INVENTÁRIO"
+label_settings = SubResource("LabelSettings_8mxbg")
+
+[node name="Shop" type="Button" parent="TextureRect" unique_id=1134973158]
+layout_mode = 0
+offset_left = 508.68292
+offset_top = 562.6677
+offset_right = 1584.6829
+offset_bottom = 897.6677
+scale = Vector2(0.461469, 0.5925119)
+icon = ExtResource("3_dekx4")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Shop" unique_id=2006956623]
+layout_mode = 0
+offset_left = 249.33255
+offset_top = 24.16349
+offset_right = 755.3325
+offset_bottom = 284.16348
+text = "LOJA"
+label_settings = SubResource("LabelSettings_wwv4j")
+
+[node name="Skin" type="Button" parent="TextureRect" unique_id=1776131656]
+layout_mode = 0
+offset_left = 463.26483
+offset_top = 786.0165
+offset_right = 1464.2649
+offset_bottom = 1045.0165
+scale = Vector2(0.566314, 0.9573106)
+icon = ExtResource("4_tryab")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Skin" unique_id=397411228]
+layout_mode = 0
+offset_left = 119.408165
+offset_top = 58.32738
+offset_right = 996.40814
+offset_bottom = 212.32738
+text = "PERSONALIZAR"
+label_settings = SubResource("LabelSettings_vflsi")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=164975365]
+layout_mode = 0
+offset_left = 320.9547
+offset_top = 84.47173
+offset_right = 751.9547
+offset_bottom = 238.47174
+text = "AVATAR"
+label_settings = SubResource("LabelSettings_s8n3g")
+
+[node name="Coin" parent="TextureRect" unique_id=671021650 instance=ExtResource("5_dekx4")]
+layout_mode = 0
+offset_left = 141.30081
+offset_top = 1338.6622
+offset_right = 484.6805
+offset_bottom = 1710.2573
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=231322588]
+layout_mode = 0
+offset_left = 204.88617
+offset_top = 2333.7107
+offset_right = 1205.8862
+offset_bottom = 2592.7107
+scale = Vector2(0.6401319, 0.93965167)
+icon = ExtResource("4_tryab")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Button" unique_id=515251149]
+layout_mode = 0
+offset_left = 255.42432
+offset_top = 19.807781
+offset_right = 832.4243
+offset_bottom = 227.80779
+text = "VOLTAR"
+label_settings = SubResource("LabelSettings_dekx4")
+
+[node name="CharacterRight" type="Sprite2D" parent="." unique_id=632767098]
+position = Vector2(250, 447)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_om7f1")
+
+[connection signal="pressed" from="TextureRect/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

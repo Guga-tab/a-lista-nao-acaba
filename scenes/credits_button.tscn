@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ctxpvmhfonvq7"]
+
+[ext_resource type="Texture2D" uid="uid://dgtdfo501cco4" path="res://assets/buttons/credits_button.png" id="1_p4c6o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
+
+[node name="CreditsButton" type="Button" unique_id=624023024]
+offset_left = 1.0
+offset_right = 98.40363
+offset_bottom = 44.466164
+scale = Vector2(2.9670353, 3.3958406)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1525833253]
+layout_mode = 1
+offset_right = 464.0
+offset_bottom = 217.0
+scale = Vector2(0.20994882, 0.20448692)
+mouse_filter = 2
+texture_normal = ExtResource("1_p4c6o")
+stretch_mode = 0
