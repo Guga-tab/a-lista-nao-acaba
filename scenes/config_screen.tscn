@@ -6,13 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="5_7mjbw"]
 [ext_resource type="Script" uid="uid://duhjxp77hdc8c" path="res://scripts/language_options.gd" id="5_duf6u"]
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="6_huqva"]
-[ext_resource type="Texture2D" uid="uid://dbjo884mdfoy" path="res://assets/icons/volume_stage2.png" id="7_lvjhn"]
+[ext_resource type="PackedScene" uid="uid://b8qxiy3sodbb2" path="res://scenes/volume_slider.tscn" id="8_huqva"]
 [ext_resource type="Texture2D" uid="uid://c7m5gysjelqbp" path="res://assets/icons/brazil_icon.png" id="8_lcgs8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rn47q"]
 font = ExtResource("6_huqva")
 font_size = 46
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvjhn"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_lcgs8"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_mo5w4"]
+font_size = 42
 
 [node name="Control" type="Control" unique_id=643388367]
 z_index = 2
@@ -94,24 +103,6 @@ texture_normal = ExtResource("5_7mjbw")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="SoundBarFX" type="TextureRect" parent="." unique_id=924420885]
-layout_mode = 0
-offset_left = -62.0
-offset_top = -237.0
-offset_right = 260.0
-offset_bottom = -12.0
-texture = ExtResource("7_lvjhn")
-expand_mode = 1
-
-[node name="SoundBarMusic" type="TextureRect" parent="." unique_id=155283252]
-layout_mode = 0
-offset_left = -62.0
-offset_top = -140.0
-offset_right = 260.0
-offset_bottom = 85.0
-texture = ExtResource("7_lvjhn")
-expand_mode = 1
-
 [node name="Flag" type="TextureRect" parent="." unique_id=1565993883]
 layout_mode = 0
 offset_left = 138.0
@@ -123,20 +114,11 @@ expand_mode = 1
 
 [node name="Music" type="Label" parent="." unique_id=1755936216]
 layout_mode = 0
-offset_left = -160.0
-offset_top = -59.0
-offset_right = -114.0
-offset_bottom = 9.0
+offset_left = -114.0
+offset_top = -113.0
+offset_right = -68.0
+offset_bottom = -45.0
 text = "♬"
-label_settings = SubResource("LabelSettings_rn47q")
-
-[node name="SFX" type="Label" parent="." unique_id=1702995647]
-layout_mode = 0
-offset_left = -171.0
-offset_top = -147.0
-offset_right = -92.0
-offset_bottom = -91.0
-text = "SFX"
 label_settings = SubResource("LabelSettings_rn47q")
 
 [node name="Language" type="Label" parent="." unique_id=487438030]
@@ -147,6 +129,44 @@ offset_right = -102.0
 offset_bottom = 73.0
 text = "Idioma:"
 label_settings = SubResource("LabelSettings_rn47q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=438786641]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -202.0
+offset_right = 250.0
+offset_bottom = 46.0
+
+[node name="master" type="Label" parent="VBoxContainer" unique_id=1376815995]
+layout_mode = 2
+text = "Volume Geral"
+label_settings = SubResource("LabelSettings_lvjhn")
+
+[node name="MasterSlider" parent="VBoxContainer" unique_id=2051280562 instance=ExtResource("8_huqva")]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+bus_name = "Master"
+
+[node name="music" type="Label" parent="VBoxContainer" unique_id=1043694021]
+layout_mode = 2
+text = "Música"
+label_settings = SubResource("LabelSettings_lcgs8")
+
+[node name="MusicSlider" parent="VBoxContainer" unique_id=305323429 instance=ExtResource("8_huqva")]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+bus_name = "music"
+
+[node name="sfx" type="Label" parent="VBoxContainer" unique_id=1816588317]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_mo5w4")
+
+[node name="SFXSlider" parent="VBoxContainer" unique_id=1023512387 instance=ExtResource("8_huqva")]
+layout_mode = 2
+bus_name = "sfx"
 
 [connection signal="item_selected" from="OptionButton" to="OptionButton" method="_on_item_selected"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

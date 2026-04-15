@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b88r070i5oq8x"]
+
+[ext_resource type="Script" uid="uid://bvog2fmhrcgem" path="res://scripts/timer.gd" id="1_srplv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_srplv"]
+font_size = 64
+font_color = Color(0.15500495, 0.035859693, 0.08849602, 1)
+
+[node name="Timer" type="Node" unique_id=1909568394]
+script = ExtResource("1_srplv")
+
+[node name="Label" type="Label" parent="." unique_id=1163313822]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -420.0
+offset_right = -65.0
+offset_bottom = -332.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.1045299, 4.493985)
+text = "00:00"
+label_settings = SubResource("LabelSettings_srplv")
+
+[node name="Timer" type="Timer" parent="." unique_id=602822393]
+wait_time = 180.0
+one_shot = true

@@ -3,6 +3,30 @@
 [ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://assets/icons/coin_icon.png" id="1_kyq3r"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5twpi"]
 
+[sub_resource type="GDScript" id="GDScript_i64fm"]
+script/source = "extends TextureRect
+
+@onready var coins_label: Label = $CoinLabel
+@onready var user_service = preload(\"res://scripts/user_service.gd\").new()
+
+func _ready():
+	add_child(user_service)
+
+	# mostra valor inicial
+	update_coins()
+
+	# conecta o signal
+	user_service.coins_changed.connect(_on_coins_changed)
+
+
+func update_coins():
+	coins_label.text = str(user_service.get_coins())
+
+
+func _on_coins_changed(new_value:int):
+	coins_label.text = str(new_value)
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_i64fm"]
 font_size = 199
 font_color = Color(0.8901961, 0.67058825, 0.17254902, 1)
@@ -16,6 +40,7 @@ offset_right = 365.99133
 offset_bottom = 608.6479
 scale = Vector2(0.41237384, 0.41764438)
 texture = ExtResource("1_kyq3r")
+script = SubResource("GDScript_i64fm")
 
 [node name="CoinLabel" type="Label" parent="." unique_id=60545834]
 layout_mode = 0

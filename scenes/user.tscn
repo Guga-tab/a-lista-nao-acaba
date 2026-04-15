@@ -102,13 +102,6 @@ offset_bottom = 238.47174
 text = "AVATAR"
 label_settings = SubResource("LabelSettings_s8n3g")
 
-[node name="Coin" parent="TextureRect" unique_id=671021650 instance=ExtResource("5_dekx4")]
-layout_mode = 0
-offset_left = 141.30081
-offset_top = 1338.6622
-offset_right = 484.6805
-offset_bottom = 1710.2573
-
 [node name="Button" type="Button" parent="TextureRect" unique_id=231322588]
 layout_mode = 0
 offset_left = 204.88617
@@ -132,6 +125,13 @@ label_settings = SubResource("LabelSettings_dekx4")
 position = Vector2(250, 447)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("5_om7f1")
+
+[node name="Coin" parent="." unique_id=671021650 instance=ExtResource("5_dekx4")]
+layout_mode = 0
+offset_left = 94.99999
+offset_top = 862.0
+offset_right = 438.3797
+offset_bottom = 1233.5952
 
 [connection signal="pressed" from="TextureRect/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_v3nvf"]
 [ext_resource type="Texture2D" uid="uid://dpcey3ef6bi70" path="res://assets/backgrounds/mission_room.png" id="2_v3nvf"]
+[ext_resource type="PackedScene" uid="uid://b88r070i5oq8x" path="res://scenes/timer.tscn" id="3_cv0tx"]
 
 [node name="Mission" type="Control" unique_id=1842973118]
 layout_mode = 3
@@ -9,16 +10,19 @@ anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=823901568]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -9.0
+offset_right = 1080.0
+offset_bottom = 2738.0
 scale = Vector2(1.412078, 1.4009519)
 texture = ExtResource("1_v3nvf")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1463548266]
 layout_mode = 0
-offset_left = -64.44403
-offset_top = 503.94302
-offset_right = 612.55597
-offset_bottom = 872.9431
+offset_left = -58.070442
+offset_top = 267.67508
+offset_right = 618.92957
+offset_bottom = 636.6752
 scale = Vector2(1.2415404, 1.7912706)
 texture = ExtResource("2_v3nvf")
+
+[node name="Timer" parent="." unique_id=1909568394 instance=ExtResource("3_cv0tx")]

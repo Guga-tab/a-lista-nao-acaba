@@ -164,6 +164,7 @@ offset_left = -12.999998
 offset_top = 1577.0001
 offset_right = 196.99998
 offset_bottom = 1807.0001
+flat = true
 
 [node name="Character" parent="." unique_id=1596499005 instance=ExtResource("11_1idv1")]
 layout_mode = 0
@@ -171,6 +172,7 @@ offset_left = 832.99994
 offset_top = 1508.0
 offset_right = 1133.0
 offset_bottom = 2008.0
+flat = true
 
 [node name="VBoxTasks" type="VBoxContainer" parent="." unique_id=938742341]
 visible = false
@@ -179,6 +181,7 @@ theme = SubResource("Theme_ommbi")
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
 stream = ExtResource("15_rpgsi")
+bus = &"sfx"
 
 [node name="Clock" type="Node" parent="." unique_id=618355643]
 script = ExtResource("18_snnha")
