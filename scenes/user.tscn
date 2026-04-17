@@ -2,14 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_3uhnw"]
 [ext_resource type="Script" uid="uid://b6mx2eysepopw" path="res://scripts/user_screen.gd" id="1_tryab"]
-[ext_resource type="Texture2D" uid="uid://dkhjuq51jx3jv" path="res://assets/buttons/inventory_button.png" id="2_s8n3g"]
 [ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://assets/buttons/default_button.png" id="3_dekx4"]
 [ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="4_tryab"]
 [ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/coin.tscn" id="5_dekx4"]
 [ext_resource type="Texture2D" uid="uid://c3q5i7f76onr7" path="res://assets/icons/character_right.png" id="5_om7f1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_8mxbg"]
-font_size = 216
 
 [sub_resource type="LabelSettings" id="LabelSettings_wwv4j"]
 font_size = 216
@@ -36,31 +32,12 @@ offset_bottom = 40.0
 scale = Vector2(0.990794, 0.6984585)
 texture = ExtResource("1_3uhnw")
 
-[node name="Inv" type="Button" parent="TextureRect" unique_id=20698481]
-layout_mode = 0
-offset_left = 446.10687
-offset_top = 306.38892
-offset_right = 2088.107
-offset_bottom = 924.3889
-scale = Vector2(0.35873908, 0.3901533)
-icon = ExtResource("2_s8n3g")
-flat = true
-
-[node name="Label" type="Label" parent="TextureRect/Inv" unique_id=1354764620]
-layout_mode = 0
-offset_left = 253.20976
-offset_top = 176.1432
-offset_right = 1434.2097
-offset_bottom = 436.1432
-text = "INVENTÁRIO"
-label_settings = SubResource("LabelSettings_8mxbg")
-
 [node name="Shop" type="Button" parent="TextureRect" unique_id=1134973158]
 layout_mode = 0
-offset_left = 508.68292
-offset_top = 562.6677
-offset_right = 1584.6829
-offset_bottom = 897.6677
+offset_left = 522.813
+offset_top = 365.08975
+offset_right = 1598.813
+offset_bottom = 700.0897
 scale = Vector2(0.461469, 0.5925119)
 icon = ExtResource("3_dekx4")
 flat = true
@@ -76,10 +53,10 @@ label_settings = SubResource("LabelSettings_wwv4j")
 
 [node name="Skin" type="Button" parent="TextureRect" unique_id=1776131656]
 layout_mode = 0
-offset_left = 463.26483
-offset_top = 786.0165
-offset_right = 1464.2649
-offset_bottom = 1045.0165
+offset_left = 473.35773
+offset_top = 628.527
+offset_right = 1474.3579
+offset_bottom = 887.527
 scale = Vector2(0.566314, 0.9573106)
 icon = ExtResource("4_tryab")
 flat = true
@@ -134,4 +111,5 @@ offset_right = 438.3797
 offset_bottom = 1233.5952
 
 [connection signal="pressed" from="TextureRect/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="TextureRect/Skin" to="." method="_on_skin_pressed"]
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

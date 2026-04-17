@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://crvkjae326ut3"]
+
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_qw0r6"]
+[ext_resource type="Script" uid="uid://dv2x6ixple607" path="res://scripts/inventory_screen.gd" id="1_ty45s"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="2_hj2ta"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ty45s"]
+font_size = 162
+
+[node name="Inventory" type="Control" unique_id=1273420522]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ty45s")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=119533042]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qw0r6")
+
+[node name="TabContainer" type="TabContainer" parent="TextureRect" unique_id=280409731]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 209.0
+offset_right = 885.0
+offset_bottom = 1604.0
+theme_override_font_sizes/font_size = 48
+current_tab = 0
+
+[node name="Decorações" type="TabBar" parent="TextureRect/TabContainer" unique_id=1051703603]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+metadata/_tab_index = 0
+
+[node name="Cosméticos" type="TabBar" parent="TextureRect/TabContainer" unique_id=1429977921]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+metadata/_tab_index = 1
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1001858606]
+layout_mode = 0
+offset_left = 127.99999
+offset_top = 1682.0
+offset_right = 1129.0
+offset_bottom = 1941.0
+scale = Vector2(0.7891842, 0.7494367)
+icon = ExtResource("2_hj2ta")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Button" unique_id=1854049831]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 21.0
+offset_right = 800.0
+offset_bottom = 226.0
+text = "VOLTAR"
+label_settings = SubResource("LabelSettings_ty45s")
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
