@@ -4,13 +4,15 @@
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/default_button.tscn" id="4_3yumr"]
 [ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/about_us_button.tscn" id="5_dc4i4"]
+[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/config_button.tscn" id="5_e54dn"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="6_e54dn"]
 
 [sub_resource type="GDScript" id="GDScript_dc4i4"]
 script/source = "extends Control
 
 #popup
-@onready var PopUp = preload(\"res://scenes/pop_up.tscn\")
+@onready var ConfigScreen = preload(\"res://scenes/config_screen.tscn\")
+@onready var Credits = preload(\"res://scenes/credits.tscn\")
 
 #labels
 @onready var button_play_label = $VBoxContainer/PlayButton
@@ -35,8 +37,14 @@ func _on_exit_button_pressed() -> void:
 func _on_config_button_pressed() -> void:
 	click_sound.play()
 	#await click_sound.finished
-	var pop_up = PopUp.instantiate()
-	add_child(pop_up)
+	var configScreen = ConfigScreen.instantiate()
+	add_child(configScreen)
+	
+func _on_credits_button_pressed() -> void:
+	click_sound.play()
+	#await click_sound.finished
+	var credits = Credits.instantiate()
+	add_child(credits)
 	
 func _on_config_exit_pressed() -> void:
 	click_sound.play()
@@ -156,17 +164,25 @@ grow_vertical = 2
 text = "EXIT"
 label_settings = SubResource("LabelSettings_e54dn")
 
-[node name="ConfigButton" parent="." unique_id=624023024 instance=ExtResource("5_dc4i4")]
+[node name="CreditsButton" parent="." unique_id=624023024 instance=ExtResource("5_dc4i4")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -192.0
-offset_right = 124.0
-offset_bottom = -149.0
+offset_left = 758.0
+offset_top = -186.0
+offset_right = 851.0
+offset_bottom = -143.0
 grow_vertical = 0
 flat = true
+
+[node name="Button" parent="." unique_id=1908190728 instance=ExtResource("5_e54dn")]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 1723.0
+offset_right = 658.0
+offset_bottom = 2139.0
+scale = Vector2(0.46, 0.45)
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=1624226236]
 stream = ExtResource("6_e54dn")
@@ -174,4 +190,5 @@ bus = &"sfx"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_config_button_pressed"]
