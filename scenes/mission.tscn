@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_v3nvf"]
 [ext_resource type="Texture2D" uid="uid://dpcey3ef6bi70" path="res://assets/backgrounds/mission_room.png" id="2_v3nvf"]
 [ext_resource type="PackedScene" uid="uid://b88r070i5oq8x" path="res://scenes/timer.tscn" id="3_cv0tx"]
+[ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/player.tscn" id="4_0mvd2"]
 
 [node name="Mission" type="Control" unique_id=1842973118]
 layout_mode = 3
@@ -26,3 +27,5 @@ scale = Vector2(1.2415404, 1.7912706)
 texture = ExtResource("2_v3nvf")
 
 [node name="Timer" parent="." unique_id=1909568394 instance=ExtResource("3_cv0tx")]
+
+[node name="Player" parent="." unique_id=797933854 instance=ExtResource("4_0mvd2")]

@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="15_rpgsi"]
 [ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/config_button.tscn" id="17_aish6"]
 [ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="17_o7pnx"]
+[ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/player.tscn" id="17_snnha"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/clock.gd" id="18_snnha"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
@@ -218,6 +219,8 @@ offset_left = 804.0
 offset_top = 42.0
 offset_right = 1424.0
 offset_bottom = 458.0
+
+[node name="Player" parent="." unique_id=797933854 instance=ExtResource("17_snnha")]
 
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
