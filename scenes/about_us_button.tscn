@@ -5,8 +5,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwsrf"]
 
 [node name="ConfigButton" type="Button" unique_id=624023024]
-offset_right = 93.0
-offset_bottom = 43.0
+offset_right = 98.41474
+offset_bottom = 44.466164
 scale = Vector2(2.9670353, 3.3958406)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vwsrf")
 

@@ -1,19 +1,16 @@
 extends OptionButton
 
-
-
 func _ready() -> void:
 	add_item("Português", 0)
 	add_item("English", 1)
-	add_item("Español", 2)
-	add_item("Français", 3)
-	add_item("Deutsch", 4)
-	add_item("Italiano", 5)
-	add_item("Русский", 6)
-	add_item("日本語", 7)
-	add_item("简体中文", 8)
-	add_item("繁體中文", 9)
-
+	#add_item("Español", 2)
+	#add_item("Français", 3)
+	#add_item("Deutsch", 4)
+	#add_item("Italiano", 5)
+	#add_item("Русский", 6)
+	#add_item("日本語", 7)
+	#add_item("简体中文", 8)
+	#add_item("繁體中文", 9)
 
 func _on_item_selected(index: int) -> void:
 	var id = get_item_id(index)

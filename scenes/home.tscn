@@ -180,10 +180,6 @@ visible = false
 layout_mode = 0
 theme = SubResource("Theme_ommbi")
 
-[node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
-stream = ExtResource("15_rpgsi")
-bus = &"sfx"
-
 [node name="Clock" type="Node" parent="." unique_id=618355643]
 script = ExtResource("18_snnha")
 
@@ -213,14 +209,18 @@ offset_bottom = 306.97888
 scale = Vector2(4.22471, 3.4033787)
 label_settings = SubResource("LabelSettings_aish6")
 
-[node name="ConfigButton" parent="." unique_id=885958001 instance=ExtResource("17_aish6")]
+[node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("17_aish6")]
 layout_mode = 0
-offset_left = 804.0
-offset_top = 42.0
-offset_right = 1424.0
-offset_bottom = 458.0
+offset_left = 796.0
+offset_top = 8.0
+offset_right = 1416.0
+offset_bottom = 424.0
 
 [node name="Player" parent="." unique_id=797933854 instance=ExtResource("17_snnha")]
+
+[node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
+stream = ExtResource("15_rpgsi")
+bus = &"sfx"
 
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]
 [connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]

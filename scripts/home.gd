@@ -9,7 +9,8 @@ extends Control
 # ========================
 # Nodes of scene
 # ========================
-@onready var PopUp = preload("res://scenes/config_screen.tscn")
+@onready var ConfigScreen = preload("res://scenes/config_screen.tscn")
+@onready var Credits = preload("res://scenes/credits.tscn")
 @onready var btn_calendar = $Bg/Room/CalendarButton
 @onready var vbox_tasks = $VBoxTasks
 @onready var coin_label = $Bg/Coin/CoinLabel
@@ -147,8 +148,10 @@ func _create_task(title_input: LineEdit, desc_input: LineEdit, tasks_container: 
 func on_task_complete():
 	update_coin_label()
 	TaskService.update_list(vbox_tasks, self)
-	
+
+
 func _on_config_button_pressed() -> void:
-	var pop_up = PopUp.instantiate()
-	add_child(pop_up)
-	
+	click_sound.play()
+	#await click_sound.finished
+	var config_screen = ConfigScreen.instantiate()
+	add_child(config_screen)
