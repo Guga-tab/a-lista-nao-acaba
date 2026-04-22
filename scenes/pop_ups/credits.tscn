@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dkksi682m1crl"]
 
-[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="1_cpc1a"]
-[ext_resource type="Script" uid="uid://1drjvgtpxsub" path="res://scripts/pop_up.gd" id="1_cy0db"]
-[ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="1_gxv0h"]
-[ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="3_ofmyw"]
+[ext_resource type="Script" uid="uid://1drjvgtpxsub" path="res://scripts/elements/pop_up.gd" id="1_uoqr3"]
+[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="2_feq0a"]
+[ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="3_p7iwp"]
+[ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="4_nj15q"]
 
 [node name="PopUp" type="Control" unique_id=446378054]
 z_index = 2
@@ -19,13 +19,13 @@ offset_right = 596.0
 offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cy0db")
+script = ExtResource("1_uoqr3")
 
 [node name="Painting" type="TextureRect" parent="." unique_id=149846687]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_cpc1a")
+texture = ExtResource("2_feq0a")
 
 [node name="Bg" type="TextureRect" parent="." unique_id=388407439]
 z_index = -1
@@ -34,7 +34,7 @@ offset_left = 300.0
 offset_top = 92.0
 offset_right = 888.0
 offset_bottom = 557.0
-texture = ExtResource("1_gxv0h")
+texture = ExtResource("3_p7iwp")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="." unique_id=716391373]
@@ -74,7 +74,7 @@ offset_right = 78.49048
 offset_bottom = 217.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_ofmyw")
+texture_normal = ExtResource("4_nj15q")
 ignore_texture_size = true
 stretch_mode = 0
 

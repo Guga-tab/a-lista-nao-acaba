@@ -3,14 +3,14 @@ extends Control
 # ========================
 # Services
 # ========================
-@onready var TaskService = preload("res://scripts/task_service.gd").new()
-@onready var UserService = preload("res://scripts/user_service.gd").new()
+@onready var TaskService = preload("res://scripts/services/task_service.gd").new()
+@onready var UserService = preload("res://scripts/services/user_service.gd").new()
 
 # ========================
 # Nodes of scene
 # ========================
-@onready var ConfigScreen = preload("res://scenes/config_screen.tscn")
-@onready var Credits = preload("res://scenes/credits.tscn")
+@onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
+@onready var Credits = preload("res://scenes/pop_ups/credits.tscn")
 @onready var btn_calendar = $Bg/Room/CalendarButton
 @onready var vbox_tasks = $VBoxTasks
 @onready var coin_label = $Bg/Coin/CoinLabel

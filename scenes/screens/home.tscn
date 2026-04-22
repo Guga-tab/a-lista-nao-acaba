@@ -1,36 +1,36 @@
 [gd_scene format=3 uid="uid://b0wll17qwks54"]
 
-[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_wa5vk"]
-[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/home.gd" id="2_x5c8i"]
-[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="3_dch01"]
-[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/coin.tscn" id="4_e42qu"]
-[ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/star.tscn" id="5_wa5vk"]
-[ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/offensive.tscn" id="6_x5c8i"]
-[ext_resource type="Texture2D" uid="uid://dbs53i0vanfji" path="res://assets/backgrounds/house.png" id="8_biiq1"]
-[ext_resource type="Texture2D" uid="uid://d1ob5or76hajv" path="res://assets/icons/calendar.png" id="9_6g2ad"]
-[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_gi00y"]
-[ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="9_ip4d6"]
-[ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/map.tscn" id="10_dch01"]
-[ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/character.tscn" id="11_1idv1"]
-[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="15_rpgsi"]
-[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/config_button.tscn" id="17_aish6"]
-[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="17_o7pnx"]
-[ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/player.tscn" id="17_snnha"]
-[ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/clock.gd" id="18_snnha"]
+[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_eiuvs"]
+[ext_resource type="Script" uid="uid://b71ahrhd6mrb4" path="res://scripts/home/home.gd" id="2_xi2nm"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="3_ogyap"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="4_sml0d"]
+[ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/elements/star.tscn" id="5_ioo2v"]
+[ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/elements/offensive.tscn" id="6_vrxxn"]
+[ext_resource type="Texture2D" uid="uid://dbs53i0vanfji" path="res://assets/backgrounds/house.png" id="7_d6qb1"]
+[ext_resource type="Texture2D" uid="uid://d1ob5or76hajv" path="res://assets/icons/calendar.png" id="8_ivi0p"]
+[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_i2m5s"]
+[ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="10_6sy1k"]
+[ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/elements/map.tscn" id="11_bqcys"]
+[ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/elements/character.tscn" id="12_yhiqx"]
+[ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/home/clock.gd" id="13_2mya4"]
+[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="14_cvsp7"]
+[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="15_aaxut"]
+[ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="16_bhaln"]
+[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="17_vahvf"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
-default_font = ExtResource("1_wa5vk")
+default_font = ExtResource("1_eiuvs")
 default_font_size = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf0on"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rpgsi"]
-font = ExtResource("9_gi00y")
+font = ExtResource("9_i2m5s")
 font_size = 39
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_ommbi"]
-default_font = ExtResource("1_wa5vk")
+default_font = ExtResource("1_eiuvs")
 default_font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_o7pnx"]
@@ -47,7 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_sf0on")
-script = ExtResource("2_x5c8i")
+script = ExtResource("2_xi2nm")
 
 [node name="Bg" type="TextureRect" parent="." unique_id=1567050482]
 layout_mode = 0
@@ -55,23 +55,23 @@ offset_right = 1080.0
 offset_bottom = 2747.0
 scale = Vector2(1.0133935, 1)
 mouse_filter = 2
-texture = ExtResource("3_dch01")
+texture = ExtResource("3_ogyap")
 
-[node name="Coin" parent="Bg" unique_id=671021650 instance=ExtResource("4_e42qu")]
+[node name="Coin" parent="Bg" unique_id=671021650 instance=ExtResource("4_sml0d")]
 layout_mode = 0
 offset_left = 29.603506
 offset_top = 235.99998
 offset_right = 372.98322
 offset_bottom = 607.59515
 
-[node name="Star" parent="Bg" unique_id=1961716797 instance=ExtResource("5_wa5vk")]
+[node name="Star" parent="Bg" unique_id=1961716797 instance=ExtResource("5_ioo2v")]
 layout_mode = 0
 offset_left = 37.497772
 offset_top = 101.0
 offset_right = 295.49777
 offset_bottom = 359.0
 
-[node name="Offensive" parent="Bg" unique_id=136825866 instance=ExtResource("6_x5c8i")]
+[node name="Offensive" parent="Bg" unique_id=136825866 instance=ExtResource("6_vrxxn")]
 layout_mode = 0
 offset_left = 896.9861
 offset_top = 211.00002
@@ -86,7 +86,7 @@ offset_right = 1160.1761
 offset_bottom = 1630.0
 scale = Vector2(0.80509734, 0.7936535)
 mouse_filter = 2
-texture = ExtResource("8_biiq1")
+texture = ExtResource("7_d6qb1")
 
 [node name="CalendarButton" type="Button" parent="Bg/Room" unique_id=1093566574]
 custom_minimum_size = Vector2(10, 0)
@@ -110,7 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 mouse_filter = 2
-texture = ExtResource("9_6g2ad")
+texture = ExtResource("8_ivi0p")
 
 [node name="TextBlackBar" type="Label" parent="Bg" unique_id=703416742]
 layout_mode = 1
@@ -139,7 +139,7 @@ offset_top = 1386.0
 offset_right = 345.14478
 offset_bottom = 1563.0
 grow_horizontal = 2
-texture = ExtResource("9_ip4d6")
+texture = ExtResource("10_6sy1k")
 expand_mode = 1
 
 [node name="TextBlackBar2" type="Label" parent="Bg" unique_id=1281770143]
@@ -159,7 +159,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "FULANO"
 label_settings = SubResource("LabelSettings_rpgsi")
 
-[node name="Map" parent="." unique_id=578311879 instance=ExtResource("10_dch01")]
+[node name="Map" parent="." unique_id=578311879 instance=ExtResource("11_bqcys")]
 layout_mode = 0
 offset_left = -12.999998
 offset_top = 1577.0001
@@ -167,7 +167,7 @@ offset_right = 196.99998
 offset_bottom = 1807.0001
 flat = true
 
-[node name="Character" parent="." unique_id=1596499005 instance=ExtResource("11_1idv1")]
+[node name="Character" parent="." unique_id=1596499005 instance=ExtResource("12_yhiqx")]
 layout_mode = 0
 offset_left = 832.99994
 offset_top = 1508.0
@@ -181,7 +181,7 @@ layout_mode = 0
 theme = SubResource("Theme_ommbi")
 
 [node name="Clock" type="Node" parent="." unique_id=618355643]
-script = ExtResource("18_snnha")
+script = ExtResource("13_2mya4")
 
 [node name="Clock" type="TextureRect" parent="Clock" unique_id=2031594130]
 offset_left = 389.0
@@ -189,7 +189,7 @@ offset_top = 309.0
 offset_right = 889.0
 offset_bottom = 809.0
 scale = Vector2(0.6390822, 0.7046018)
-texture = ExtResource("17_o7pnx")
+texture = ExtResource("14_cvsp7")
 
 [node name="Day" type="Label" parent="Clock/Clock" unique_id=1381635584]
 layout_mode = 0
@@ -209,17 +209,17 @@ offset_bottom = 306.97888
 scale = Vector2(4.22471, 3.4033787)
 label_settings = SubResource("LabelSettings_aish6")
 
-[node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("17_aish6")]
+[node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("15_aaxut")]
 layout_mode = 0
 offset_left = 796.0
 offset_top = 8.0
 offset_right = 1416.0
 offset_bottom = 424.0
 
-[node name="Player" parent="." unique_id=797933854 instance=ExtResource("17_snnha")]
+[node name="Player" parent="." unique_id=797933854 instance=ExtResource("16_bhaln")]
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
-stream = ExtResource("15_rpgsi")
+stream = ExtResource("17_vahvf")
 bus = &"sfx"
 
 [connection signal="pressed" from="Bg/Room/CalendarButton" to="." method="_on_calendar_button_pressed"]

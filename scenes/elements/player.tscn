@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://myikxsive6gc"]
 
-[ext_resource type="Script" uid="uid://bhfm6td6so0mi" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bhfm6td6so0mi" path="res://scripts/home/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bdgus6qsjnnn4" path="res://assets/characters/default_skin/south.png" id="2_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]

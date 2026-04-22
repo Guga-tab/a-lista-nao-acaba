@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://japv55g355ky"]
 
 [ext_resource type="Texture2D" uid="uid://cq1edbyr0g33j" path="res://assets/buttons/map.png" id="1_5hauk"]
-[ext_resource type="Script" uid="uid://bbywmtdaxta2n" path="res://scripts/map.gd" id="1_paxxb"]
+[ext_resource type="Script" uid="uid://bbywmtdaxta2n" path="res://scripts/home/map.gd" id="1_paxxb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ommbi"]
 

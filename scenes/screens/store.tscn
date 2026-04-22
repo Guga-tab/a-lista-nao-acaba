@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dd6igee3k5c4c"]
 
-[ext_resource type="Script" uid="uid://cojhmah6pukyt" path="res://scripts/store.gd" id="1_gf6f2"]
-[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_jmp1n"]
-[ext_resource type="Texture2D" uid="uid://p7qk220nsay4" path="res://assets/icons/bed.png" id="2_atuvt"]
-[ext_resource type="Texture2D" uid="uid://c50qs6j6ih562" path="res://assets/icons/hat.png" id="3_codmc"]
-[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="4_5bups"]
+[ext_resource type="Script" uid="uid://cojhmah6pukyt" path="res://scripts/user/store.gd" id="1_0hyjw"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_f48gf"]
+[ext_resource type="Texture2D" uid="uid://p7qk220nsay4" path="res://assets/icons/bed.png" id="3_ah326"]
+[ext_resource type="Texture2D" uid="uid://c50qs6j6ih562" path="res://assets/icons/hat.png" id="4_brrfh"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="5_evk6i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vb4ln"]
 font_size = 162
@@ -12,13 +12,13 @@ font_size = 162
 [node name="Store" type="Control" unique_id=250576756]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_gf6f2")
+script = ExtResource("1_0hyjw")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1722329427]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_jmp1n")
+texture = ExtResource("2_f48gf")
 
 [node name="TabContainer" type="TabContainer" parent="TextureRect" unique_id=1455339200]
 layout_mode = 0
@@ -37,22 +37,22 @@ metadata/_tab_index = 0
 [node name="Bed" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=127782908]
 position = Vector2(96.474594, 223.06656)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_atuvt")
+texture = ExtResource("3_ah326")
 
 [node name="Bed2" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=140880943]
 position = Vector2(189.19928, 221.6319)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_atuvt")
+texture = ExtResource("3_ah326")
 
 [node name="Bed3" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1585596074]
 position = Vector2(96.474594, 116.04047)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_atuvt")
+texture = ExtResource("3_ah326")
 
 [node name="Bed4" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1745288327]
 position = Vector2(189.54019, 119.19673)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_atuvt")
+texture = ExtResource("3_ah326")
 
 [node name="Cosméticos" type="TabBar" parent="TextureRect/TabContainer" unique_id=1941354055]
 layout_mode = 2
@@ -62,22 +62,22 @@ metadata/_tab_name = "Cosméticos"
 [node name="Hat" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=235111563]
 position = Vector2(79.4296, 136.69965)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_codmc")
+texture = ExtResource("4_brrfh")
 
 [node name="Hat2" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1575480368]
 position = Vector2(184.7676, 134.69112)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_codmc")
+texture = ExtResource("4_brrfh")
 
 [node name="Hat3" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1388803208]
 position = Vector2(74.99791, 240.85641)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_codmc")
+texture = ExtResource("4_brrfh")
 
 [node name="Hat4" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=755581892]
 position = Vector2(180.33589, 242.86493)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_codmc")
+texture = ExtResource("4_brrfh")
 
 [node name="Button" type="Button" parent="TextureRect" unique_id=837219144]
 layout_mode = 0
@@ -86,7 +86,7 @@ offset_top = 1682.0
 offset_right = 1129.0
 offset_bottom = 1941.0
 scale = Vector2(0.7891842, 0.7494367)
-icon = ExtResource("4_5bups")
+icon = ExtResource("5_evk6i")
 flat = true
 
 [node name="Label" type="Label" parent="TextureRect/Button" unique_id=376239931]

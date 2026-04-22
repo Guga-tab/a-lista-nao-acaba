@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bnrv3q6au201o"]
 
-[ext_resource type="Script" uid="uid://dr04khh6k77y7" path="res://scripts/title_screen.gd" id="1_3yumr"]
-[ext_resource type="Texture2D" uid="uid://d1mcvdnwgt5pv" path="res://assets/backgrounds/bg.png" id="2_dc4i4"]
-[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_mgrm8"]
-[ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/default_button.tscn" id="4_3yumr"]
-[ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/about_us_button.tscn" id="5_dc4i4"]
-[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/config_button.tscn" id="5_e54dn"]
-[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="6_e54dn"]
+[ext_resource type="Script" uid="uid://dr04khh6k77y7" path="res://scripts/title/title_screen.gd" id="1_8q7jh"]
+[ext_resource type="Texture2D" uid="uid://d1mcvdnwgt5pv" path="res://assets/backgrounds/bg.png" id="2_v7ot4"]
+[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_y3dha"]
+[ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/buttons/default_button.tscn" id="4_ugltb"]
+[ext_resource type="PackedScene" uid="uid://ckifu2pos7a0i" path="res://scenes/buttons/about_us_button.tscn" id="5_vr0a7"]
+[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="6_v0ibo"]
+[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="7_yit7y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s4lrb"]
-font = ExtResource("3_mgrm8")
+font = ExtResource("3_y3dha")
 font_size = 131
 font_color = Color(0.99215686, 0.8901961, 0.8235294, 1)
 outline_size = 25
@@ -38,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_3yumr")
+script = ExtResource("1_8q7jh")
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
@@ -46,7 +46,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_dc4i4")
+texture = ExtResource("2_v7ot4")
 
 [node name="Label" type="Label" parent="Bg" unique_id=262331371]
 layout_mode = 1
@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 80
 
-[node name="PlayButton" parent="VBoxContainer" unique_id=137207077 instance=ExtResource("4_3yumr")]
+[node name="PlayButton" parent="VBoxContainer" unique_id=137207077 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "TEXTO"
 
@@ -100,7 +100,7 @@ grow_vertical = 2
 text = "PLAY"
 label_settings = SubResource("LabelSettings_dc4i4")
 
-[node name="ExitButton" parent="VBoxContainer" unique_id=102119678 instance=ExtResource("4_3yumr")]
+[node name="ExitButton" parent="VBoxContainer" unique_id=102119678 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "EXIT"
 
@@ -120,7 +120,7 @@ grow_vertical = 2
 text = "EXIT"
 label_settings = SubResource("LabelSettings_e54dn")
 
-[node name="CreditsButton" parent="." unique_id=624023024 instance=ExtResource("5_dc4i4")]
+[node name="CreditsButton" parent="." unique_id=624023024 instance=ExtResource("5_vr0a7")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -132,7 +132,7 @@ offset_bottom = -143.0
 grow_vertical = 0
 flat = true
 
-[node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("5_e54dn")]
+[node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("6_v0ibo")]
 layout_mode = 0
 offset_left = 29.999998
 offset_top = 1729.0001
@@ -141,7 +141,7 @@ offset_bottom = 2131.6665
 scale = Vector2(0.46, 0.45)
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=1624226236]
-stream = ExtResource("6_e54dn")
+stream = ExtResource("7_yit7y")
 bus = &"sfx"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

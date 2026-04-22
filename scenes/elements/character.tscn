@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkmn5k25awrpd"]
 
 [ext_resource type="Texture2D" uid="uid://biok07wnb7yfb" path="res://assets/buttons/character.png" id="1_53v7d"]
-[ext_resource type="Script" uid="uid://bvjh0vpxmytlr" path="res://scripts/character_button.gd" id="1_rkhd4"]
+[ext_resource type="Script" uid="uid://bvjh0vpxmytlr" path="res://scripts/home/character_button.gd" id="1_rkhd4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
 

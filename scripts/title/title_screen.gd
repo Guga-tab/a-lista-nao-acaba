@@ -1,8 +1,8 @@
 extends Control
 
 #popup
-@onready var ConfigScreen = preload("res://scenes/config_screen.tscn")
-@onready var Credits = preload("res://scenes/credits.tscn")
+@onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
+@onready var Credits = preload("res://scenes/pop_ups/credits.tscn")
 
 #labels
 @onready var button_play_label = $VBoxContainer/PlayButton
@@ -17,7 +17,7 @@ func _ready():
 func _on_play_button_pressed() -> void:
 	click_sound.play()
 	#await click_sound.finished
-	get_tree().change_scene_to_file("res://scenes/home.tscn")
+	get_tree().change_scene_to_file("res://scenes/screens/home.tscn")
 
 func _on_exit_button_pressed() -> void:
 	click_sound.play()
@@ -39,4 +39,4 @@ func _on_credits_button_pressed() -> void:
 func _on_config_exit_pressed() -> void:
 	click_sound.play()
 	#await click_sound.finished
-	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/screens/title.tscn")
