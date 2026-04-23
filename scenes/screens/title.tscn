@@ -119,6 +119,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "EXIT"
 label_settings = SubResource("LabelSettings_e54dn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CreditsButton" parent="." unique_id=624023024 instance=ExtResource("5_vr0a7")]
 layout_mode = 1

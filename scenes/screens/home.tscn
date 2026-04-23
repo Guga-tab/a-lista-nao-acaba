@@ -34,9 +34,13 @@ default_font = ExtResource("1_eiuvs")
 default_font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_o7pnx"]
+font = ExtResource("1_eiuvs")
+font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aish6"]
+font = ExtResource("1_eiuvs")
+font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [node name="Home" type="Control" unique_id=336287379]
@@ -180,34 +184,39 @@ visible = false
 layout_mode = 0
 theme = SubResource("Theme_ommbi")
 
-[node name="Clock" type="Node" parent="." unique_id=618355643]
-script = ExtResource("13_2mya4")
-
-[node name="Clock" type="TextureRect" parent="Clock" unique_id=2031594130]
-offset_left = 389.0
-offset_top = 309.0
-offset_right = 889.0
-offset_bottom = 809.0
+[node name="Clock" type="TextureRect" parent="." unique_id=2031594130]
+layout_mode = 0
+offset_left = 377.45905
+offset_top = 299.0
+offset_right = 877.45905
+offset_bottom = 799.0
 scale = Vector2(0.6390822, 0.7046018)
 texture = ExtResource("14_cvsp7")
+script = ExtResource("13_2mya4")
 
-[node name="Day" type="Label" parent="Clock/Clock" unique_id=1381635584]
+[node name="VBoxContainer" type="VBoxContainer" parent="Clock" unique_id=675725498]
+layout_direction = 2
 layout_mode = 0
-offset_left = 114.22632
-offset_top = 166.05124
-offset_right = 154.22632
-offset_bottom = 186.05124
-scale = Vector2(3.9340332, 3.5279703)
+offset_left = 108.81379
+offset_top = 151.8588
+offset_right = 402.98566
+offset_bottom = 336.36014
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="Day" type="Label" parent="Clock/VBoxContainer" unique_id=1381635584]
+layout_mode = 2
+text = "teste"
 label_settings = SubResource("LabelSettings_o7pnx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Time" type="Label" parent="Clock/Clock" unique_id=1607444957]
-layout_mode = 0
-offset_left = 118.92055
-offset_top = 263.97888
-offset_right = 182.92055
-offset_bottom = 306.97888
-scale = Vector2(4.22471, 3.4033787)
+[node name="Time" type="Label" parent="Clock/VBoxContainer" unique_id=1607444957]
+layout_mode = 2
+text = "teste"
 label_settings = SubResource("LabelSettings_aish6")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ConfigButton" parent="." unique_id=1908190728 instance=ExtResource("15_aaxut")]
 layout_mode = 0

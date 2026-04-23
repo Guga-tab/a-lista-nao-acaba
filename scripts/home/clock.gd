@@ -1,8 +1,7 @@
 extends Node
 
-@onready var clock_day : Label = $Clock/Day
-@onready var clock_time : Label = $Clock/Time
-
+@onready var clock_day : Label = $VBoxContainer/Day
+@onready var clock_time : Label = $VBoxContainer/Time
 
 func _process(delta: float) -> void:
 	var time = Time.get_datetime_dict_from_system()
