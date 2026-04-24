@@ -30,7 +30,7 @@ font_color = Color(0, 0, 0, 1)
 font_size = 42
 font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" unique_id=643388367]
+[node name="Config" type="Control" unique_id=643388367]
 z_index = 2
 layout_mode = 3
 anchors_preset = 8

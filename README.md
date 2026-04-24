@@ -20,8 +20,8 @@ Com uma abordagem inspirada em jogos, o aplicativo incentiva a consistência por
 - **GDScript** (lógica do jogo)  
 - **Banco de dados local**  
   - Arquivos:  
-    - `database/A-tarefa-nao-acaba.db`  
-    - `database/A-tarefa-nao-acaba-fisico.sql`  
+	- `database/A-tarefa-nao-acaba.db`  
+	- `database/A-tarefa-nao-acaba-fisico.sql`  
 - **Pixel Art e UI**  
   - Assets em `Assets_GODOT/Assets_GODOT`  
   - Fonte **Pixelify Sans** em `Assets_GODOT/Assets_GODOT/fontes/Pixelify_Sans`
@@ -66,10 +66,10 @@ a-lista-nao-acaba
 
   1. Clone o repositório:
 
-    ```bash
-    git clone https://github.com/<seu-usuario>/a-lista-nao-acaba.git
-    cd a-lista-nao-acaba
-    ```
+	```bash
+	git clone https://github.com/<seu-usuario>/a-lista-nao-acaba.git
+	cd a-lista-nao-acaba
+	```
 
   2. Abra o projeto no **Godot** usando o arquivo `project.godot`.
 

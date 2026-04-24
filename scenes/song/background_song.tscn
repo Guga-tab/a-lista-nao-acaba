@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://ckn5xa220h6dk"]
 
-[ext_resource type="AudioStream" uid="uid://dt1tn83yv1kx7" path="res://assets/sounds/background/musiga.mp3" id="1_bc2jd"]
+[ext_resource type="AudioStream" uid="uid://csqhdco5govyg" path="res://assets/sounds/background/Peachtea - Somewhere in the Elevator.wav" id="1_6vv4a"]
 
 [node name="BackgroundSong" type="AudioStreamPlayer2D" unique_id=679220810]
-stream = ExtResource("1_bc2jd")
-volume_db = -31.103
+stream = ExtResource("1_6vv4a")
 autoplay = true
 bus = &"music"
