@@ -2,7 +2,7 @@ extends Control
 
 #popup
 @onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
-@onready var Credits = preload("res://scenes/pop_ups/credits.tscn")
+@onready var Credits = preload("res://scenes/screens/credits.tscn")
 
 #labels
 @onready var button_play_label = $VBoxContainer/PlayButton

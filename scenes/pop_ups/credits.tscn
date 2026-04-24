@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="3_p7iwp"]
 [ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="4_nj15q"]
 
-[node name="PopUp" type="Control" unique_id=446378054]
+[node name="Credits" type="Control" unique_id=446378054]
 z_index = 2
 layout_mode = 3
 anchors_preset = 8
