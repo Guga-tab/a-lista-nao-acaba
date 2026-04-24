@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cojhmah6pukyt" path="res://scripts/user/store.gd" id="1_0hyjw"]
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_f48gf"]
-[ext_resource type="Texture2D" uid="uid://p7qk220nsay4" path="res://assets/icons/bed.png" id="3_ah326"]
-[ext_resource type="Texture2D" uid="uid://c50qs6j6ih562" path="res://assets/icons/hat.png" id="4_brrfh"]
+[ext_resource type="Texture2D" uid="uid://dvwejpy65u0i6" path="res://assets/icons/shop_frame.png" id="5_0hyjw"]
 [ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="5_evk6i"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vb4ln"]
-font_size = 162
+[sub_resource type="LabelSettings" id="LabelSettings_jfqsk"]
+font_size = 160
 
 [node name="Store" type="Control" unique_id=250576756]
 layout_mode = 3
@@ -22,80 +21,292 @@ texture = ExtResource("2_f48gf")
 
 [node name="TabContainer" type="TabContainer" parent="TextureRect" unique_id=1455339200]
 layout_mode = 0
-offset_left = 90.00001
-offset_top = 308.0
-offset_right = 387.60535
-offset_bottom = 692.77747
+offset_left = 105.0
+offset_top = 160.0
+offset_right = 402.60535
+offset_bottom = 544.77747
 scale = Vector2(2.933415, 3.4851317)
-current_tab = 1
+current_tab = 0
 
 [node name="Decorações" type="TabBar" parent="TextureRect/TabContainer" unique_id=455605263]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Bed" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=127782908]
-position = Vector2(96.474594, 223.06656)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_ah326")
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1154191935]
+position = Vector2(50, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
 
-[node name="Bed2" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=140880943]
-position = Vector2(189.19928, 221.6319)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_ah326")
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D" unique_id=178524953]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
 
-[node name="Bed3" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1585596074]
-position = Vector2(96.474594, 116.04047)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_ah326")
+[node name="Sprite2D2" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=567803543]
+position = Vector2(145, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
 
-[node name="Bed4" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1745288327]
-position = Vector2(189.54019, 119.19673)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_ah326")
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D2" unique_id=1320517751]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1622461996]
+position = Vector2(240, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D3" unique_id=1221583849]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=766023098]
+position = Vector2(50, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D4" unique_id=1633217274]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1412727535]
+position = Vector2(50, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D5" unique_id=570349091]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=874363888]
+position = Vector2(145, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D6" unique_id=987045537]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=342326592]
+position = Vector2(240, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D7" unique_id=1635759218]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=451718786]
+position = Vector2(145, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D8" unique_id=136794218]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="TextureRect/TabContainer/Decorações" unique_id=1133334804]
+position = Vector2(240, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decorações/Sprite2D9" unique_id=275521308]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
 
 [node name="Cosméticos" type="TabBar" parent="TextureRect/TabContainer" unique_id=1941354055]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 metadata/_tab_name = "Cosméticos"
 
-[node name="Hat" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=235111563]
-position = Vector2(79.4296, 136.69965)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_brrfh")
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=403205104]
+position = Vector2(50, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
 
-[node name="Hat2" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1575480368]
-position = Vector2(184.7676, 134.69112)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_brrfh")
-
-[node name="Hat3" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1388803208]
-position = Vector2(74.99791, 240.85641)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_brrfh")
-
-[node name="Hat4" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=755581892]
-position = Vector2(180.33589, 242.86493)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_brrfh")
-
-[node name="Button" type="Button" parent="TextureRect" unique_id=837219144]
-layout_mode = 0
-offset_left = 127.99999
-offset_top = 1682.0
-offset_right = 1129.0
-offset_bottom = 1941.0
-scale = Vector2(0.7891842, 0.7494367)
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D" unique_id=601829183]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
 icon = ExtResource("5_evk6i")
 flat = true
 
-[node name="Label" type="Label" parent="TextureRect/Button" unique_id=376239931]
+[node name="Sprite2D2" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1966385898]
+position = Vector2(145, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D2" unique_id=1764560561]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1140183519]
+position = Vector2(240, 70)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D3" unique_id=358991474]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=104175608]
+position = Vector2(50, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D4" unique_id=1600077131]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1740313730]
+position = Vector2(50, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D5" unique_id=1026132625]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1667089327]
+position = Vector2(145, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D6" unique_id=1029268539]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1199361207]
+position = Vector2(240, 180)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D7" unique_id=1247559367]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=884563048]
+position = Vector2(145, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D8" unique_id=1383835300]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="TextureRect/TabContainer/Cosméticos" unique_id=1385395696]
+position = Vector2(240, 290)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_0hyjw")
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Cosméticos/Sprite2D9" unique_id=1489868770]
+offset_left = -183.3375
+offset_top = 201.72757
+offset_right = 817.6625
+offset_bottom = 460.72757
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=837219144]
 layout_mode = 0
-offset_left = 229.0
-offset_top = 21.0
-offset_right = 800.0
-offset_bottom = 226.0
+offset_left = 208.0
+offset_top = 1602.0
+offset_right = 1209.0
+offset_bottom = 1861.0
+scale = Vector2(0.6556309, 0.72827035)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Label2" type="Label" parent="TextureRect/Button" unique_id=1648656607]
+layout_mode = 0
+offset_left = 255.42432
+offset_top = 19.807781
+offset_right = 832.4243
+offset_bottom = 227.80779
 text = "VOLTAR"
-label_settings = SubResource("LabelSettings_vb4ln")
+label_settings = SubResource("LabelSettings_jfqsk")
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
