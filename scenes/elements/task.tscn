@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://coi1y85way7lh"]
+
+[ext_resource type="Script" uid="uid://bbywmtdaxta2n" path="res://scripts/home/map.gd" id="1_lrx7p"]
+[ext_resource type="Texture2D" uid="uid://dqctfn6erbb6p" path="res://assets/buttons/task.png" id="2_lrx7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ommbi"]
+
+[node name="Task" type="Button" unique_id=578311879]
+offset_left = -5.5213923
+offset_top = 1557.5023
+offset_right = 204.47859
+offset_bottom = 1787.5023
+scale = Vector2(1.4297929, 1.5997959)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ommbi")
+script = ExtResource("1_lrx7p")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=880479241]
+layout_mode = 0
+offset_top = 15.938049
+offset_right = 196.89662
+offset_bottom = 222.83942
+mouse_filter = 2
+texture_normal = ExtResource("2_lrx7p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

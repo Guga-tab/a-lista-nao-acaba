@@ -5,8 +5,8 @@ extends Control
 @onready var Credits = preload("res://scenes/screens/credits.tscn")
 
 #labels
-@onready var button_play_label = $VBoxContainer/PlayButton
-@onready var button_exit_label = $VBoxContainer/ExitButton
+@onready var button_play_label = $DefaultBg/VBoxContainer/PlayButton
+@onready var button_exit_label = $DefaultBg/VBoxContainer/ExitButton
 @onready var click_sound = $click_sound
 
 func _ready():

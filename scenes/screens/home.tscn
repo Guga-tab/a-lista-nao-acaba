@@ -11,9 +11,10 @@
 [ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_i2m5s"]
 [ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="10_6sy1k"]
 [ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/elements/map.tscn" id="11_bqcys"]
+[ext_resource type="PackedScene" uid="uid://coi1y85way7lh" path="res://scenes/elements/task.tscn" id="12_xi2nm"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/elements/character.tscn" id="12_yhiqx"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/home/clock.gd" id="13_2mya4"]
-[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/clock.png" id="14_cvsp7"]
+[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/calender.png" id="14_cvsp7"]
 [ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="15_aaxut"]
 [ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="16_bhaln"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="17_vahvf"]
@@ -164,12 +165,20 @@ text = "FULANO"
 label_settings = SubResource("LabelSettings_rpgsi")
 
 [node name="Map" parent="." unique_id=578311879 instance=ExtResource("11_bqcys")]
+visible = false
 layout_mode = 0
 offset_left = -12.999998
 offset_top = 1577.0001
 offset_right = 196.99998
 offset_bottom = 1807.0001
 flat = true
+
+[node name="Task" parent="." unique_id=2066206650 instance=ExtResource("12_xi2nm")]
+layout_mode = 0
+offset_left = 3.9999995
+offset_top = 1592.0001
+offset_right = 213.99998
+offset_bottom = 1822.0001
 
 [node name="Character" parent="." unique_id=1596499005 instance=ExtResource("12_yhiqx")]
 layout_mode = 0
@@ -184,7 +193,7 @@ visible = false
 layout_mode = 0
 theme = SubResource("Theme_ommbi")
 
-[node name="Clock" type="TextureRect" parent="." unique_id=2031594130]
+[node name="Calender" type="TextureRect" parent="." unique_id=2031594130]
 layout_mode = 0
 offset_left = 377.45905
 offset_top = 299.0
@@ -194,7 +203,7 @@ scale = Vector2(0.6390822, 0.7046018)
 texture = ExtResource("14_cvsp7")
 script = ExtResource("13_2mya4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Clock" unique_id=675725498]
+[node name="VBoxContainer" type="VBoxContainer" parent="Calender" unique_id=675725498]
 layout_direction = 2
 layout_mode = 0
 offset_left = 108.81379
@@ -204,14 +213,14 @@ offset_bottom = 336.36014
 theme_override_constants/separation = 33
 alignment = 1
 
-[node name="Day" type="Label" parent="Clock/VBoxContainer" unique_id=1381635584]
+[node name="Day" type="Label" parent="Calender/VBoxContainer" unique_id=1381635584]
 layout_mode = 2
 text = "teste"
 label_settings = SubResource("LabelSettings_o7pnx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Time" type="Label" parent="Clock/VBoxContainer" unique_id=1607444957]
+[node name="Time" type="Label" parent="Calender/VBoxContainer" unique_id=1607444957]
 layout_mode = 2
 text = "teste"
 label_settings = SubResource("LabelSettings_aish6")

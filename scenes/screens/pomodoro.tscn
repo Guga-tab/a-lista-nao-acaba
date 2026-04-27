@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://txpa7kin1uqi"]
+
+[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="1_t3m3h"]
+[ext_resource type="Script" uid="uid://5618r8ahggeo" path="res://scripts/screens/pomodoro.gd" id="2_gfyoc"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="3_5kd53"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="4_drvns"]
+[ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/elements/star.tscn" id="5_eiie8"]
+[ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/elements/offensive.tscn" id="6_ehlrr"]
+[ext_resource type="Texture2D" uid="uid://di3vu1quhro1f" path="res://assets/icons/character_allRight.png" id="9_ebi4v"]
+[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/icons/clock_circle_no_number.png" id="9_v11oo"]
+[ext_resource type="Texture2D" uid="uid://b80onvsukwh72" path="res://assets/buttons/up_down_clock.png" id="10_u1oj8"]
+[ext_resource type="PackedScene" uid="uid://cofoos0b4poqc" path="res://scenes/buttons/default_button.tscn" id="11_mi0bl"]
+[ext_resource type="Texture2D" uid="uid://kxxlfch2bww6" path="res://assets/backgrounds/clock_background.png" id="11_v11oo"]
+[ext_resource type="Texture2D" uid="uid://bjrv1pu374drp" path="res://assets/icons/task_frame.png" id="13_v11oo"]
+[ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="16_lmbwc"]
+[ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="18_icgir"]
+
+[sub_resource type="Theme" id="Theme_sf0on"]
+default_font = ExtResource("1_t3m3h")
+default_font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_v11oo"]
+font_size = 72
+font_color = Color(0.83137256, 0.8862745, 0.24705882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aish6"]
+font = ExtResource("1_t3m3h")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Pomodoro" type="Control" unique_id=336287379]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sf0on")
+script = ExtResource("2_gfyoc")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1567050482]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 2747.0
+scale = Vector2(1.0133935, 1)
+mouse_filter = 2
+texture = ExtResource("3_5kd53")
+
+[node name="Coin" parent="Bg" unique_id=671021650 instance=ExtResource("4_drvns")]
+layout_mode = 0
+offset_left = 29.603506
+offset_top = 235.99998
+offset_right = 372.98322
+offset_bottom = 607.59515
+
+[node name="Star" parent="Bg" unique_id=1961716797 instance=ExtResource("5_eiie8")]
+layout_mode = 0
+offset_left = 37.497772
+offset_top = 101.0
+offset_right = 295.49777
+offset_bottom = 359.0
+
+[node name="Offensive" parent="Bg" unique_id=136825866 instance=ExtResource("6_ehlrr")]
+layout_mode = 0
+offset_left = 896.9861
+offset_top = 211.00002
+offset_right = 1207.9001
+offset_bottom = 549.4366
+
+[node name="CharacterRight" type="TextureRect" parent="Bg" unique_id=623338299]
+layout_mode = 0
+offset_left = 116.44045
+offset_top = 695.0
+offset_right = 336.44046
+offset_bottom = 1024.0
+texture = ExtResource("9_ebi4v")
+
+[node name="ConfigButton" parent="Bg" unique_id=1908190728 instance=ExtResource("16_lmbwc")]
+layout_mode = 0
+offset_left = 785.4797
+offset_top = 8.0
+offset_right = 1405.4797
+offset_bottom = 424.0
+
+[node name="ClockBg" type="TextureRect" parent="Bg" unique_id=228600750]
+layout_mode = 0
+offset_left = -8.881052
+offset_top = 735.0
+offset_right = 1078.1189
+offset_bottom = 1459.0
+texture = ExtResource("11_v11oo")
+
+[node name="ClockCircle1" type="TextureRect" parent="Bg" unique_id=1804468878]
+layout_mode = 0
+offset_left = 141.05746
+offset_top = 973.0
+offset_right = 470.05746
+offset_bottom = 1298.0
+texture = ExtResource("9_v11oo")
+
+[node name="ClockCircle2" type="TextureRect" parent="Bg" unique_id=989223850]
+layout_mode = 0
+offset_left = 603.67444
+offset_top = 973.0
+offset_right = 932.6745
+offset_bottom = 1298.0
+texture = ExtResource("9_v11oo")
+
+[node name="UpDnClock" type="TextureRect" parent="Bg" unique_id=1132662386]
+layout_mode = 0
+offset_left = 467.73538
+offset_top = 955.0
+offset_right = 607.73535
+offset_bottom = 1310.0
+texture = ExtResource("10_u1oj8")
+
+[node name="StartButton" parent="Bg" unique_id=137207077 instance=ExtResource("11_mi0bl")]
+layout_mode = 0
+offset_left = 335.506
+offset_top = 1406.0
+offset_right = 735.506
+offset_bottom = 1546.0
+scale = Vector2(1.07, 1.221)
+
+[node name="Label" type="Label" parent="Bg/StartButton" unique_id=1652986373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -44.0
+offset_right = 99.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+label_settings = SubResource("LabelSettings_v11oo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" parent="Bg" unique_id=6871123 instance=ExtResource("11_mi0bl")]
+layout_mode = 0
+offset_left = 335.50638
+offset_top = 1635.0
+offset_right = 735.50635
+offset_bottom = 1775.0
+scale = Vector2(1.07, 1.221)
+
+[node name="Label" type="Label" parent="Bg/BackButton" unique_id=1962652061]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -44.0
+offset_right = 99.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+label_settings = SubResource("LabelSettings_v11oo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskFrame" type="TextureRect" parent="Bg" unique_id=466839084]
+layout_mode = 0
+offset_left = 34.537422
+offset_top = 390.0
+offset_right = 1058.5375
+offset_bottom = 767.0
+texture = ExtResource("13_v11oo")
+
+[node name="Label" type="Label" parent="Bg/TaskFrame" unique_id=1567836811]
+layout_mode = 0
+offset_left = 108.54619
+offset_top = 170.0
+offset_right = 291.10114
+offset_bottom = 230.0
+text = "teste"
+label_settings = SubResource("LabelSettings_aish6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
+stream = ExtResource("18_icgir")
+bus = &"sfx"
+
+[connection signal="pressed" from="Bg/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Bg/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Bg/BackButton" to="." method="_on_back_button_pressed"]
