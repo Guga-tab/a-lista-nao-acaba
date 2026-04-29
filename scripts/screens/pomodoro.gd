@@ -9,6 +9,7 @@ extends Control
 @onready var click_sound = $click_sound
 @onready var minutes : Label = $Bg/ClockBg/MM
 @onready var seconds : Label = $Bg/ClockBg/SS
+@onready var input_task = $Bg/TaskFrame/LineEdit
 
 var minutes_value = 0
 var seconds_value = 0
@@ -70,7 +71,7 @@ func _on_config_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	click_sound.play()
 	#await click_sound.finished
-	get_tree().change_scene_to_file("res://scenes/screens/title.tscn")
+	get_tree().change_scene_to_file("res://scenes/screens/home.tscn")
 
 func _on_up_clock_pressed() -> void:
 	if(minutes_value < 120):
@@ -85,3 +86,10 @@ func _on_dn_clock_pressed() -> void:
 		
 		if not running:
 			total_time = minutes_value * 60
+
+func _on_line_edit_text_changed(new_text):
+	pass
+	
+# Conecte o sinal 'text_submitted' do LineEdit a esta função
+func _on_line_edit_text_submitted(new_text):
+	pass

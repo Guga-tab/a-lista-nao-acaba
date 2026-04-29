@@ -24,19 +24,16 @@ func _on_exit_button_pressed() -> void:
 	#await click_sound.finished
 	get_tree().quit()
 
-func _on_config_button_pressed() -> void:
-	click_sound.play()
-	#await click_sound.finished
-	var config_screen = ConfigScreen.instantiate()
-	add_child(config_screen)
-	
 func _on_credits_button_pressed() -> void:
 	click_sound.play()
+	print("CLICOU NO BUTAO")
 	#await click_sound.finished
 	var credits = Credits.instantiate()
 	add_child(credits)
-	
-func _on_config_exit_pressed() -> void:
+
+func _on_config_button_pressed() -> void:
 	click_sound.play()
+	print("CLICOU NO BUTAO")
 	#await click_sound.finished
-	get_tree().change_scene_to_file("res://scenes/screens/title.tscn")
+	var config_screen = ConfigScreen.instantiate()
+	add_child(config_screen)

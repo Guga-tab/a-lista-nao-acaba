@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cveeqry70w5ok" path="res://scripts/elements/config_screen.gd" id="1_n634o"]
 [ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="2_o57cd"]
 [ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="3_jpaht"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_7fyqw"]
 [ext_resource type="Script" uid="uid://duhjxp77hdc8c" path="res://scripts/elements/language_options.gd" id="4_847j5"]
 [ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="5_nsku3"]
 [ext_resource type="Texture2D" uid="uid://c7m5gysjelqbp" path="res://assets/icons/brazil_icon.png" id="6_i2g36"]
@@ -86,11 +87,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -47.0
-offset_top = 44.0
+offset_top = 36.0
 offset_right = 253.0
-offset_bottom = 79.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_7fyqw")
+theme_override_font_sizes/font_size = 30
 script = ExtResource("4_847j5")
 
 [node name="ExitButton" type="TextureButton" parent="." unique_id=770317885]
