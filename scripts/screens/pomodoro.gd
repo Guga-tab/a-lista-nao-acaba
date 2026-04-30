@@ -2,8 +2,10 @@ extends Control
 
 #popup
 @onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
-
+@onready var TaskService = preload("res://scripts/services/task_service.gd").new()
+@onready var UserService = preload("res://scripts/services/user_service.gd").new()
 #labels
+@onready var task_input = $Bg/TaskFrame/LineEdit
 @onready var button_play_label = $Bg/StartButton/Label
 @onready var button_exit_label  = $Bg/BackButton/Label
 @onready var click_sound = $click_sound
@@ -42,24 +44,30 @@ func _process(delta: float) -> void:
 	
 func _on_start_button_pressed() -> void:
 	click_sound.play()
-	#await click_sound.finished
-	
+	# SALVAR TAREFA
 	if not running and not paused:
+		var description = task_input.text
+		var title = ""
+		TaskService.create_task(
+			title,
+			description,
+			minutes_value
+		)
+
 		total_time = minutes_value * 60
 		running = true
 		button_play_label.text = "PAUSE"
-		return
+		
+		var mission_scene = preload("res://scenes/screens/mission.tscn").instantiate()
+		mission_scene.minutes_value = minutes_value
+		mission_scene.seconds_value = seconds_value
+		mission_scene.task_text = description
 
-	if running:
-		running = false
-		paused = true
-		button_play_label.text = "CONTINUE"
+		get_tree().current_scene.call_deferred("free")
+		get_tree().root.add_child(mission_scene)
+		get_tree().current_scene = mission_scene
+		
 		return
-
-	if paused:
-		running = true
-		paused = false
-		button_play_label.text = "PAUSE"
 
 func _on_config_button_pressed() -> void:
 	click_sound.play()
@@ -74,14 +82,14 @@ func _on_back_button_pressed() -> void:
 
 func _on_up_clock_pressed() -> void:
 	if(minutes_value < 120):
-		minutes_value += 5
+		minutes_value += 1
 		
 		if not running:
 			total_time = minutes_value * 60
 
 func _on_dn_clock_pressed() -> void:
 	if(minutes_value > 0):
-		minutes_value -= 5
+		minutes_value -= 1
 		
 		if not running:
 			total_time = minutes_value * 60

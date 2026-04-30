@@ -137,8 +137,6 @@ func _create_task(title_input: LineEdit, desc_input: LineEdit, tasks_container: 
 		push_error(tr("TITLE_ERROR"))
 		return
 
-	TaskService.create_task(title, desc)
-
 	title_input.text = ""
 	desc_input.text = ""
 

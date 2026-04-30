@@ -9,9 +9,9 @@ func _ready():
 func set_main(main_ref: Node):
 	main_scene = main_ref
 
-func create_task(title: String, desc: String) -> void:
-	if title.strip_edges() == "":
-		push_error("Título não pode ser vazio") 
+func create_task(title: String, desc: String, time: float) -> void:
+	if desc.strip_edges() == "":
+		push_error("Descrição não pode ser vazio") 
 		return
 
 	var ids = user_service.get_user_ids()

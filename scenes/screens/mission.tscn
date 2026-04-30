@@ -1,13 +1,29 @@
 [gd_scene format=3 uid="uid://b06icfjf4mlp7"]
 
+[ext_resource type="Script" uid="uid://b6g4tup8mrgub" path="res://scripts/screens/mission.gd" id="1_p31kk"]
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_v3nvf"]
 [ext_resource type="Texture2D" uid="uid://dpcey3ef6bi70" path="res://assets/backgrounds/mission_room.png" id="2_v3nvf"]
-[ext_resource type="PackedScene" uid="uid://b88r070i5oq8x" path="res://scenes/elements/timer.tscn" id="3_cv0tx"]
+[ext_resource type="Texture2D" uid="uid://kxxlfch2bww6" path="res://assets/backgrounds/clock_background.png" id="3_p31kk"]
 [ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="4_0mvd2"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_bqlt0"]
+[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/icons/clock_circle_no_number.png" id="5_0sm7f"]
+[ext_resource type="FontFile" uid="uid://noxa3dpws2ju" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="7_p31kk"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="9_bqlt0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8d6vx"]
+font = ExtResource("4_bqlt0")
+font_size = 100
+font_color = Color(0.3647059, 0.2784314, 0.12941177, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqlt0"]
+font = ExtResource("7_p31kk")
 
 [node name="Mission" type="Control" unique_id=1842973118]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 4.0
+offset_right = 4.0
+script = ExtResource("1_p31kk")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=823901568]
 layout_mode = 0
@@ -26,6 +42,74 @@ offset_bottom = 636.6752
 scale = Vector2(1.2415404, 1.7912706)
 texture = ExtResource("2_v3nvf")
 
-[node name="Timer" parent="." unique_id=1909568394 instance=ExtResource("3_cv0tx")]
+[node name="ClockBg" type="TextureRect" parent="TextureRect" unique_id=801537015]
+layout_mode = 0
+offset_left = -19.828928
+offset_top = 925.0853
+offset_right = 1067.171
+offset_bottom = 1649.0854
+scale = Vector2(0.6993969, 0.63734245)
+texture = ExtResource("3_p31kk")
+
+[node name="ClockCircle1" type="TextureRect" parent="TextureRect/ClockBg" unique_id=1650520221]
+layout_mode = 0
+offset_left = 191.25182
+offset_top = 238.3513
+offset_right = 520.25183
+offset_bottom = 563.3513
+texture = ExtResource("5_0sm7f")
+
+[node name="MM" type="Label" parent="TextureRect/ClockBg/ClockCircle1" unique_id=128722549]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 97.32266
+offset_top = -58.77478
+offset_right = 200.32268
+offset_bottom = 61.22522
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_8d6vx")
+
+[node name="ClockCircle2" type="TextureRect" parent="TextureRect/ClockBg" unique_id=1780681065]
+layout_mode = 0
+offset_left = 546.30304
+offset_top = 234.42783
+offset_right = 875.3031
+offset_bottom = 559.42786
+texture = ExtResource("5_0sm7f")
+
+[node name="SS" type="Label" parent="TextureRect/ClockBg/ClockCircle2" unique_id=1245301717]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 107.06439
+offset_top = -61.47046
+offset_right = 230.06439
+offset_bottom = 83.52954
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_8d6vx")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1888091957]
+layout_mode = 0
+offset_left = 80.732086
+offset_top = 927.2266
+offset_right = 209.73209
+offset_bottom = 947.2266
+scale = Vector2(2.4084277, 4.5275807)
+text = "teste pomodoro"
+label_settings = SubResource("LabelSettings_bqlt0")
 
 [node name="Player" parent="." unique_id=797933854 instance=ExtResource("4_0mvd2")]
+
+[node name="Coin" parent="." unique_id=671021650 instance=ExtResource("9_bqlt0")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 20.999985
+offset_right = 369.3797
+offset_bottom = 392.59515

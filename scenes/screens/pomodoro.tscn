@@ -29,11 +29,6 @@ font_color = Color(0.3647059, 0.2784314, 0.12941177, 1)
 font_size = 72
 font_color = Color(0.83137256, 0.8862745, 0.24705882, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_aish6"]
-font = ExtResource("1_t3m3h")
-font_size = 50
-font_color = Color(0.28235295, 0.2784314, 0.2784314, 1)
-
 [node name="Pomodoro" type="Control" unique_id=336287379]
 layout_mode = 3
 anchors_preset = 15
@@ -124,31 +119,31 @@ grow_vertical = 2
 text = "10"
 label_settings = SubResource("LabelSettings_emtur")
 
-[node name="ClockCircle1" type="TextureRect" parent="Bg" unique_id=1804468878]
+[node name="ClockCircle1" type="TextureRect" parent="Bg/ClockBg" unique_id=1804468878]
 layout_mode = 0
-offset_left = 141.05746
-offset_top = 973.0
-offset_right = 470.05746
-offset_bottom = 1298.0
+offset_left = 149.93852
+offset_top = 238.0
+offset_right = 478.93854
+offset_bottom = 563.0
 texture = ExtResource("9_v11oo")
 
-[node name="ClockCircle2" type="TextureRect" parent="Bg" unique_id=989223850]
+[node name="ClockCircle2" type="TextureRect" parent="Bg/ClockBg" unique_id=989223850]
 layout_mode = 0
-offset_left = 603.67444
-offset_top = 973.0
-offset_right = 932.6745
-offset_bottom = 1298.0
+offset_left = 612.5555
+offset_top = 238.0
+offset_right = 941.55554
+offset_bottom = 563.0
 texture = ExtResource("9_v11oo")
 
-[node name="UpDnClock" type="TextureRect" parent="Bg" unique_id=1132662386]
+[node name="UpDnClock" type="TextureRect" parent="Bg/ClockBg" unique_id=1132662386]
 layout_mode = 0
-offset_left = 467.73538
-offset_top = 955.0
-offset_right = 607.73535
-offset_bottom = 1310.0
+offset_left = 476.61642
+offset_top = 220.0
+offset_right = 616.61646
+offset_bottom = 575.0
 texture = ExtResource("10_u1oj8")
 
-[node name="UpClock" type="Button" parent="Bg/UpDnClock" unique_id=635319121]
+[node name="UpClock" type="Button" parent="Bg/ClockBg/UpDnClock" unique_id=635319121]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -158,7 +153,7 @@ offset_right = -20.599213
 offset_bottom = 109.0
 grow_horizontal = 2
 
-[node name="DnClock" type="Button" parent="Bg/UpDnClock" unique_id=1832646242]
+[node name="DnClock" type="Button" parent="Bg/ClockBg/UpDnClock" unique_id=1832646242]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -228,23 +223,22 @@ offset_right = 1058.5375
 offset_bottom = 767.0
 texture = ExtResource("13_v11oo")
 
-[node name="Label" type="Label" parent="Bg/TaskFrame" unique_id=1567836811]
+[node name="LineEdit" type="LineEdit" parent="Bg/TaskFrame" unique_id=1343230988]
 layout_mode = 0
-offset_left = 104.59905
-offset_top = 112.0
-offset_right = 287.154
-offset_bottom = 172.0
-text = "teste"
-label_settings = SubResource("LabelSettings_aish6")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 115.45367
+offset_top = 114.0
+offset_right = 247.45367
+offset_bottom = 171.0
+scale = Vector2(6.1634183, 2.790671)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Descrição"
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
 stream = ExtResource("18_icgir")
 bus = &"sfx"
 
 [connection signal="pressed" from="Bg/ConfigButton" to="." method="_on_config_button_pressed"]
-[connection signal="pressed" from="Bg/UpDnClock/UpClock" to="." method="_on_up_clock_pressed"]
-[connection signal="pressed" from="Bg/UpDnClock/DnClock" to="." method="_on_dn_clock_pressed"]
+[connection signal="pressed" from="Bg/ClockBg/UpDnClock/UpClock" to="." method="_on_up_clock_pressed"]
+[connection signal="pressed" from="Bg/ClockBg/UpDnClock/DnClock" to="." method="_on_dn_clock_pressed"]
 [connection signal="pressed" from="Bg/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Bg/BackButton" to="." method="_on_back_button_pressed"]
