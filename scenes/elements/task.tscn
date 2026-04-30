@@ -12,6 +12,7 @@ offset_right = 204.47859
 offset_bottom = 1787.5023
 scale = Vector2(1.4297929, 1.5997959)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ommbi")
+flat = true
 script = ExtResource("1_lrx7p")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=880479241]

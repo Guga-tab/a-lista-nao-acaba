@@ -5,7 +5,7 @@ signal coins_changed(new_value)
 
 var user_id: int = -1
 var avatar_id: int = -1
-
+ 
 func _ready():
 	load_or_create_user()
 
