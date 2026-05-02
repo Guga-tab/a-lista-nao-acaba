@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bhfm6td6so0mi" path="res://scripts/home/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bdgus6qsjnnn4" path="res://assets/characters/default_skin/south.png" id="2_g2els"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6phu"]
+radius = 28.0
+height = 100.0
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
 length = 0.001
@@ -45,7 +47,7 @@ _data = {
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=141834874]
-shape = SubResource("CircleShape2D_u8vuu")
+shape = SubResource("CapsuleShape2D_y6phu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2097552489]
 scale = Vector2(4, 4)
@@ -53,3 +55,5 @@ texture = ExtResource("2_g2els")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1743970399]
 libraries/ = SubResource("AnimationLibrary_qhqgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9021952]

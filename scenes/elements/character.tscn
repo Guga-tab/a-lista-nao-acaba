@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
 
-[node name="PersonagemButton" type="Button" unique_id=1596499005]
+[node name="CharacterButton" type="Button" unique_id=1596499005]
 offset_left = 829.1018
 offset_top = 1507.6929
 offset_right = 1129.1018

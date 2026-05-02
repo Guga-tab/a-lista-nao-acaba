@@ -36,8 +36,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_8q7jh")
-metadata/_edit_group_ = true
-metadata/_edit_horizontal_guides_ = [1734.0]
 
 [node name="DefaultBg" type="TextureRect" parent="." unique_id=1961460087]
 layout_mode = 1

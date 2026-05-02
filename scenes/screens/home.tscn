@@ -235,6 +235,7 @@ offset_right = 1416.0
 offset_bottom = 424.0
 
 [node name="Player" parent="." unique_id=797933854 instance=ExtResource("16_bhaln")]
+position = Vector2(-49, 995)
 
 [node name="click_sound" type="AudioStreamPlayer" parent="." unique_id=950624638]
 stream = ExtResource("17_vahvf")

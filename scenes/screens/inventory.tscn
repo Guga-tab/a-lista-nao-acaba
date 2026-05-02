@@ -7,10 +7,10 @@
 [ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="5_k3ggv"]
 [ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="6_ub08g"]
 [ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://assets/icons/star_icon.png" id="7_4vr4i"]
-[ext_resource type="Texture2D" uid="uid://cp6hcmf5dq348" path="res://assets/characters/skins/image-removebg-preview (8) 1.png" id="8_ipjli"]
-[ext_resource type="Texture2D" uid="uid://c3pydbwf6vaoo" path="res://assets/characters/skins/image-removebg-preview (6) 1.png" id="9_jyf1w"]
-[ext_resource type="Texture2D" uid="uid://de3xk02aw6hr8" path="res://assets/characters/skins/image-removebg-preview (4) 9.png" id="10_4rc8n"]
-[ext_resource type="Texture2D" uid="uid://bcgr1qa6kme7r" path="res://assets/characters/skins/image-removebg-preview (1) 1.png" id="11_vq4xo"]
+[ext_resource type="Texture2D" uid="uid://cp6hcmf5dq348" path="res://assets/characters/skins/garden.png" id="8_ipjli"]
+[ext_resource type="Texture2D" uid="uid://c3pydbwf6vaoo" path="res://assets/characters/skins/purple_pink.png" id="9_jyf1w"]
+[ext_resource type="Texture2D" uid="uid://de3xk02aw6hr8" path="res://assets/characters/skins/natal.png" id="10_4rc8n"]
+[ext_resource type="Texture2D" uid="uid://bcgr1qa6kme7r" path="res://assets/characters/skins/black_manba.png" id="11_vq4xo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_buby5"]
 font = ExtResource("5_k3ggv")
@@ -493,7 +493,7 @@ texture = ExtResource("7_4vr4i")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="TextureRect" unique_id=1001858606]
+[node name="BackButton" type="Button" parent="TextureRect" unique_id=1001858606]
 layout_mode = 0
 offset_left = 127.99999
 offset_top = 1682.0
@@ -503,7 +503,7 @@ scale = Vector2(0.7891842, 0.7494367)
 icon = ExtResource("3_lb3qo")
 flat = true
 
-[node name="Label" type="Label" parent="TextureRect/Button" unique_id=1854049831]
+[node name="Label" type="Label" parent="TextureRect/BackButton" unique_id=1854049831]
 layout_mode = 0
 offset_left = 229.0
 offset_top = 21.0
@@ -512,4 +512,4 @@ offset_bottom = 226.0
 text = "VOLTAR"
 label_settings = SubResource("LabelSettings_ty45s")
 
-[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3q5i7f76onr7"
-path="res://.godot/imported/character_right.png-badfacb0fc28c33f577b64ef6258dcbd.ctex"
+uid="uid://de3xk02aw6hr8"
+path="res://.godot/imported/natal.png-3576f28906548cd67de3f14c69d4b3d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/character_right.png"
-dest_files=["res://.godot/imported/character_right.png-badfacb0fc28c33f577b64ef6258dcbd.ctex"]
+source_file="res://assets/characters/skins/natal.png"
+dest_files=["res://.godot/imported/natal.png-3576f28906548cd67de3f14c69d4b3d9.ctex"]
 
 [params]
 

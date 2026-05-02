@@ -6,13 +6,13 @@ extends Control
 @onready var seconds_label: Label = $TextureRect/ClockBg/ClockCircle2/SS
 @onready var task_label: Label = $TextureRect/Label
 @onready var coin_label: Label = $Coin/CoinLabel
+
 var task_text: String
 # Valores recebidos
 var minutes_value: int = 0
 var seconds_value: int = 0
 var total_time: float = 0.0
 var finished = false
-
 
 func _ready() -> void:
 	total_time = minutes_value * 60 + seconds_value
@@ -42,7 +42,7 @@ func update_coin_label():
 	coin_label.text = str(coins)
 	
 func on_task_complete():
-	user_service.add_coins(1)
+	user_service.add_coins(10)
 	update_coin_label()
 	
 	await get_tree().create_timer(1.0).timeout

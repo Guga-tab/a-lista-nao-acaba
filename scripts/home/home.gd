@@ -1,5 +1,8 @@
 extends Control
 
+# Referenciando a subcena do personagem na árvore de nós da Home
+@onready var character_node = $Character
+
 # ========================
 # Services
 # ========================
@@ -34,9 +37,6 @@ func _ready():
 		push_error("coin_label não encontrado!")
 		return
 	
-	#Welcome Player
-	text_black_bar.text
-
 	# ------- MAIN VBOX STYLE --------
 	_stylize_vbox(vbox_tasks)
 
@@ -47,6 +47,8 @@ func _ready():
 	update_coin_label()
 	TaskService.update_list(vbox_tasks, self)
 	
+	# Update Character Skin e Tamanho
+	update_character_skin()
 
 # ===============================
 # FUNCTION: Stylize container
@@ -150,6 +152,55 @@ func on_task_complete():
 
 func _on_config_button_pressed() -> void:
 	click_sound.play()
-	#await click_sound.finished
 	var config_screen = ConfigScreen.instantiate()
 	add_child(config_screen)
+
+# ===============================
+# UPDATE CHARACTER SKIN & SIZE
+# ===============================
+func update_character_skin() -> void:
+	var equipped_skin = UserService.get_equipped_skin()
+	print("Sua skin salva no banco é: ", equipped_skin)
+
+	var skin_path = "res://assets/characters/skins/" + equipped_skin + ".png"
+	var default_path = "res://assets/characters/skins/default.png"
+
+	# Tamanho desejado para o personagem na Home (pode ajustar à vontade)
+	var novo_tamanho = Vector2(150, 250)
+
+	# Buscamos o nó TextureButton dentro da subcena instanciada Character
+	var texture_button = character_node.get_node("TextureButton") as TextureButton
+
+	if texture_button == null:
+		push_error("ERRO GRAVE: O TextureButton não foi encontrado dentro do nó Character!")
+		return
+
+	# Tenta carregar a skin salva do usuário
+	if ResourceLoader.exists(skin_path):
+		texture_button.texture_normal = load(skin_path)
+		_aplicar_redimensionamento_button(texture_button, novo_tamanho)
+		print("Skin equipada alterada com sucesso!")
+		return
+
+	# Se a skin equipada não existir, carrega a padrão fallback
+	if ResourceLoader.exists(default_path):
+		texture_button.texture_normal = load(default_path)
+		_aplicar_redimensionamento_button(texture_button, novo_tamanho)
+		print("Skin equipada não foi encontrada. Carregando a padrão: default.png")
+	else:
+		push_error("ERRO GRAVE: Nem a skin equipada nem a padrão (default.png) foram encontradas!")
+
+# Função auxiliar para redimensionar o TextureButton mantendo a proporção
+func _aplicar_redimensionamento_button(button: TextureButton, size: Vector2) -> void:
+	# 1. Permite que a textura ignore o tamanho original e estique
+	button.ignore_texture_size = true
+	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+
+	# 2. Define o tamanho em pixels da caixa do botão
+	button.custom_minimum_size = size
+	button.size = size
+
+	# 3. FORÇA A ESCALA (Multiplicador visual)
+	# Se 300x300 ainda estiver pequeno, aumentamos a escala do nó em si para 2x ou 3x
+	button.scale = Vector2(2, 2) # Teste mudar para Vector2(3.0, 3.0) se quiser ainda maior!
+	button.flip_h = true
