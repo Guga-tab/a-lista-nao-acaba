@@ -102,3 +102,14 @@ func get_equipped_skin() -> String:
 # Desequipa a skin (volta para a padrão)
 func unequip_skin():
 	equip_skin("default")
+
+
+func reset_user_data() -> void:
+	print("Resetando dados do usuário para teste...")
+	var empty_users: Array = []
+	Database.save_users(empty_users)
+	user_id = -1
+	avatar_id = -1
+	load_or_create_user()
+	coins_changed.emit(0)
+	print("Dados resetados com sucesso!")
