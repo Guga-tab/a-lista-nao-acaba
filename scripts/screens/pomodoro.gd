@@ -5,13 +5,13 @@ extends Control
 @onready var TaskService = preload("res://scripts/services/task_service.gd").new()
 @onready var UserService = preload("res://scripts/services/user_service.gd").new()
 #labels
-@onready var task_input = $Bg/TaskFrame/LineEdit
+@onready var task_input = $Bg/TaskFrame/TaskText
 @onready var button_play_label = $Bg/StartButton/Label
 @onready var button_exit_label  = $Bg/BackButton/Label
 @onready var click_sound = $click_sound
-@onready var minutes : Label = $Bg/ClockBg/MM
-@onready var seconds : Label = $Bg/ClockBg/SS
-@onready var input_task = $Bg/TaskFrame/LineEdit
+@onready var minutes : Label = $Bg/ClockBg/ClockCircle1/MM
+@onready var seconds : Label = $Bg/ClockBg/ClockCircle2/SS
+@onready var input_task = $Bg/TaskFrame/TaskText
 
 var minutes_value = 0
 var seconds_value = 0

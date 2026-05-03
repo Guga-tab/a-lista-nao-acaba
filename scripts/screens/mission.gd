@@ -2,9 +2,9 @@ extends Control
 
 @onready var UserService = preload("res://scripts/services/user_service.gd")
 # Labels do relógio
-@onready var minutes_label: Label = $TextureRect/ClockBg/ClockCircle1/MM
-@onready var seconds_label: Label = $TextureRect/ClockBg/ClockCircle2/SS
-@onready var task_label: Label = $TextureRect/Label
+@onready var minutes_label: Label = $Bg/ClockBg/ClockCircle1/MM
+@onready var seconds_label: Label = $Bg/ClockBg/ClockCircle2/SS
+@onready var task_label: Label = $Bg/TaskText
 @onready var coin_label: Label = $Coin/CoinLabel
 
 var task_text: String

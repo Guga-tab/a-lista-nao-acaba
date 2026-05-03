@@ -93,34 +93,6 @@ offset_right = 1078.1189
 offset_bottom = 1459.0
 texture = ExtResource("11_v11oo")
 
-[node name="MM" type="Label" parent="Bg/ClockBg" unique_id=1046444130]
-z_index = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 243.73552
-offset_top = -16.0
-offset_right = 346.73553
-offset_bottom = 104.0
-grow_vertical = 2
-text = "10"
-label_settings = SubResource("LabelSettings_emtur")
-
-[node name="SS" type="Label" parent="Bg/ClockBg" unique_id=1067672033]
-z_index = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 702.616
-offset_top = -16.0
-offset_right = 825.616
-offset_bottom = 129.0
-grow_vertical = 2
-text = "10"
-label_settings = SubResource("LabelSettings_emtur")
-
 [node name="ClockCircle1" type="TextureRect" parent="Bg/ClockBg" unique_id=1804468878]
 layout_mode = 0
 offset_left = 149.93852
@@ -129,6 +101,20 @@ offset_right = 478.93854
 offset_bottom = 563.0
 texture = ExtResource("9_v11oo")
 
+[node name="MM" type="Label" parent="Bg/ClockBg/ClockCircle1" unique_id=1046444130]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 93.797
+offset_top = -54.5
+offset_right = 196.79701
+offset_bottom = 65.5
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_emtur")
+
 [node name="ClockCircle2" type="TextureRect" parent="Bg/ClockBg" unique_id=989223850]
 layout_mode = 0
 offset_left = 612.5555
@@ -136,6 +122,20 @@ offset_top = 238.0
 offset_right = 941.55554
 offset_bottom = 563.0
 texture = ExtResource("9_v11oo")
+
+[node name="SS" type="Label" parent="Bg/ClockBg/ClockCircle2" unique_id=1067672033]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 90.06055
+offset_top = -54.5
+offset_right = 213.06055
+offset_bottom = 90.5
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_emtur")
 
 [node name="UpDnClock" type="TextureRect" parent="Bg/ClockBg" unique_id=1132662386]
 layout_mode = 0
@@ -225,7 +225,7 @@ offset_right = 1058.5375
 offset_bottom = 767.0
 texture = ExtResource("13_v11oo")
 
-[node name="LineEdit" type="LineEdit" parent="Bg/TaskFrame" unique_id=1343230988]
+[node name="TaskText" type="LineEdit" parent="Bg/TaskFrame" unique_id=1343230988]
 layout_mode = 0
 offset_left = 118.41402
 offset_top = 131.0
@@ -247,5 +247,5 @@ bus = &"sfx"
 [connection signal="pressed" from="Bg/ClockBg/UpDnClock/DnClock" to="." method="_on_dn_clock_pressed"]
 [connection signal="pressed" from="Bg/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Bg/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="text_changed" from="Bg/TaskFrame/LineEdit" to="." method="_on_line_edit_text_changed"]
-[connection signal="text_submitted" from="Bg/TaskFrame/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_changed" from="Bg/TaskFrame/TaskText" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="Bg/TaskFrame/TaskText" to="." method="_on_line_edit_text_submitted"]
