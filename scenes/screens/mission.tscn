@@ -156,28 +156,6 @@ grow_vertical = 2
 text = "10"
 label_settings = SubResource("LabelSettings_yj4cy")
 
-[node name="ClockCircle2" type="TextureRect" parent="Bg/ClockBg" unique_id=1664988830]
-layout_mode = 0
-offset_left = 612.5555
-offset_top = 238.0
-offset_right = 941.55554
-offset_bottom = 563.0
-texture = ExtResource("5_0sm7f")
-
-[node name="SS" type="Label" parent="Bg/ClockBg/ClockCircle2" unique_id=648203652]
-z_index = 1
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 113.94452
-offset_top = -52.5
-offset_right = 236.94452
-offset_bottom = 92.5
-grow_vertical = 2
-text = "10"
-label_settings = SubResource("LabelSettings_yj4cy")
-
 [node name="UpDnClock" type="TextureRect" parent="Bg/ClockBg" unique_id=895047949]
 layout_mode = 0
 offset_left = 476.61642
@@ -186,7 +164,30 @@ offset_right = 616.61646
 offset_bottom = 575.0
 texture = ExtResource("8_0sm7f")
 
+[node name="ClockCircle2" type="TextureRect" parent="Bg/ClockBg" unique_id=708312257]
+layout_mode = 0
+offset_left = 609.5
+offset_top = 239.0
+offset_right = 938.5
+offset_bottom = 564.0
+texture = ExtResource("5_0sm7f")
+
+[node name="SS" type="Label" parent="Bg/ClockBg/ClockCircle2" unique_id=872458112]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 115.0
+offset_top = -58.5
+offset_right = 218.00002
+offset_bottom = 61.5
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_yj4cy")
+
 [node name="Player" parent="." unique_id=797933854 instance=ExtResource("4_0mvd2")]
+position = Vector2(615, 592)
 
 [node name="Coin" parent="." unique_id=671021650 instance=ExtResource("9_bqlt0")]
 layout_mode = 0
