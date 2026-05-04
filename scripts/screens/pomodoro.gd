@@ -13,6 +13,9 @@ extends Control
 @onready var seconds : Label = $Bg/ClockBg/ClockCircle2/SS
 @onready var input_task = $Bg/TaskFrame/TaskText
 
+# Botão Start para podermos travar ele
+@onready var start_button: Button = $Bg/StartButton
+
 var minutes_value = 0
 var seconds_value = 0
 var total_time = 0.0
@@ -20,15 +23,21 @@ var running = false
 var paused = false
 
 func _ready():
-	#insert text in buttons
+	# Insere texto nos botões
 	button_play_label.text = "START"
 	button_exit_label.text = "BACK"
 
 	minutes.text = "%02d" % minutes_value
 	seconds.text = "%02d" % seconds_value
 	
+	# Conecta o sinal do LineEdit/TextEdit se houver um para validar na hora
+	if task_input.has_signal("text_changed"):
+		task_input.text_changed.connect(_on_task_text_changed)
+		
+	# Validação inicial
+	check_start_button_validity()
+
 func _process(delta: float) -> void:
-	
 	if running and total_time > 0:
 		total_time -= delta
 		
@@ -42,9 +51,33 @@ func _process(delta: float) -> void:
 		running = false
 		paused = false
 		button_play_label.text = "START"
-	
+		
+	# Checa continuamente se as condições para liberar o START são válidas
+	check_start_button_validity()
+
+# Função que valida se o jogador escreveu algo e colocou tempo > 0
+func check_start_button_validity() -> void:
+	if start_button:
+		# Verifica se tem texto válido (removendo espaços em branco) e se o tempo é maior que 0
+		var has_text = task_input.text.strip_edges() != ""
+		var has_time = minutes_value > 0 or seconds_value > 0
+		
+		if has_text and has_time:
+			start_button.disabled = false
+			start_button.modulate = Color(1, 1, 1) # Cor normal
+		else:
+			start_button.disabled = true
+			start_button.modulate = Color(0.5, 0.5, 0.5) # Cor apagada (desativado)
+
+func _on_task_text_changed() -> void:
+	check_start_button_validity()
+
 func _on_start_button_pressed() -> void:
+	if start_button.disabled:
+		return
+		
 	click_sound.play()
+	
 	# SALVAR TAREFA
 	if not running and not paused:
 		var description = task_input.text
@@ -72,32 +105,30 @@ func _on_start_button_pressed() -> void:
 
 func _on_config_button_pressed() -> void:
 	click_sound.play()
-	#await click_sound.finished
 	var config_screen = ConfigScreen.instantiate()
 	add_child(config_screen)
 	
 func _on_back_button_pressed() -> void:
 	click_sound.play()
-	#await click_sound.finished
 	get_tree().change_scene_to_file("res://scenes/screens/home.tscn")
 
 func _on_up_clock_pressed() -> void:
-	if(minutes_value < 120):
+	if minutes_value < 120:
 		minutes_value += 1
 		
 		if not running:
 			total_time = minutes_value * 60
+			
+	check_start_button_validity()
 
 func _on_dn_clock_pressed() -> void:
-	if(minutes_value > 0):
+	if minutes_value > 0:
 		minutes_value -= 1
 		
 		if not running:
 			total_time = minutes_value * 60
+			
+	check_start_button_validity()
 
 func _on_line_edit_text_changed(new_text):
-	pass
-	
-# Conecte o sinal 'text_submitted' do LineEdit a esta função
-func _on_line_edit_text_submitted(new_text):
-	pass
+	check_start_button_validity()

@@ -88,6 +88,9 @@ func apply_equipped_decorations() -> void:
 
 func on_task_complete() -> void:
 	UserService.add_coins(10)
+	
+	UserService.update_streak()
+	
 	update_coin_label()
 	
 	await get_tree().create_timer(1.0).timeout

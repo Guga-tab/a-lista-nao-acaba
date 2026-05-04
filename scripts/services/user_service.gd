@@ -39,7 +39,9 @@ func load_or_create_user():
 		"id_usuario": 1,
 		"id_avatar": 1,
 		"coins": 0,
-		"estrelas": 0,
+		"star_balance": 0,
+		"streak_count": 0,
+		"last_streak_date": "",
 		"nome": "User",
 		"data_criacao_conta": Time.get_unix_time_from_system(),
 		"skins_compradas": ["default"], # Skin inicial gratuita
@@ -187,6 +189,87 @@ func get_equipped_decorations() -> Array:
 			if typeof(equipadas) == TYPE_ARRAY:
 				return equipadas
 	return []
+	
+# ===============================================
+# OFENSIVA
+# ===============================================
+
+# Retorna os dados de ofensiva
+func get_streak_data() -> Dictionary:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			return {
+				"count": u.get("streak_count", 0),
+				"last_date": u.get("last_streak_date", "") # Formato "YYYY-MM-DD"
+			}
+	return {"count": 0, "last_date": ""}
+
+# Verifica e atualiza a ofensiva
+# No UserService.gd
+
+# --- LÓGICA DE GANHO (Chamar ao completar a Task na scene Mission) ---
+func update_streak():
+	var users = Database.get_users()
+	var today = Time.get_date_string_from_system()
+	var yesterday = Time.get_date_string_from_unix_time(Time.get_unix_time_from_system() - 86400)
+	
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			var last_date = u.get("last_streak_date", "")
+			if last_date == today: return # Já computou hoje
+			
+			# Incrementa a ofensiva
+			if last_date == yesterday:
+				u["streak_count"] = int(u.get("streak_count", 0)) + 1
+			else:
+				u["streak_count"] = 1 # Começa ou recomeça ofensiva
+			
+			# NOVA REGRA: A cada 3 dias de ofensiva, ganha 5 estrelas
+			if int(u["streak_count"]) % 3 == 0:
+				var current_stars = int(u.get("stars_balance", 0))
+				u["stars_balance"] = current_stars
+				print("Parabéns! +5 estrelas por 3 dias de ofensiva!")
+				
+			u["last_streak_date"] = today
+			break
+	Database.save_users(users)
+
+# --- LÓGICA DE PERDA (Chamar no _ready da Home ou Splash para checar ausência) ---
+func check_streak_expiry():
+	var users = Database.get_users()
+	var today = Time.get_date_string_from_system()
+	var yesterday = Time.get_date_string_from_unix_time(Time.get_unix_time_from_system() - 86400)
+	
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			var last_date = u.get("last_streak_date", "")
+			
+			# Se o usuário não jogou hoje nem ontem, ele está ausente
+			if last_date != "" and last_date != today and last_date != yesterday:
+				# 1. Ofensiva volta para 0
+				u["streak_count"] = 0 
+				
+				# 2. NOVA REGRA: Perde apenas 1 estrela de "multa"
+				var current_stars = int(u.get("stars_balance", 0))
+				if current_stars > 0:
+					u["stars_balance"] = current_stars - 1
+					print("Aviso: -1 estrela por ausência.")
+				
+				# Atualiza a data para "ontem" para não cobrar várias vezes no mesmo dia
+				# se ele abrir e fechar o jogo
+				u["last_streak_date"] = yesterday 
+				
+				Database.save_users(users)
+			break
+			
+# Retorna o saldo real de estrelas para a loja
+func get_stars_balance() -> int:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			return int(u.get("stars_balance", 0))
+	return 0
 # ===============================================
 # RESET DE DADOS PARA TESTES
 # ===============================================
