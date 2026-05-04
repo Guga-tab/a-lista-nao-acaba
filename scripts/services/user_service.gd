@@ -138,31 +138,55 @@ func buy_decoration(deco_id: String):
 	Database.save_users(users)
 
 # ===============================================
-# GESTÃO DE EQUIPAR DECORAÇÕES
+# GESTÃO DE MÚLTIPLAS DECORAÇÕES EQUIPADAS
 # ===============================================
 
-# Equipa uma decoração
+# Retorna se a decoração específica está equipada
+func is_decoration_equipped(deco_id: String) -> bool:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			var equipadas = u.get("decoracoes_equipadas", [])
+			if typeof(equipadas) == TYPE_ARRAY:
+				return deco_id in equipadas
+	return false
+
+# Adiciona uma decoração à lista de equipadas
 func equip_decoration(deco_id: String):
 	var users = Database.get_users()
 	for u in users:
 		if int(u["id_usuario"]) == user_id:
-			u["decoracao_equipada"] = deco_id
+			var equipadas = u.get("decoracoes_equipadas", [])
+			if typeof(equipadas) != TYPE_ARRAY:
+				equipadas = []
+			if not deco_id in equipadas:
+				equipadas.append(deco_id)
+				u["decoracoes_equipadas"] = equipadas
 			break
 	Database.save_users(users)
 
-# Retorna qual decoração está equipada atualmente
-func get_equipped_decoration() -> String:
+# Remove uma decoração da lista de equipadas
+func unequip_decoration(deco_id: String):
 	var users = Database.get_users()
 	for u in users:
 		if int(u["id_usuario"]) == user_id:
-			# Se não tiver nada equipado, retorna vazio "" ou "none", evitando que "default" seja confundido
-			return u.get("decoracao_equipada", "")
-	return ""
+			var equipadas = u.get("decoracoes_equipadas", [])
+			if typeof(equipadas) == TYPE_ARRAY:
+				if deco_id in equipadas:
+					equipadas.erase(deco_id)
+					u["decoracoes_equipadas"] = equipadas
+			break
+	Database.save_users(users)
 
-# Volta para nenhuma decoração (ou padrão)
-func unequip_decoration():
-	equip_decoration("")
-
+# Retorna a lista completa de decorações equipadas
+func get_equipped_decorations() -> Array:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			var equipadas = u.get("decoracoes_equipadas", [])
+			if typeof(equipadas) == TYPE_ARRAY:
+				return equipadas
+	return []
 # ===============================================
 # RESET DE DADOS PARA TESTES
 # ===============================================
