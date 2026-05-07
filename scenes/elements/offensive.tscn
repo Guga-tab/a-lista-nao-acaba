@@ -22,9 +22,9 @@ script = ExtResource("2_8em4p")
 
 [node name="OffensiveLabel" type="Label" parent="." unique_id=643569194]
 layout_mode = 0
-offset_left = -177.27
+offset_left = -278.70746
 offset_top = 49.18
-offset_right = 122.729996
+offset_right = 21.292542
 offset_bottom = 349.18
 text = "0"
 label_settings = SubResource("LabelSettings_v81jl")

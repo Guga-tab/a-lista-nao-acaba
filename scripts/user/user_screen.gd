@@ -1,12 +1,9 @@
 extends Control
-
-@onready var UserService = preload("res://scripts/services/user_service.gd").new()
 # Adicione este @onready no topo do script para referenciar o Sprite2D do personagem
 @onready var character_node = $Character# Ajuste o caminho correto do nó
 
 func _ready() -> void:
 	# CRUCIAL: Adicionar o serviço na cena para ele funcionar
-	add_child(UserService)
 	UserService.load_or_create_user()
 	
 	# Só então atualizamos o visual

@@ -1,6 +1,7 @@
 extends Node
 
 signal coins_changed(new_value)
+signal skin_changed(new_skin_name) # NOVO: Sinal para avisar a troca de skin
 
 var user_id: int = -1
 var avatar_id: int = -1
@@ -39,7 +40,7 @@ func load_or_create_user():
 		"id_usuario": 1,
 		"id_avatar": 1,
 		"coins": 0,
-		"star_balance": 0,
+		"stars_balance": 0,
 		"streak_count": 0,
 		"last_streak_date": "",
 		"nome": "User",
@@ -76,6 +77,28 @@ func get_coins() -> int:
 	return 0
 
 # ===============================================
+# GESTÃO DE ESTRELAS (STARS) - MÉTODOS ADICIONADOS
+# ===============================================
+
+func get_stars_balance() -> int:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			return int(u.get("stars_balance", 0))
+	return 0
+
+func spend_stars(amount: int) -> bool:
+	var users = Database.get_users()
+	for u in users:
+		if int(u["id_usuario"]) == user_id:
+			var balance = int(u.get("stars_balance", 0))
+			if balance >= amount:
+				u["stars_balance"] = balance - amount 
+				Database.save_users(users)
+				return true
+	return false
+
+# ===============================================
 # GESTÃO DE SKINS (COSMÉTICOS)
 # ===============================================
 
@@ -105,7 +128,10 @@ func equip_skin(skin_id: String):
 			u["skin_equipada"] = skin_id
 			break
 	Database.save_users(users)
-
+	
+	# EMITE O SINAL: Avisa que a skin mudou para quem estiver ouvindo (Home)
+	skin_changed.emit(skin_id)
+	
 func get_equipped_skin() -> String:
 	var users = Database.get_users()
 	for u in users:
@@ -212,28 +238,32 @@ func get_streak_data() -> Dictionary:
 func update_streak():
 	var users = Database.get_users()
 	var today = Time.get_date_string_from_system()
-	var yesterday = Time.get_date_string_from_unix_time(Time.get_unix_time_from_system() - 86400)
 	
 	for u in users:
 		if int(u["id_usuario"]) == user_id:
 			var last_date = u.get("last_streak_date", "")
-			if last_date == today: return # Já computou hoje
 			
-			# Incrementa a ofensiva
-			if last_date == yesterday:
-				u["streak_count"] = int(u.get("streak_count", 0)) + 1
-			else:
-				u["streak_count"] = 1 # Começa ou recomeça ofensiva
+			# 1. Verifica se já não atualizou hoje
+			if last_date == today:
+				print("Ofensiva já atualizada hoje. Aguarde até amanhã!")
+				return
 			
-			# NOVA REGRA: A cada 3 dias de ofensiva, ganha 5 estrelas
-			if int(u["streak_count"]) % 3 == 0:
-				var current_stars = int(u.get("stars_balance", 0))
-				u["stars_balance"] = current_stars
-				print("Parabéns! +5 estrelas por 3 dias de ofensiva!")
-				
+			# 2. Incrementa a ofensiva com segurança
+			var current_streak = int(u.get("streak_count", 0)) + 1
+			u["streak_count"] = current_streak
 			u["last_streak_date"] = today
+			
+			print("Ofensiva atualizada: ", current_streak)
+			
+			# 3. Lógica de Recompensa: A cada 3 dias ganha 5 estrelas
+			if current_streak % 3 == 0:
+				var current_stars = int(u.get("stars_balance", 0))
+				u["stars_balance"] = current_stars + 5
+				print("Parabéns! 3 dias de foco: +5 Estrelas. Total: ", u["stars_balance"])
+			
+			# 4. SALVAMENTO CRÍTICO (Persistência no banco)
+			Database.save_users(users)
 			break
-	Database.save_users(users)
 
 # --- LÓGICA DE PERDA (Chamar no _ready da Home ou Splash para checar ausência) ---
 func check_streak_expiry():
@@ -262,14 +292,6 @@ func check_streak_expiry():
 				
 				Database.save_users(users)
 			break
-			
-# Retorna o saldo real de estrelas para a loja
-func get_stars_balance() -> int:
-	var users = Database.get_users()
-	for u in users:
-		if int(u["id_usuario"]) == user_id:
-			return int(u.get("stars_balance", 0))
-	return 0
 # ===============================================
 # RESET DE DADOS PARA TESTES
 # ===============================================

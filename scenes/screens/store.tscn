@@ -61,7 +61,7 @@ position = Vector2(83.5204, 108.00633)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="skin" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1589239292]
+[node name="Bedroom" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1589239292]
 anchors_preset = -1
 anchor_left = -0.1103287
 anchor_top = -0.072494656
@@ -104,7 +104,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1473038559]
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1473038559]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -118,7 +118,7 @@ position = Vector2(245.44772, 108.00633)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1448807352]
+[node name="LivingRoom" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1448807352]
 anchors_preset = -1
 anchor_left = -0.1103287
 anchor_top = -0.072494656
@@ -162,7 +162,7 @@ text = "20"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1631369936]
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1631369936]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -176,7 +176,7 @@ position = Vector2(84.543106, 321.1977)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1922354590]
+[node name="Toilet" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1922354590]
 anchors_preset = -1
 anchor_left = -0.1103287
 anchor_top = -0.072494656
@@ -220,7 +220,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=673191814]
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=673191814]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -234,7 +234,7 @@ position = Vector2(244.08412, 321.1977)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=1014555356]
+[node name="Kitchen" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=1014555356]
 anchors_preset = -1
 anchor_left = -0.1103287
 anchor_top = -0.072494656
@@ -275,7 +275,7 @@ offset_bottom = 234.11217
 text = "50"
 label_settings = SubResource("LabelSettings_gegpc")
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=745429090]
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=745429090]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -293,7 +293,7 @@ position = Vector2(83.5204, 108.00633)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1487086709]
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1487086709]
 anchors_preset = -1
 anchor_right = 0.9089643
 anchor_bottom = 1.0
@@ -334,7 +334,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1813187971]
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1813187971]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -348,7 +348,7 @@ position = Vector2(245.44772, 108.00633)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=459419923]
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=459419923]
 anchors_preset = -1
 anchor_right = 0.89558446
 anchor_bottom = 1.0
@@ -390,7 +390,7 @@ text = "20"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1680990288]
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1680990288]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -404,7 +404,7 @@ position = Vector2(84.543106, 321.1977)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2080887692]
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2080887692]
 anchors_preset = -1
 anchor_right = 0.9089643
 anchor_bottom = 1.0
@@ -446,7 +446,7 @@ text = "10"
 label_settings = SubResource("LabelSettings_gegpc")
 metadata/_edit_use_anchors_ = true
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2005623494]
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2005623494]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899
@@ -460,7 +460,7 @@ position = Vector2(244.08412, 321.1977)
 scale = Vector2(0.3568138, 0.32929444)
 texture = ExtResource("5_0hyjw")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=524261018]
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=524261018]
 anchors_preset = -1
 anchor_top = 0.024165044
 anchor_right = 0.8885422
@@ -500,7 +500,7 @@ offset_bottom = 234.11217
 text = "40"
 label_settings = SubResource("LabelSettings_gegpc")
 
-[node name="start" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1208481835]
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1208481835]
 offset_left = 105.58234
 offset_top = 225.28278
 offset_right = 162.39899

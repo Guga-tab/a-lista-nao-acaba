@@ -1,8 +1,5 @@
 extends Control
 
-# Importa o serviço do usuário
-@onready var UserService = preload("res://scripts/services/user_service.gd").new()
-
 # Labels do relógio e interface
 @onready var minutes_label: Label = $Bg/ClockBg/ClockCircle1/MM
 @onready var seconds_label: Label = $Bg/ClockBg/ClockCircle2/SS
@@ -27,7 +24,6 @@ var finished = false
 
 func _ready() -> void:
 	# Inicializa o serviço do usuário
-	add_child(UserService)
 	UserService.load_or_create_user()
 
 	total_time = minutes_value * 60 + seconds_value
@@ -87,6 +83,7 @@ func apply_equipped_decorations() -> void:
 		deco_kitchen.visible = true
 
 func on_task_complete() -> void:
+	
 	UserService.add_coins(10)
 	
 	UserService.update_streak()

@@ -3,7 +3,7 @@ extends Control
 #popup
 @onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
 @onready var TaskService = preload("res://scripts/services/task_service.gd").new()
-@onready var UserService = preload("res://scripts/services/user_service.gd").new()
+
 #labels
 @onready var task_input = $Bg/TaskFrame/TaskText
 @onready var button_play_label = $Bg/StartButton/Label

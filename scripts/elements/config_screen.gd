@@ -1,6 +1,4 @@
 extends Control
-# Precarrega o UserService para usar a função de reset
-@onready var UserService = preload("res://scripts/services/user_service.gd").new()
 @onready var option_button = $OptionButton
 
 
@@ -8,7 +6,6 @@ extends Control
 func _ready() -> void:
 	option_button.modulate.a = 1.0
 	 # Adiciona o UserService como filho deste nó para ele funcionar corretamente
-	add_child(UserService)
 	
 func _on_exit_button_pressed() -> void:
 	queue_free()

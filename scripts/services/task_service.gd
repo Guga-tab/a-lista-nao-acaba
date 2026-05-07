@@ -4,7 +4,7 @@ var main_scene: Node = null
 
 func _ready():
 	add_child(Database)
-	add_child(user_service)
+	add_child(UserService)
 
 func set_main(main_ref: Node):
 	main_scene = main_ref
@@ -14,7 +14,7 @@ func create_task(title: String, desc: String, time: float) -> void:
 		push_error("Descrição não pode ser vazio") 
 		return
 
-	var ids = user_service.get_user_ids()
+	var ids = UserService.get_user_ids()
 	var tasks = Database.get_tasks()
 
 	var new_task = {
@@ -43,7 +43,7 @@ func complete_task(task_id: int) -> void:
 			t["data_conclusao"] = Time.get_unix_time_from_system()
 
 			var coins = int(t["coins_recompensa"])
-			user_service.add_coins(coins)
+			UserService.add_coins(coins)
 			break
 
 	Database.save_tasks(tasks)
@@ -55,7 +55,7 @@ func update_list(vbox: VBoxContainer, main_ref: Node = null) -> void:
 	if main_ref != null:
 		main_scene = main_ref
 
-	var ids = user_service.get_user_ids()
+	var ids = UserService.get_user_ids()
 	var tasks = Database.get_tasks()
 
 	for child in vbox.get_children():

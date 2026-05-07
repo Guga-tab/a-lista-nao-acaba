@@ -16,13 +16,10 @@ extends Control
 @onready var Cbutton3 = $"TextureRect/TabContainer/Costumes/Cos3/Button"
 @onready var Cbutton4 = $"TextureRect/TabContainer/Costumes/Cos4/Button"
 
-@onready var UserService = preload("res://scripts/services/user_service.gd").new()
-
 var cosmetic_ids: Dictionary = {}
 var deco_ids: Dictionary = {}
 
 func _ready() -> void:
-	add_child(UserService)
 	UserService.load_or_create_user()
 
 	# 1. Registro de Cosméticos

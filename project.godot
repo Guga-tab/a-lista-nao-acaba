@@ -25,7 +25,8 @@ config/icon="uid://ccpxwabmmiw27"
 BackgroundSong="*uid://ckn5xa220h6dk"
 ClickSound="*uid://cx3wiwa8jj6ew"
 Database="*res://scripts/database.gd"
-user_service="*uid://72gqjx4oib5d"
+UserService="*uid://72gqjx4oib5d"
+TaskService="*uid://c7glo058s71y5"
 
 [display]
 
