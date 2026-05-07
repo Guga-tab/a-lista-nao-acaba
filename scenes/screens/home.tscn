@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="4_sml0d"]
 [ext_resource type="PackedScene" uid="uid://dw8683kdkjrsd" path="res://scenes/elements/star.tscn" id="5_ioo2v"]
 [ext_resource type="PackedScene" uid="uid://civos6uapbs02" path="res://scenes/elements/offensive.tscn" id="6_vrxxn"]
-[ext_resource type="Texture2D" uid="uid://dbs53i0vanfji" path="res://assets/backgrounds/house.png" id="7_d6qb1"]
-[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="9_i2m5s"]
-[ext_resource type="Texture2D" uid="uid://bupujvdomej13" path="res://fonts/black_bar.png" id="10_6sy1k"]
+[ext_resource type="Texture2D" uid="uid://bup6asklqdwqi" path="res://assets/backgrounds/house_default.png" id="7_ioo2v"]
+[ext_resource type="Texture2D" uid="uid://c4df0xthxpmmu" path="res://assets/fornitures/bedroom.png" id="8_vrxxn"]
+[ext_resource type="Texture2D" uid="uid://d00lkqkv1xxup" path="res://assets/fornitures/kitchen.png" id="9_d6qb1"]
+[ext_resource type="Texture2D" uid="uid://fmducumyysqg" path="res://assets/fornitures/living_room.png" id="10_ivi0p"]
 [ext_resource type="PackedScene" uid="uid://japv55g355ky" path="res://scenes/elements/map.tscn" id="11_bqcys"]
+[ext_resource type="Texture2D" uid="uid://bsgrlxd40ofaj" path="res://assets/fornitures/toilet.png" id="11_i2m5s"]
 [ext_resource type="PackedScene" uid="uid://coi1y85way7lh" path="res://scenes/elements/task.tscn" id="12_xi2nm"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/elements/character.tscn" id="12_yhiqx"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/home/clock.gd" id="13_2mya4"]
@@ -21,11 +23,6 @@
 [sub_resource type="Theme" id="Theme_sf0on"]
 default_font = ExtResource("1_eiuvs")
 default_font_size = 40
-
-[sub_resource type="LabelSettings" id="LabelSettings_rpgsi"]
-font = ExtResource("9_i2m5s")
-font_size = 39
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_ommbi"]
 default_font = ExtResource("1_eiuvs")
@@ -80,62 +77,54 @@ offset_top = 211.00002
 offset_right = 1207.9001
 offset_bottom = 549.4366
 
-[node name="Room" type="TextureRect" parent="Bg" unique_id=679648907]
-layout_mode = 0
-offset_left = 136.17612
-offset_top = 606.0
-offset_right = 1160.1761
-offset_bottom = 1630.0
-scale = Vector2(0.80509734, 0.7936535)
-mouse_filter = 2
-texture = ExtResource("7_d6qb1")
-
-[node name="TextBlackBar" type="Label" parent="Bg" unique_id=703416742]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -166.99585
-offset_top = 69.5
-offset_right = 37.00415
-offset_bottom = 118.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "WELCOME"
-label_settings = SubResource("LabelSettings_rpgsi")
-
-[node name="BlackBar" type="TextureRect" parent="Bg" unique_id=1376563812]
+[node name="Room" type="TextureRect" parent="Bg" unique_id=1900774230]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -327.84155
-offset_top = 1386.0
-offset_right = 345.14478
-offset_bottom = 1563.0
+offset_left = -456.0
+offset_top = 609.0
+offset_right = 315.6405
+offset_bottom = 1107.5288
 grow_horizontal = 2
-texture = ExtResource("10_6sy1k")
+scale = Vector2(1.2415404, 1.7912706)
+texture = ExtResource("7_ioo2v")
 expand_mode = 1
 
-[node name="TextBlackBar2" type="Label" parent="Bg" unique_id=1281770143]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 31.347595
-offset_top = 69.5
-offset_right = 235.3476
-offset_bottom = 118.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "FULANO"
-label_settings = SubResource("LabelSettings_rpgsi")
+[node name="Bedroom" type="TextureRect" parent="Bg/Room" unique_id=1264629150]
+layout_mode = 0
+offset_left = 20.941734
+offset_top = 25.680096
+offset_right = 349.56573
+offset_bottom = 251.7766
+texture = ExtResource("8_vrxxn")
+expand_mode = 1
+
+[node name="Kitchen" type="TextureRect" parent="Bg/Room" unique_id=1009756092]
+layout_mode = 0
+offset_left = 1.6109009
+offset_top = 282.48105
+offset_right = 374.5347
+offset_bottom = 471.7322
+texture = ExtResource("9_d6qb1")
+expand_mode = 1
+
+[node name="LivingRoom" type="TextureRect" parent="Bg/Room" unique_id=851077709]
+layout_mode = 0
+offset_left = 356.00934
+offset_top = 34.05403
+offset_right = 719.2677
+offset_bottom = 282.05402
+texture = ExtResource("10_ivi0p")
+
+[node name="Toilet" type="TextureRect" parent="Bg/Room" unique_id=1286854716]
+layout_mode = 0
+offset_left = 433.3326
+offset_top = 296.99588
+offset_right = 731.3495
+offset_bottom = 467.26605
+texture = ExtResource("11_i2m5s")
+expand_mode = 1
 
 [node name="Map" parent="." unique_id=578311879 instance=ExtResource("11_bqcys")]
 visible = false

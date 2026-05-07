@@ -4,26 +4,33 @@ extends Control
 @onready var character_node = $Character
 
 # ========================
+# NÓS DAS DECORAÇÕES (Home)
+# Certifique-se de que estes caminhos existem na sua cena Home!
+# ========================
+@onready var deco_bedroom = $Bg/Room/Bedroom
+@onready var deco_living_room = $Bg/Room/LivingRoom
+@onready var deco_toilet = $Bg/Room/Toilet
+@onready var deco_kitchen = $Bg/Room/Kitchen
+
+# ========================
 # Nodes of scene
 # ========================
 @onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
-@onready var Credits = preload("res://scenes/pop_ups/credits.tscn")
-@onready var btn_calendar = $Bg/Room/CalendarButton
-@onready var vbox_tasks = $VBoxTasks
 @onready var coin_label = $Bg/Coin/CoinLabel
 @onready var text_black_bar = $Bg/TextBlackBar
 @onready var click_sound = $click_sound
 
 func _ready():
 	# Up services
-	add_child(TaskService)
 	UserService.load_or_create_user()
 	
 	# CONEXÃO: Sempre que o UserService avisar que a skin mudou, roda a função abaixo
 	if not UserService.skin_changed.is_connected(_on_skin_changed):
 		UserService.skin_changed.connect(_on_skin_changed)
 	
+	# Carregamento Inicial (Skins e Decorações) 
 	update_character_skin()
+	apply_equipped_decorations() # Chamada inicial para mostrar os cômodos comprados
 	
 	# Update main UI
 	update_coin_label()
@@ -31,6 +38,7 @@ func _ready():
 # Função chamada automaticamente quando o sinal 'skin_changed' é emitido
 func _on_skin_changed(_new_skin_name: String):
 	update_character_skin()
+
 # ===============================
 # UPDATE COINS ON SCREEN
 # ===============================
@@ -52,18 +60,14 @@ func update_character_skin() -> void:
 
 	var skin_path = "res://assets/characters/skins/" + equipped_skin + ".png"
 	var default_path = "res://assets/characters/skins/default.png"
-
-	# Tamanho desejado para o personagem na Home (pode ajustar à vontade)
 	var novo_tamanho = Vector2(150, 250)
 
-	# Buscamos o nó TextureButton dentro da subcena instanciada Character
 	var texture_button = character_node.get_node("TextureButton") as TextureButton
 
 	if texture_button == null:
 		push_error("ERRO GRAVE: O TextureButton não foi encontrado dentro do nó Character!")
 		return
 
-	# Limpa a textura antiga para evitar "fantasmas" visuais antes de carregar a nova
 	texture_button.texture_normal = null
 	
 	if ResourceLoader.exists(skin_path):
@@ -75,20 +79,34 @@ func update_character_skin() -> void:
 		_aplicar_redimensionamento_button(texture_button, novo_tamanho)
 		print("Skin equipada não foi encontrada. Carregando a padrão: default.png")
 	else:
-		push_error("ERRO GRAVE: Nem a skin equipada nem a padrão (default.png) foram encontradas!")
-		# Tenta carregar a skin salva do usuário
+		push_error("ERRO GRAVE: Nem a skin equipada nem a padrão encontradas!")
 
-# Função auxiliar para redimensionar o TextureButton mantendo a proporção
+# ====================================================
+# FUNÇÃO PARA EXIBIR/OCULTAR AS DECORAÇÕES (Idêntica à Missão) [cite: 166]
+# ====================================================
+func apply_equipped_decorations() -> void:
+	var equipped_decorations = UserService.get_equipped_decorations()
+
+	# Esconde todas por padrão antes de checar as equipadas [cite: 166]
+	if deco_bedroom: deco_bedroom.visible = false
+	if deco_living_room: deco_living_room.visible = false
+	if deco_toilet: deco_toilet.visible = false
+	if deco_kitchen: deco_kitchen.visible = false
+
+	# Torna visíveis apenas as que estiverem no Array de equipadas 
+	if "bedroom" in equipped_decorations and deco_bedroom:
+		deco_bedroom.visible = true
+	if "living_room" in equipped_decorations and deco_living_room:
+		deco_living_room.visible = true
+	if "toilet" in equipped_decorations and deco_toilet:
+		deco_toilet.visible = true
+	if "kitchen" in equipped_decorations and deco_kitchen:
+		deco_kitchen.visible = true
+
 func _aplicar_redimensionamento_button(button: TextureButton, size: Vector2) -> void:
-	# 1. Permite que a textura ignore o tamanho original e estique
 	button.ignore_texture_size = true
 	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-
-	# 2. Define o tamanho em pixels da caixa do botão
 	button.custom_minimum_size = size
 	button.size = size
-
-	# 3. FORÇA A ESCALA (Multiplicador visual)
-	# Se 300x300 ainda estiver pequeno, aumentamos a escala do nó em si para 2x ou 3x
-	button.scale = Vector2(2, 2) # Teste mudar para Vector2(3.0, 3.0) se quiser ainda maior!
+	button.scale = Vector2(2, 2)
 	button.flip_h = true
