@@ -1,10 +1,10 @@
 extends Control
 
-#popup
+# PopUp
 @onready var ConfigScreen = preload("res://scenes/pop_ups/config.tscn")
 @onready var TaskService = preload("res://scripts/services/task_service.gd").new()
 
-#labels
+# Labels
 @onready var task_input = $Bg/TaskFrame/TaskText
 @onready var button_play_label = $Bg/StartButton/Label
 @onready var button_exit_label  = $Bg/BackButton/Label
@@ -13,7 +13,6 @@ extends Control
 @onready var seconds : Label = $Bg/ClockBg/ClockCircle2/SS
 @onready var input_task = $Bg/TaskFrame/TaskText
 
-# Botão Start para podermos travar ele
 @onready var start_button: Button = $Bg/StartButton
 
 var minutes_value = 0
@@ -23,18 +22,16 @@ var running = false
 var paused = false
 
 func _ready():
-	# Insere texto nos botões
+
 	button_play_label.text = "START"
 	button_exit_label.text = "BACK"
 
 	minutes.text = "%02d" % minutes_value
 	seconds.text = "%02d" % seconds_value
 	
-	# Conecta o sinal do LineEdit/TextEdit se houver um para validar na hora
 	if task_input.has_signal("text_changed"):
 		task_input.text_changed.connect(_on_task_text_changed)
 		
-	# Validação inicial
 	check_start_button_validity()
 
 func _process(delta: float) -> void:
@@ -52,22 +49,20 @@ func _process(delta: float) -> void:
 		paused = false
 		button_play_label.text = "START"
 		
-	# Checa continuamente se as condições para liberar o START são válidas
 	check_start_button_validity()
 
-# Função que valida se o jogador escreveu algo e colocou tempo > 0
+	# Block pomodoro start
 func check_start_button_validity() -> void:
 	if start_button:
-		# Verifica se tem texto válido (removendo espaços em branco) e se o tempo é maior que 0
 		var has_text = task_input.text.strip_edges() != ""
 		var has_time = minutes_value > 0 or seconds_value > 0
 		
 		if has_text and has_time:
 			start_button.disabled = false
-			start_button.modulate = Color(1, 1, 1) # Cor normal
+			start_button.modulate = Color(1, 1, 1)
 		else:
 			start_button.disabled = true
-			start_button.modulate = Color(0.5, 0.5, 0.5) # Cor apagada (desativado)
+			start_button.modulate = Color(0.5, 0.5, 0.5)
 
 func _on_task_text_changed() -> void:
 	check_start_button_validity()
@@ -78,7 +73,7 @@ func _on_start_button_pressed() -> void:
 		
 	click_sound.play()
 	
-	# SALVAR TAREFA
+	# Save Task
 	if not running and not paused:
 		var description = task_input.text
 		var title = ""
@@ -100,7 +95,6 @@ func _on_start_button_pressed() -> void:
 		get_tree().current_scene.call_deferred("free")
 		get_tree().root.add_child(mission_scene)
 		get_tree().current_scene = mission_scene
-		
 		return
 
 func _on_config_button_pressed() -> void:

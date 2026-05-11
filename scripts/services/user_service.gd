@@ -1,7 +1,7 @@
 extends Node
 
 signal coins_changed(new_value)
-signal skin_changed(new_skin_name) # NOVO: Sinal para avisar a troca de skin
+signal skin_changed(new_skin_name)
 
 var user_id: int = -1
 var avatar_id: int = -1
@@ -17,25 +17,21 @@ func load_or_create_user():
 		user_id = int(u["id_usuario"])
 		avatar_id = int(u["id_avatar"])
 		
-		# --- COMPATIBILIDADE COM DADOS ANTIGOS ---
-		# Garante que as chaves existam caso o usuário seja antigo
 		if not u.has("skins_compradas"):
 			u["skins_compradas"] = ["default"]
 		if not u.has("skin_equipada"):
 			u["skin_equipada"] = "default"
 			
-		# Garante suporte a decorações compradas para usuários antigos
 		if not u.has("decoracoes_compradas"):
 			u["decoracoes_compradas"] = []
 		
-		# NOVA CHAVE: Garante que a chave da decoração equipada exista
 		if not u.has("decoracao_equipada"):
 			u["decoracao_equipada"] = "default"
 			
-		Database.save_users(users) # Salva as novas chaves estruturais criadas
+		Database.save_users(users)
 		return
 
-	# --- CRIAÇÃO DE NOVO USUÁRIO ---
+	# New user
 	var user = {
 		"id_usuario": 1,
 		"id_avatar": 1,
@@ -45,10 +41,10 @@ func load_or_create_user():
 		"last_streak_date": "",
 		"nome": "User",
 		"data_criacao_conta": Time.get_unix_time_from_system(),
-		"skins_compradas": ["default"], # Skin inicial gratuita
+		"skins_compradas": ["default"],
 		"skin_equipada": "default",
-		"decoracoes_compradas": [],     # Sem decorações compradas inicialmente
-		"decoracao_equipada": "default" # Decoração padrão equipada
+		"decoracoes_compradas": [],
+		"decoracao_equipada": "default"
 	}
 
 	users.append(user)
@@ -76,10 +72,8 @@ func get_coins() -> int:
 			return int(u["coins"])
 	return 0
 
-# ===============================================
-# GESTÃO DE ESTRELAS (STARS) - MÉTODOS ADICIONADOS
-# ===============================================
 
+# Star
 func get_stars_balance() -> int:
 	var users = Database.get_users()
 	for u in users:
@@ -98,10 +92,7 @@ func spend_stars(amount: int) -> bool:
 				return true
 	return false
 
-# ===============================================
-# GESTÃO DE SKINS (COSMÉTICOS)
-# ===============================================
-
+# Skin
 func has_skin(skin_id: String) -> bool:
 	var users = Database.get_users()
 	for u in users:
@@ -129,7 +120,6 @@ func equip_skin(skin_id: String):
 			break
 	Database.save_users(users)
 	
-	# EMITE O SINAL: Avisa que a skin mudou para quem estiver ouvindo (Home)
 	skin_changed.emit(skin_id)
 	
 func get_equipped_skin() -> String:
@@ -142,10 +132,7 @@ func get_equipped_skin() -> String:
 func unequip_skin():
 	equip_skin("default")
 
-# ===============================================
-# GESTÃO DE DECORAÇÕES
-# ===============================================
-
+# Decoration
 func has_decoration(deco_id: String) -> bool:
 	var users = Database.get_users()
 	for u in users:
@@ -165,11 +152,6 @@ func buy_decoration(deco_id: String):
 			break
 	Database.save_users(users)
 
-# ===============================================
-# GESTÃO DE MÚLTIPLAS DECORAÇÕES EQUIPADAS
-# ===============================================
-
-# Retorna se a decoração específica está equipada
 func is_decoration_equipped(deco_id: String) -> bool:
 	var users = Database.get_users()
 	for u in users:
@@ -179,7 +161,6 @@ func is_decoration_equipped(deco_id: String) -> bool:
 				return deco_id in equipadas
 	return false
 
-# Adiciona uma decoração à lista de equipadas
 func equip_decoration(deco_id: String):
 	var users = Database.get_users()
 	for u in users:
@@ -193,7 +174,6 @@ func equip_decoration(deco_id: String):
 			break
 	Database.save_users(users)
 
-# Remove uma decoração da lista de equipadas
 func unequip_decoration(deco_id: String):
 	var users = Database.get_users()
 	for u in users:
@@ -206,7 +186,6 @@ func unequip_decoration(deco_id: String):
 			break
 	Database.save_users(users)
 
-# Retorna a lista completa de decorações equipadas
 func get_equipped_decorations() -> Array:
 	var users = Database.get_users()
 	for u in users:
@@ -216,25 +195,17 @@ func get_equipped_decorations() -> Array:
 				return equipadas
 	return []
 	
-# ===============================================
-# OFENSIVA
-# ===============================================
-
-# Retorna os dados de ofensiva
+# Offensive
 func get_streak_data() -> Dictionary:
 	var users = Database.get_users()
 	for u in users:
 		if int(u["id_usuario"]) == user_id:
 			return {
 				"count": u.get("streak_count", 0),
-				"last_date": u.get("last_streak_date", "") # Formato "YYYY-MM-DD"
+				"last_date": u.get("last_streak_date", "") # Format "YYYY-MM-DD"
 			}
 	return {"count": 0, "last_date": ""}
 
-# Verifica e atualiza a ofensiva
-# No UserService.gd
-
-# --- LÓGICA DE GANHO (Chamar ao completar a Task na scene Mission) ---
 func update_streak():
 	var users = Database.get_users()
 	var today = Time.get_date_string_from_system()
@@ -243,29 +214,24 @@ func update_streak():
 		if int(u["id_usuario"]) == user_id:
 			var last_date = u.get("last_streak_date", "")
 			
-			# 1. Verifica se já não atualizou hoje
 			if last_date == today:
 				print("Ofensiva já atualizada hoje. Aguarde até amanhã!")
 				return
 			
-			# 2. Incrementa a ofensiva com segurança
 			var current_streak = int(u.get("streak_count", 0)) + 1
 			u["streak_count"] = current_streak
 			u["last_streak_date"] = today
 			
 			print("Ofensiva atualizada: ", current_streak)
 			
-			# 3. Lógica de Recompensa: A cada 3 dias ganha 5 estrelas
 			if current_streak % 3 == 0:
 				var current_stars = int(u.get("stars_balance", 0))
 				u["stars_balance"] = current_stars + 5
 				print("Parabéns! 3 dias de foco: +5 Estrelas. Total: ", u["stars_balance"])
 			
-			# 4. SALVAMENTO CRÍTICO (Persistência no banco)
 			Database.save_users(users)
 			break
 
-# --- LÓGICA DE PERDA (Chamar no _ready da Home ou Splash para checar ausência) ---
 func check_streak_expiry():
 	var users = Database.get_users()
 	var today = Time.get_date_string_from_system()
@@ -275,26 +241,20 @@ func check_streak_expiry():
 		if int(u["id_usuario"]) == user_id:
 			var last_date = u.get("last_streak_date", "")
 			
-			# Se o usuário não jogou hoje nem ontem, ele está ausente
 			if last_date != "" and last_date != today and last_date != yesterday:
-				# 1. Ofensiva volta para 0
 				u["streak_count"] = 0 
 				
-				# 2. NOVA REGRA: Perde apenas 1 estrela de "multa"
 				var current_stars = int(u.get("stars_balance", 0))
 				if current_stars > 0:
 					u["stars_balance"] = current_stars - 1
 					print("Aviso: -1 estrela por ausência.")
 				
-				# Atualiza a data para "ontem" para não cobrar várias vezes no mesmo dia
-				# se ele abrir e fechar o jogo
 				u["last_streak_date"] = yesterday 
 				
 				Database.save_users(users)
 			break
-# ===============================================
-# RESET DE DADOS PARA TESTES
-# ===============================================
+
+# Reset Data
 func reset_user_data() -> void:
 	print("Resetando dados do usuário para teste...")
 	var empty_users: Array = []

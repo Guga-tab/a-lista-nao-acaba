@@ -37,13 +37,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_8q7jh")
 
-[node name="DefaultBg" type="TextureRect" parent="." unique_id=1961460087]
+[node name="Bg" type="TextureRect" parent="." unique_id=1961460087]
 layout_mode = 1
 offset_right = 1080.0
 offset_bottom = 2747.0
 texture = ExtResource("2_v7ot4")
 
-[node name="TitleBg" type="TextureRect" parent="DefaultBg" unique_id=110604540]
+[node name="TitleBg" type="TextureRect" parent="Bg" unique_id=110604540]
 layout_mode = 0
 offset_left = -82.0
 offset_top = -134.0
@@ -53,7 +53,7 @@ mouse_filter = 2
 texture = ExtResource("3_ugltb")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="DefaultBg/TitleBg" unique_id=262331371]
+[node name="Label" type="Label" parent="Bg/TitleBg" unique_id=262331371]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,7 +70,7 @@ label_settings = SubResource("LabelSettings_s4lrb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DefaultBg" unique_id=1584737332]
+[node name="VBoxContainer" type="VBoxContainer" parent="Bg" unique_id=1584737332]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -86,11 +86,11 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 80
 
-[node name="PlayButton" parent="DefaultBg/VBoxContainer" unique_id=137207077 instance=ExtResource("4_ugltb")]
+[node name="PlayButton" parent="Bg/VBoxContainer" unique_id=137207077 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "TEXTO"
 
-[node name="Label" type="Label" parent="DefaultBg/VBoxContainer/PlayButton" unique_id=1194344088]
+[node name="Label" type="Label" parent="Bg/VBoxContainer/PlayButton" unique_id=1194344088]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,11 +106,11 @@ grow_vertical = 2
 text = "PLAY"
 label_settings = SubResource("LabelSettings_dc4i4")
 
-[node name="ExitButton" parent="DefaultBg/VBoxContainer" unique_id=102119678 instance=ExtResource("4_ugltb")]
+[node name="ExitButton" parent="Bg/VBoxContainer" unique_id=102119678 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "EXIT"
 
-[node name="Label" type="Label" parent="DefaultBg/VBoxContainer/ExitButton" unique_id=741820767]
+[node name="Label" type="Label" parent="Bg/VBoxContainer/ExitButton" unique_id=741820767]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -128,7 +128,7 @@ label_settings = SubResource("LabelSettings_e54dn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ConfigButton" parent="DefaultBg" unique_id=1908190728 instance=ExtResource("6_v0ibo")]
+[node name="ConfigButton" parent="Bg" unique_id=1908190728 instance=ExtResource("6_v0ibo")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -140,7 +140,7 @@ offset_bottom = -618.0
 grow_vertical = 0
 scale = Vector2(0.493, 0.482)
 
-[node name="CreditsButton" parent="DefaultBg" unique_id=624023024 instance=ExtResource("5_vr0a7")]
+[node name="CreditsButton" parent="Bg" unique_id=624023024 instance=ExtResource("5_vr0a7")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -156,7 +156,7 @@ flat = true
 stream = ExtResource("7_yit7y")
 bus = &"sfx"
 
-[connection signal="pressed" from="DefaultBg/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="DefaultBg/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="DefaultBg/ConfigButton" to="." method="_on_config_button_pressed"]
-[connection signal="pressed" from="DefaultBg/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Bg/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Bg/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Bg/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="Bg/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://coi1y85way7lh" path="res://scenes/elements/task.tscn" id="12_xi2nm"]
 [ext_resource type="PackedScene" uid="uid://bkmn5k25awrpd" path="res://scenes/elements/character.tscn" id="12_yhiqx"]
 [ext_resource type="Script" uid="uid://cogl85fxukc6c" path="res://scripts/home/clock.gd" id="13_2mya4"]
-[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/icons/calender.png" id="14_cvsp7"]
+[ext_resource type="Texture2D" uid="uid://cpu1u1hbila5a" path="res://assets/elements/calender.png" id="14_cvsp7"]
 [ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="15_aaxut"]
 [ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="16_bhaln"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="17_vahvf"]

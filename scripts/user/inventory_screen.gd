@@ -1,16 +1,13 @@
 extends Control
 
-# ========================
-# Decorações
-# ========================
+# Decorations
 @onready var Dbutton1 = $"TextureRect/TabContainer/Decoration/Dec/Button"
 @onready var Dbutton2 = $"TextureRect/TabContainer/Decoration/Dec2/Button"
 @onready var Dbutton3 = $"TextureRect/TabContainer/Decoration/Dec3/Button"
 @onready var Dbutton4 = $"TextureRect/TabContainer/Decoration/Dec4/Button"
 
-# ========================
-# Cosméticos
-# ========================
+
+# Cosmetics
 @onready var Cbutton1 = $"TextureRect/TabContainer/Costumes/Cos/Button"
 @onready var Cbutton2 = $"TextureRect/TabContainer/Costumes/Cos2/Button"
 @onready var Cbutton3 = $"TextureRect/TabContainer/Costumes/Cos3/Button"
@@ -22,19 +19,16 @@ var deco_ids: Dictionary = {}
 func _ready() -> void:
 	UserService.load_or_create_user()
 
-	# 1. Registro de Cosméticos
 	cosmetic_ids[Cbutton1] = "garden"
 	cosmetic_ids[Cbutton2] = "purple_pink"
 	cosmetic_ids[Cbutton3] = "natal"
 	cosmetic_ids[Cbutton4] = "black_manba"
 
-	# 2. Registro de Decorações
 	deco_ids[Dbutton1] = "bedroom"
 	deco_ids[Dbutton2] = "living_room"
 	deco_ids[Dbutton3] = "toilet"
 	deco_ids[Dbutton4] = "kitchen"
 
-	# Conecta os sinais de clique nos botões válidos
 	for btn in cosmetic_ids.keys() + deco_ids.keys():
 		if btn == null: 
 			continue
@@ -42,7 +36,6 @@ func _ready() -> void:
 			btn.pressed.disconnect(_on_equip_click)
 		btn.pressed.connect(_on_equip_click.bind(btn))
 	
-	# Atualiza o inventário visualmente
 	update_inventory_ui()
 
 
@@ -56,30 +49,27 @@ func update_inventory_ui() -> void:
 		var has_item = false
 		var is_equipped = false
 		
-		# Verifica se o jogador possui o item e se está equipado
 		if btn in deco_ids:
 			var deco_id = deco_ids[btn]
 			has_item = UserService.has_decoration(deco_id)
-			# Agora checa se este ID específico está na lista de equipados
 			is_equipped = UserService.is_decoration_equipped(deco_id)
 		else:
 			var skin_id = cosmetic_ids[btn]
 			has_item = UserService.has_skin(skin_id)
 			is_equipped = (skin_id == equipped_skin)
 
-		# Aplica as regras visuais
 		if has_item:
 			btn.disabled = false
 			if is_equipped:
 				if lbl: lbl.text = "EQUIPADO"
-				btn.modulate = Color(0.5, 1.0, 0.5) # Verde (equipado)
+				btn.modulate = Color(0.5, 1.0, 0.5)
 			else:
 				if lbl: lbl.text = "EQUIPAR"
-				btn.modulate = Color(1, 1, 1) # Normal (disponível para equipar)
+				btn.modulate = Color(1, 1, 1)
 		else:
 			if lbl: lbl.text = "BLOQUEADO"
 			btn.disabled = true
-			btn.modulate = Color(0.3, 0.3, 0.3) # Cinza escuro (bloqueado)
+			btn.modulate = Color(0.3, 0.3, 0.3)
 
 
 func _on_equip_click(botao_clicado: Button) -> void:
@@ -88,8 +78,6 @@ func _on_equip_click(botao_clicado: Button) -> void:
 
 	if botao_clicado in deco_ids:
 		var deco_id = deco_ids[botao_clicado]
-		
-		# Se já está equipado, remove da lista de equipados. Se não, adiciona.
 		if UserService.is_decoration_equipped(deco_id):
 			UserService.unequip_decoration(deco_id)
 		else:
@@ -103,7 +91,6 @@ func _on_equip_click(botao_clicado: Button) -> void:
 		else:
 			UserService.equip_skin(skin_id)
 			
-	# Atualiza a interface
 	update_inventory_ui()
 
 

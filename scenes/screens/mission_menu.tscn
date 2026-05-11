@@ -1,13 +1,12 @@
-[gd_scene format=3 uid="uid://de3yffvhc0efg"]
+[gd_scene format=3 uid="uid://c4t5u20btlrr1"]
 
 [ext_resource type="Texture2D" uid="uid://dgu0qcn6gat8m" path="res://assets/backgrounds/mission_background.png" id="1_3wtyk"]
 [ext_resource type="Texture2D" uid="uid://bmfuek6dlbdka" path="res://assets/backgrounds/mission_path.png" id="2_6mfd4"]
-[ext_resource type="Texture2D" uid="uid://r8vf07aqpqgk" path="res://assets/icons/char.png" id="3_nuruv"]
-[ext_resource type="Texture2D" uid="uid://cdum073lq3e6e" path="res://assets/icons/tree1.png" id="4_2fmf2"]
-[ext_resource type="Texture2D" uid="uid://duklmmo1hfob4" path="res://assets/icons/tree2.png" id="5_huhse"]
+[ext_resource type="Texture2D" uid="uid://r8vf07aqpqgk" path="res://assets/characters/misson.png" id="3_nuruv"]
+[ext_resource type="Texture2D" uid="uid://cdum073lq3e6e" path="res://assets/elements/tree1.png" id="4_2fmf2"]
+[ext_resource type="Texture2D" uid="uid://duklmmo1hfob4" path="res://assets/elements/tree2.png" id="5_huhse"]
 [ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="6_2fmf2"]
 [ext_resource type="FontFile" uid="uid://noxa3dpws2ju" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="7_huhse"]
-[ext_resource type="Texture2D" uid="uid://bkwmserr4l3of" path="res://assets/buttons/mission_button.png" id="8_mceua"]
 
 [sub_resource type="GDScript" id="GDScript_mceua"]
 script/source = "extends Control
@@ -23,6 +22,9 @@ script/source = "extends Button
 [sub_resource type="LabelSettings" id="LabelSettings_2fmf2"]
 font = ExtResource("7_huhse")
 font_size = 90
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xcnmj"]
+load_path = "res://.godot/imported/mission_button.png-1c41a08748681bc02c3f4963fbd6a5a1.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_hiav7"]
 font = ExtResource("7_huhse")
@@ -91,7 +93,7 @@ offset_top = 1362.0001
 offset_right = 988.0
 offset_bottom = 1862.0001
 scale = Vector2(0.51446503, 0.4993259)
-texture_normal = ExtResource("8_mceua")
+texture_normal = SubResource("CompressedTexture2D_xcnmj")
 
 [node name="Label" type="Label" parent="MissionButton" unique_id=1373619234]
 layout_mode = 0

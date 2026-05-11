@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://dkksi682m1crl"]
+[gd_scene format=3 uid="uid://jlm738rqu8nm"]
 
-[ext_resource type="Script" uid="uid://1drjvgtpxsub" path="res://scripts/elements/pop_up.gd" id="1_uoqr3"]
-[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/backgrounds/popup_painting.png" id="2_feq0a"]
+[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/frames/popup_painting.png" id="2_feq0a"]
 [ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="3_p7iwp"]
 [ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="4_nj15q"]
+
+[sub_resource type="GDScript" id="GDScript_ge4wn"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/screens/title.tscn\")
+"
 
 [node name="Credits" type="Control" unique_id=446378054]
 z_index = 2
@@ -19,7 +28,7 @@ offset_right = 596.0
 offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uoqr3")
+script = SubResource("GDScript_ge4wn")
 
 [node name="Painting" type="TextureRect" parent="." unique_id=149846687]
 layout_mode = 0

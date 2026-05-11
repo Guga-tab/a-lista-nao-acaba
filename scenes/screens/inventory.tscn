@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dv2x6ixple607" path="res://scripts/user/inventory_screen.gd" id="1_bxato"]
 [ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_ten2e"]
 [ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="3_lb3qo"]
-[ext_resource type="Texture2D" uid="uid://dvwejpy65u0i6" path="res://assets/icons/shop_frame.png" id="3_oxyou"]
+[ext_resource type="Texture2D" uid="uid://dvwejpy65u0i6" path="res://assets/frames/shop.png" id="3_oxyou"]
 [ext_resource type="Texture2D" uid="uid://c4df0xthxpmmu" path="res://assets/fornitures/bedroom.png" id="4_ipjli"]
 [ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="5_k3ggv"]
 [ext_resource type="Texture2D" uid="uid://cp6hcmf5dq348" path="res://assets/characters/skins/garden.png" id="8_ipjli"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://kxxlfch2bww6" path="res://assets/backgrounds/clock_background.png" id="1_bj4cd"]
 [ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_aok3b"]
-[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/icons/clock_circle_no_number.png" id="3_p7ytp"]
+[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/elements/clock_circle_no_number.png" id="3_p7ytp"]
 [ext_resource type="Texture2D" uid="uid://b80onvsukwh72" path="res://assets/buttons/up_down_clock.png" id="4_60wp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_emtur"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkmn5k25awrpd"]
 
-[ext_resource type="Texture2D" uid="uid://biok07wnb7yfb" path="res://assets/buttons/character.png" id="1_53v7d"]
 [ext_resource type="Script" uid="uid://bvjh0vpxmytlr" path="res://scripts/home/character_button.gd" id="1_rkhd4"]
+[ext_resource type="Texture2D" uid="uid://cksotnnvobjir" path="res://assets/buttons/char.png" id="2_rh5fl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlig8"]
 
@@ -21,6 +21,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.6685962, 0.7230768)
 mouse_filter = 2
-texture_normal = ExtResource("1_53v7d")
+texture_normal = ExtResource("2_rh5fl")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

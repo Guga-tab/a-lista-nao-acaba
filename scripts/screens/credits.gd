@@ -25,9 +25,10 @@ func _ready() -> void:
 		scroll_amount,
 		15
 	)
-	tween.finished.connect(_acabou)
+	tween.finished.connect(finished)
 	tween.play()
 
-func _acabou() -> void:
+
+func finished() -> void:
 	print("acabou!")
 	get_tree().change_scene_to_file("res://scenes/screens/title.tscn")
