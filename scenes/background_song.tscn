@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://ckn5xa220h6dk"]
-
-[ext_resource type="AudioStream" uid="uid://dt1tn83yv1kx7" path="res://assets/sounds/background/musiga.mp3" id="1_bc2jd"]
-
-[node name="BackgroundSong" type="AudioStreamPlayer2D" unique_id=679220810]
-stream = ExtResource("1_bc2jd")
-volume_db = -31.103
-autoplay = true

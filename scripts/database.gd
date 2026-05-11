@@ -27,6 +27,7 @@ func save_db():
 	f.store_string(JSON.stringify(db, "\t"))
 	f.close()
 
+
 func _ensure_structure():
 	if not db.has("USUARIO_AVATAR"):
 		db["USUARIO_AVATAR"] = []
@@ -34,24 +35,33 @@ func _ensure_structure():
 	if not db.has("TAREFA"):
 		db["TAREFA"] = []
 
-	save_db()
 
 func get_users() -> Array:
-	return db["USUARIO_AVATAR"]
+	load_db()
+	return db.get("USUARIO_AVATAR", [])
+
 
 func save_users(users: Array):
+	load_db()
 	db["USUARIO_AVATAR"] = users
 	save_db()
 
+
 func get_tasks() -> Array:
-	return db["TAREFA"]
+	load_db()
+	return db.get("TAREFA", [])
+
 
 func save_tasks(tasks: Array):
+	load_db()
 	db["TAREFA"] = tasks
 	save_db()
 
+
 func get_next_task_id() -> int:
-	var tasks = db["TAREFA"]
-	if tasks.size() == 0:
+	var tasks = get_tasks()
+
+	if tasks.is_empty():
 		return 1
-	return int(tasks[-1]["id_tarefa"]) + 1
+
+	return int(tasks[-1].get("id_tarefa", 0)) + 1

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dbgled4nroyj"]
+
+[ext_resource type="Script" uid="uid://dam5y6jgiglcl" path="res://scripts/screens/credits.gd" id="1_sqip1"]
+[ext_resource type="FontFile" uid="uid://noxa3dpws2ju" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="2_3qmcs"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_rglap"]
+[ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="4_5pgc0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd0bp"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" unique_id=1476088696 node_paths=PackedStringArray("text_node")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nd0bp")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_sqip1")
+text_node = NodePath("MarginContainer/RichTextLabel")
+credits_time = 50.0
+margin_increment = 1920.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1165653794]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=183407031]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_3qmcs")
+theme_override_fonts/bold_font = ExtResource("3_rglap")
+theme_override_fonts/mono_font = ExtResource("4_5pgc0")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+bbcode_enabled = true
+text = "[b][u]CRÉDITOS[/u][/b]
+
+[b][u]Equipe de Desenvolvimento[/u][/b]  
+[b]Game Designer:[/b] Gustavo Machado 
+[b]Programadores:[/b]  
+- Gustavo Machado 
+- Gustavo Carlos  
+[b]Artistas:[/b]  
+- [i]2D:[/i] Roberto Neiva    
+[b]Animadores:[/b] Gustavo Carlos, Roberto Neiva  
+
+[b][u]Música e Som[/u][/b]  
+Somewhere in the Elevator by Peachtea@You're Perfect Studio
+
+[b][u]Produção[/u][/b]   
+[b]Gerente de Projeto:[/b] Gustavo Machado  
+[b]Coordenador de Equipe:[/b] Gustavo Machado 
+
+[b][u]Testadores[/u][/b]  
+- Adriano
+- Beltrano
+- Ciclano
+- Fulano
+
+[b][u]Agradecimentos Especiais[/u][/b]  
+- Comunidade do [i]Godot Engine[/i]  
+- [i]Plataforma opengameart[/i]
+- Professores, mentores e amigos que inspiraram este projeto.  
+- Aos nossos familiares, que sempre apoiaram nossos sonhos.  
+
+[b][u]Ferramentas Utilizadas[/u][/b]  
+[b]Engine:[/b] Godot Engine  
+[b]Linguagem de Programação:[/b] GDScript 
+[b]Ferramentas Gráficas:[/b]  
+- Google AI  
+- GIMP    
+
+[b][u]Tecnologias Suportadas[/u][/b]  
+[b]Plataformas:[/b]  
+- Windows  
+- Android  
+
+[b]Resoluções:[/b]  
+- 720p  
+- 1080p  
+
+[b][u]Mensagem Final[/u][/b]  
+[i]Desenvolvido por estudantes da Faculdade de Tecnologia de Praia Grande (FATEC), com o intuito de ajudar você em suas tarefas do dia a dia.[/i]  
+
+[b]Muito obrigado![/b]"
+fit_content = true
+horizontal_alignment = 1

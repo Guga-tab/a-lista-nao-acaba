@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://jlm738rqu8nm"]
+
+[ext_resource type="Texture2D" uid="uid://bm3nabjrlt5js" path="res://assets/frames/popup_painting.png" id="2_feq0a"]
+[ext_resource type="Texture2D" uid="uid://davmviu62b87o" path="res://assets/backgrounds/background_popup.jpg" id="3_p7iwp"]
+[ext_resource type="Texture2D" uid="uid://b8j53vpdd4i2a" path="res://assets/buttons/x_button.png" id="4_nj15q"]
+
+[sub_resource type="GDScript" id="GDScript_ge4wn"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+
+func _on_texture_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/screens/title.tscn\")
+"
+
+[node name="Credits" type="Control" unique_id=446378054]
+z_index = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -596.0
+offset_top = -325.0
+offset_right = 596.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ge4wn")
+
+[node name="Painting" type="TextureRect" parent="." unique_id=149846687]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_feq0a")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=388407439]
+z_index = -1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 92.0
+offset_right = 888.0
+offset_bottom = 557.0
+texture = ExtResource("3_p7iwp")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=716391373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.039215688, 0, 0.1764706, 1)
+theme_override_font_sizes/font_size = 38
+text = "Desenvolvido por estudantes
+da Faculdade de Tecnologia
+ de Praia Grande (FATEC), 
+com o intuito de ajudar você
+ em suas tarefas do dia a dia."
+flat = true
+autowrap_trim_flags = 0
+
+[node name="TextureButton" type="TextureButton" parent="Button" unique_id=1027522562]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 126.0
+offset_right = 78.49048
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_nj15q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Button/TextureButton" to="." method="_on_texture_button_pressed"]

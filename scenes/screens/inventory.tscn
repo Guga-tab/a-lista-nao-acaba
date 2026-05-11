@@ -1,0 +1,369 @@
+[gd_scene format=3 uid="uid://crvkjae326ut3"]
+
+[ext_resource type="Script" uid="uid://dv2x6ixple607" path="res://scripts/user/inventory_screen.gd" id="1_bxato"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_ten2e"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="3_lb3qo"]
+[ext_resource type="Texture2D" uid="uid://dvwejpy65u0i6" path="res://assets/frames/shop.png" id="3_oxyou"]
+[ext_resource type="Texture2D" uid="uid://c4df0xthxpmmu" path="res://assets/fornitures/bedroom.png" id="4_ipjli"]
+[ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="5_k3ggv"]
+[ext_resource type="Texture2D" uid="uid://cp6hcmf5dq348" path="res://assets/characters/skins/garden.png" id="8_ipjli"]
+[ext_resource type="Texture2D" uid="uid://fmducumyysqg" path="res://assets/fornitures/living_room.png" id="9_4rc8n"]
+[ext_resource type="Texture2D" uid="uid://c3pydbwf6vaoo" path="res://assets/characters/skins/purple_pink.png" id="9_jyf1w"]
+[ext_resource type="Texture2D" uid="uid://de3xk02aw6hr8" path="res://assets/characters/skins/natal.png" id="10_4rc8n"]
+[ext_resource type="Texture2D" uid="uid://bsgrlxd40ofaj" path="res://assets/fornitures/toilet.png" id="10_vq4xo"]
+[ext_resource type="Texture2D" uid="uid://d00lkqkv1xxup" path="res://assets/fornitures/kitchen.png" id="11_buby5"]
+[ext_resource type="Texture2D" uid="uid://bcgr1qa6kme7r" path="res://assets/characters/skins/black_manba.png" id="11_vq4xo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_buby5"]
+font = ExtResource("5_k3ggv")
+font_size = 140
+font_color = Color(1, 0.87058824, 0.62352943, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ty45s"]
+font_size = 162
+
+[node name="Inventory" type="Control" unique_id=1273420522]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bxato")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=119533042]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ten2e")
+
+[node name="TabContainer" type="TabContainer" parent="TextureRect" unique_id=1131273433]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 50.000008
+offset_right = 392.9908
+offset_bottom = 510.52783
+scale = Vector2(2.933415, 3.4851317)
+current_tab = 0
+
+[node name="Decoration" type="TabBar" parent="TextureRect/TabContainer" unique_id=1423642237]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Dec" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=578245643]
+position = Vector2(83.5204, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1544112517]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ipjli")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=2115353507]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec/Button" unique_id=367009113]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Dec2" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=1655416081]
+position = Vector2(245.44772, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1344499827]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_4rc8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=333210903]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec2/Button" unique_id=101322430]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Dec3" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=429980120]
+position = Vector2(84.543106, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1618070342]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9551179
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_vq4xo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=521362495]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec3/Button" unique_id=201976399]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Dec4" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=1405950291]
+position = Vector2(244.08412, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=2030837906]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_buby5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=1949199309]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec4/Button" unique_id=1974780564]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Costumes" type="TabBar" parent="TextureRect/TabContainer" unique_id=1194052868]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Cos" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=171384471]
+position = Vector2(83.5204, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1857287105]
+anchors_preset = -1
+anchor_right = 0.9089643
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ipjli")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=447917953]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos/Button" unique_id=1387539947]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Cos2" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=571884168]
+position = Vector2(245.44772, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1412648710]
+anchors_preset = -1
+anchor_right = 0.89323694
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_jyf1w")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1738726685]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos2/Button" unique_id=1684076927]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Cos3" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=1233652693]
+position = Vector2(84.543106, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=1377158969]
+anchors_preset = -1
+anchor_right = 0.9089643
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_4rc8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=1873143234]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos3/Button" unique_id=406206166]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="Cos4" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=2027729643]
+position = Vector2(244.08412, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("3_oxyou")
+
+[node name="Img" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1034300376]
+anchors_preset = -1
+anchor_right = 0.88384724
+anchor_bottom = 1.0
+offset_left = -121.335686
+offset_top = -221.32481
+offset_right = -237.43475
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_vq4xo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1024934906]
+offset_left = -141.39908
+offset_top = 204.76904
+offset_right = 859.60095
+offset_bottom = 463.76904
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos4/Button" unique_id=330417858]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "EQUIPAR"
+label_settings = SubResource("LabelSettings_buby5")
+
+[node name="BackButton" type="Button" parent="TextureRect" unique_id=1001858606]
+layout_mode = 0
+offset_left = 127.99999
+offset_top = 1682.0
+offset_right = 1129.0
+offset_bottom = 1941.0
+scale = Vector2(0.7891842, 0.7494367)
+icon = ExtResource("3_lb3qo")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/BackButton" unique_id=1854049831]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 21.0
+offset_right = 800.0
+offset_bottom = 226.0
+text = "VOLTAR"
+label_settings = SubResource("LabelSettings_ty45s")
+
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

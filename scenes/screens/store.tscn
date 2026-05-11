@@ -1,0 +1,530 @@
+[gd_scene format=3 uid="uid://dd6igee3k5c4c"]
+
+[ext_resource type="Script" uid="uid://cojhmah6pukyt" path="res://scripts/user/store.gd" id="1_0hyjw"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_f48gf"]
+[ext_resource type="Texture2D" uid="uid://c4df0xthxpmmu" path="res://assets/fornitures/bedroom.png" id="4_lhvys"]
+[ext_resource type="Texture2D" uid="uid://dvwejpy65u0i6" path="res://assets/frames/shop.png" id="5_0hyjw"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="5_evk6i"]
+[ext_resource type="Texture2D" uid="uid://cp6hcmf5dq348" path="res://assets/characters/skins/garden.png" id="5_f48gf"]
+[ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="6_2a1el"]
+[ext_resource type="Texture2D" uid="uid://c3pydbwf6vaoo" path="res://assets/characters/skins/purple_pink.png" id="6_brrfh"]
+[ext_resource type="Texture2D" uid="uid://de3xk02aw6hr8" path="res://assets/characters/skins/natal.png" id="7_evk6i"]
+[ext_resource type="FontFile" uid="uid://c7l28r557ls0x" path="res://fonts/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="7_tq5re"]
+[ext_resource type="Texture2D" uid="uid://bcgr1qa6kme7r" path="res://assets/characters/skins/black_manba.png" id="8_efmgq"]
+[ext_resource type="Texture2D" uid="uid://cu22sw8hkstto" path="res://assets/elements/star.png" id="8_xbciq"]
+[ext_resource type="Texture2D" uid="uid://fmducumyysqg" path="res://assets/fornitures/living_room.png" id="9_g0efx"]
+[ext_resource type="Texture2D" uid="uid://dtq2h20osrdc7" path="res://assets/elements/coin.png" id="9_tq5re"]
+[ext_resource type="Texture2D" uid="uid://bsgrlxd40ofaj" path="res://assets/fornitures/toilet.png" id="10_kv5ta"]
+[ext_resource type="Texture2D" uid="uid://d00lkqkv1xxup" path="res://assets/fornitures/kitchen.png" id="12_ref0d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n50pq"]
+font = ExtResource("6_2a1el")
+font_size = 140
+font_color = Color(1, 0.87058824, 0.62352943, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gegpc"]
+font = ExtResource("7_tq5re")
+font_size = 40
+font_color = Color(0.96862745, 0.78039217, 0.2784314, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfqsk"]
+font_size = 160
+
+[node name="Store" type="Control" unique_id=250576756]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0hyjw")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1722329427]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_f48gf")
+
+[node name="TabContainer" type="TabContainer" parent="TextureRect" unique_id=1455339200]
+layout_mode = 1
+offset_left = 63.0
+offset_top = 50.000008
+offset_right = 392.9908
+offset_bottom = 510.52783
+scale = Vector2(2.933415, 3.4851317)
+current_tab = 0
+
+[node name="Decoration" type="TabBar" parent="TextureRect/TabContainer" unique_id=455605263]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Dec" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=971016305]
+position = Vector2(83.5204, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Bedroom" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1589239292]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lhvys")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=470310318]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec/Button" unique_id=2008227038]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1507645321]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "10"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec" unique_id=1473038559]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("9_tq5re")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Dec2" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=334754555]
+position = Vector2(245.44772, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="LivingRoom" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1448807352]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_g0efx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=376306230]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec2/Button" unique_id=1002282833]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1266279921]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "20"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec2" unique_id=1631369936]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("9_tq5re")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Dec3" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=42808137]
+position = Vector2(84.543106, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Toilet" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1922354590]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_kv5ta")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1992387410]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec3/Button" unique_id=1149109700]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=1890332338]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "10"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec3" unique_id=673191814]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("8_xbciq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Dec4" type="Sprite2D" parent="TextureRect/TabContainer/Decoration" unique_id=247758653]
+position = Vector2(244.08412, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Kitchen" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=1014555356]
+anchors_preset = -1
+anchor_left = -0.1103287
+anchor_top = -0.072494656
+anchor_right = 1.0246924
+anchor_bottom = 0.9522749
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_ref0d")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=187962421]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Decoration/Dec4/Button" unique_id=219911547]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=1949975915]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "50"
+label_settings = SubResource("LabelSettings_gegpc")
+
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Decoration/Dec4" unique_id=745429090]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("8_xbciq")
+expand_mode = 1
+
+[node name="Costumes" type="TabBar" parent="TextureRect/TabContainer" unique_id=1941354055]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Cos" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=403205104]
+position = Vector2(83.5204, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1487086709]
+anchors_preset = -1
+anchor_right = 0.9089643
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_f48gf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=601829183]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos/Button" unique_id=1570150481]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=368184043]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "10"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos" unique_id=1813187971]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("9_tq5re")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cos2" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=1966385898]
+position = Vector2(245.44772, 108.00633)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=459419923]
+anchors_preset = -1
+anchor_right = 0.89558446
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_brrfh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1863325125]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos2/Button" unique_id=1025655589]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=909406724]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "20"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos2" unique_id=1680990288]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("9_tq5re")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cos3" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=1140183519]
+position = Vector2(84.543106, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2080887692]
+anchors_preset = -1
+anchor_right = 0.9089643
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_evk6i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=703359952]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos3/Button" unique_id=2118599115]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=1089424535]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "10"
+label_settings = SubResource("LabelSettings_gegpc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos3" unique_id=2005623494]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("8_xbciq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cos4" type="Sprite2D" parent="TextureRect/TabContainer/Costumes" unique_id=104175608]
+position = Vector2(244.08412, 321.1977)
+scale = Vector2(0.3568138, 0.32929444)
+texture = ExtResource("5_0hyjw")
+
+[node name="Skin" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=524261018]
+anchors_preset = -1
+anchor_top = 0.024165044
+anchor_right = 0.8885422
+anchor_bottom = 1.0
+offset_left = -133.75587
+offset_top = -221.32481
+offset_right = -249.85493
+offset_bottom = -417.3152
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_efmgq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1300099992]
+offset_left = -180.77333
+offset_top = 206.15393
+offset_right = 820.2267
+offset_bottom = 465.15393
+scale = Vector2(0.28, 0.28)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/TabContainer/Costumes/Cos4/Button" unique_id=1122396541]
+layout_mode = 0
+offset_left = 227.26637
+offset_top = 40.990456
+offset_right = 837.26636
+offset_bottom = 209.99045
+text = "COMPRAR"
+label_settings = SubResource("LabelSettings_n50pq")
+
+[node name="Price" type="Label" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1486833981]
+offset_left = 114.673
+offset_top = 185.11217
+offset_right = 154.673
+offset_bottom = 234.11217
+text = "40"
+label_settings = SubResource("LabelSettings_gegpc")
+
+[node name="Star" type="TextureRect" parent="TextureRect/TabContainer/Costumes/Cos4" unique_id=1208481835]
+offset_left = 105.58234
+offset_top = 225.28278
+offset_right = 162.39899
+offset_bottom = 282.09943
+texture = ExtResource("8_xbciq")
+expand_mode = 1
+
+[node name="BackButton" type="Button" parent="TextureRect" unique_id=837219144]
+layout_mode = 0
+offset_left = 200.00002
+offset_top = 1723.0
+offset_right = 1201.0
+offset_bottom = 1982.0
+scale = Vector2(0.6556309, 0.72827035)
+icon = ExtResource("5_evk6i")
+flat = true
+
+[node name="Label2" type="Label" parent="TextureRect/BackButton" unique_id=1648656607]
+layout_mode = 0
+offset_left = 255.42432
+offset_top = 19.807781
+offset_right = 832.4243
+offset_bottom = 227.80779
+text = "VOLTAR"
+label_settings = SubResource("LabelSettings_jfqsk")
+
+[connection signal="pressed" from="TextureRect/BackButton" to="." method="_on_back_button_pressed"]

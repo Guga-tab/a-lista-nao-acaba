@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://b06icfjf4mlp7"]
+
+[ext_resource type="Script" uid="uid://b6g4tup8mrgub" path="res://scripts/screens/mission.gd" id="1_p31kk"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="1_v3nvf"]
+[ext_resource type="Texture2D" uid="uid://bup6asklqdwqi" path="res://assets/backgrounds/house_default.png" id="3_0sm7f"]
+[ext_resource type="Texture2D" uid="uid://kxxlfch2bww6" path="res://assets/backgrounds/clock_background.png" id="3_p31kk"]
+[ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="4_0mvd2"]
+[ext_resource type="FontFile" uid="uid://dncemyjponlf" path="res://fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="4_0sm7f"]
+[ext_resource type="Texture2D" uid="uid://c4df0xthxpmmu" path="res://assets/fornitures/bedroom.png" id="4_8jc3d"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_bqlt0"]
+[ext_resource type="Texture2D" uid="uid://bjrv1pu374drp" path="res://assets/frames/task.png" id="4_yj4cy"]
+[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/elements/clock_circle_no_number.png" id="5_0sm7f"]
+[ext_resource type="Texture2D" uid="uid://d00lkqkv1xxup" path="res://assets/fornitures/kitchen.png" id="5_8g1fu"]
+[ext_resource type="Texture2D" uid="uid://fmducumyysqg" path="res://assets/fornitures/living_room.png" id="6_sv3t0"]
+[ext_resource type="Texture2D" uid="uid://bsgrlxd40ofaj" path="res://assets/fornitures/toilet.png" id="7_s1m8v"]
+[ext_resource type="Texture2D" uid="uid://b80onvsukwh72" path="res://assets/buttons/up_down_clock.png" id="8_0sm7f"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="9_bqlt0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqlt0"]
+font = ExtResource("4_0sm7f")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.1764706, 0.1764706, 0.1764706, 0.078431375)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yj4cy"]
+font = ExtResource("4_bqlt0")
+font_size = 100
+font_color = Color(0.3647059, 0.2784314, 0.12941177, 1)
+
+[node name="Mission" type="Control" unique_id=1842973118]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_right = 4.0
+script = ExtResource("1_p31kk")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=823901568]
+layout_mode = 1
+offset_right = 1080.0
+offset_bottom = 2747.0
+texture = ExtResource("1_v3nvf")
+
+[node name="Room" type="TextureRect" parent="Bg" unique_id=1463548266]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 196.0
+offset_right = 315.6405
+offset_bottom = 694.5288
+grow_horizontal = 2
+scale = Vector2(1.2415404, 1.7912706)
+texture = ExtResource("3_0sm7f")
+expand_mode = 1
+
+[node name="Bedroom" type="TextureRect" parent="Bg/Room" unique_id=410349312]
+layout_mode = 0
+offset_left = 20.941734
+offset_top = 25.680096
+offset_right = 349.56573
+offset_bottom = 251.7766
+texture = ExtResource("4_8jc3d")
+expand_mode = 1
+
+[node name="Kitchen" type="TextureRect" parent="Bg/Room" unique_id=1032341497]
+layout_mode = 0
+offset_left = 1.6109009
+offset_top = 282.48105
+offset_right = 374.5347
+offset_bottom = 471.7322
+texture = ExtResource("5_8g1fu")
+expand_mode = 1
+
+[node name="LivingRoom" type="TextureRect" parent="Bg/Room" unique_id=1668516437]
+layout_mode = 0
+offset_left = 356.00934
+offset_top = 34.05403
+offset_right = 719.2677
+offset_bottom = 282.05402
+texture = ExtResource("6_sv3t0")
+
+[node name="Toilet" type="TextureRect" parent="Bg/Room" unique_id=1398008708]
+layout_mode = 0
+offset_left = 433.3326
+offset_top = 296.99588
+offset_right = 731.3495
+offset_bottom = 467.26605
+texture = ExtResource("7_s1m8v")
+expand_mode = 1
+
+[node name="TaskFrame" type="TextureRect" parent="Bg" unique_id=484625864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -409.0
+offset_top = -241.5
+offset_right = 435.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_yj4cy")
+expand_mode = 1
+
+[node name="TaskText" type="Label" parent="Bg/TaskFrame" unique_id=1888091957]
+z_index = 2
+layout_mode = 0
+offset_left = 132.0
+offset_top = 61.000122
+offset_right = 373.65143
+offset_bottom = 93.00012
+scale = Vector2(2.4084277, 4.5275807)
+text = "teste pomodoro"
+label_settings = SubResource("LabelSettings_bqlt0")
+horizontal_alignment = 1
+
+[node name="ClockBg" type="TextureRect" parent="Bg" unique_id=435604671]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -543.5
+offset_top = -179.5
+offset_right = 543.5
+offset_bottom = 544.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p31kk")
+
+[node name="ClockCircle1" type="TextureRect" parent="Bg/ClockBg" unique_id=879022678]
+layout_mode = 0
+offset_left = 149.93852
+offset_top = 238.0
+offset_right = 478.93854
+offset_bottom = 563.0
+texture = ExtResource("5_0sm7f")
+
+[node name="MM" type="Label" parent="Bg/ClockBg/ClockCircle1" unique_id=619350160]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 110.56148
+offset_top = -52.5
+offset_right = 213.5615
+offset_bottom = 67.5
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_yj4cy")
+
+[node name="UpDnClock" type="TextureRect" parent="Bg/ClockBg" unique_id=895047949]
+layout_mode = 0
+offset_left = 476.61642
+offset_top = 220.0
+offset_right = 616.61646
+offset_bottom = 575.0
+texture = ExtResource("8_0sm7f")
+
+[node name="ClockCircle2" type="TextureRect" parent="Bg/ClockBg" unique_id=708312257]
+layout_mode = 0
+offset_left = 609.5
+offset_top = 239.0
+offset_right = 938.5
+offset_bottom = 564.0
+texture = ExtResource("5_0sm7f")
+
+[node name="SS" type="Label" parent="Bg/ClockBg/ClockCircle2" unique_id=872458112]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 115.0
+offset_top = -58.5
+offset_right = 218.00002
+offset_bottom = 61.5
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_yj4cy")
+
+[node name="Player" parent="." unique_id=797933854 instance=ExtResource("4_0mvd2")]
+position = Vector2(615, 592)
+
+[node name="Coin" parent="." unique_id=671021650 instance=ExtResource("9_bqlt0")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 20.999985
+offset_right = 369.3797
+offset_bottom = 392.59515

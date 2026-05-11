@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bwyctwq6roxuy"]
+
+[ext_resource type="Texture2D" uid="uid://kxxlfch2bww6" path="res://assets/backgrounds/clock_background.png" id="1_bj4cd"]
+[ext_resource type="FontFile" uid="uid://bbrdd1lj6ua66" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_aok3b"]
+[ext_resource type="Texture2D" uid="uid://bnfr6g30c2gjp" path="res://assets/elements/clock_circle_no_number.png" id="3_p7ytp"]
+[ext_resource type="Texture2D" uid="uid://b80onvsukwh72" path="res://assets/buttons/up_down_clock.png" id="4_60wp1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_emtur"]
+font = ExtResource("2_aok3b")
+font_size = 100
+font_color = Color(0.3647059, 0.2784314, 0.12941177, 1)
+
+[node name="ClockBg" type="TextureRect" unique_id=583311660]
+offset_left = -8.881052
+offset_top = 735.0
+offset_right = 1078.1189
+offset_bottom = 1459.0
+texture = ExtResource("1_bj4cd")
+
+[node name="MM" type="Label" parent="." unique_id=1148160176]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 243.73552
+offset_top = -16.0
+offset_right = 346.73553
+offset_bottom = 104.0
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_emtur")
+
+[node name="SS" type="Label" parent="." unique_id=1218319774]
+z_index = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 702.616
+offset_top = -16.0
+offset_right = 825.616
+offset_bottom = 129.0
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_emtur")
+
+[node name="ClockCircle1" type="TextureRect" parent="." unique_id=523750537]
+layout_mode = 0
+offset_left = 149.93852
+offset_top = 238.0
+offset_right = 478.93854
+offset_bottom = 563.0
+texture = ExtResource("3_p7ytp")
+
+[node name="ClockCircle2" type="TextureRect" parent="." unique_id=1778661145]
+layout_mode = 0
+offset_left = 612.5555
+offset_top = 238.0
+offset_right = 941.55554
+offset_bottom = 563.0
+texture = ExtResource("3_p7ytp")
+
+[node name="UpDnClock" type="TextureRect" parent="." unique_id=1913853687]
+layout_mode = 0
+offset_left = 476.61642
+offset_top = 220.0
+offset_right = 616.61646
+offset_bottom = 575.0
+texture = ExtResource("4_60wp1")
+
+[node name="UpClock" type="Button" parent="UpDnClock" unique_id=309301094]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.74887
+offset_top = 25.0
+offset_right = -20.599213
+offset_bottom = 109.0
+grow_horizontal = 2
+
+[node name="DnClock" type="Button" parent="UpDnClock" unique_id=1868413841]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.749
+offset_top = 270.0
+offset_right = -20.599083
+offset_bottom = 354.0
+grow_horizontal = 2

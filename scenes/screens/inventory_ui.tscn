@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b4vrhnreif8jq"]
+
+[sub_resource type="GDScript" id="GDScript_n1e1k"]
+script/source = "extends Control
+
+var is_open = false
+
+func _ready():
+	close()
+	
+func open():
+	visible = true
+	is_open = true
+	
+func _process(delta):
+	if Input.is_action_just_pressed(\"i\"):
+		if is_open:
+			close()
+		else:
+			open()
+	
+func close():
+	visible = false
+	is_open = false
+	
+"
+
+[node name="Inventory" type="Control" unique_id=2007390830]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_n1e1k")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1173754908]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

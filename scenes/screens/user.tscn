@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://cvonflvslbdrx"]
+
+[ext_resource type="Script" uid="uid://b6mx2eysepopw" path="res://scripts/user/user_screen.gd" id="1_lyf6b"]
+[ext_resource type="Texture2D" uid="uid://c1ilp1ixxljhr" path="res://assets/backgrounds/bg_default.png" id="2_tmhrx"]
+[ext_resource type="Texture2D" uid="uid://sgangyh26dly" path="res://assets/buttons/default_button.png" id="3_jfsgg"]
+[ext_resource type="FontFile" uid="uid://dne46rqwdef4b" path="res://fonts/Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="3_tmhrx"]
+[ext_resource type="Texture2D" uid="uid://ddooiwajscneg" path="res://assets/buttons/play_mission_button.png" id="4_4ds55"]
+[ext_resource type="Texture2D" uid="uid://c3q5i7f76onr7" path="res://assets/characters/skins/default.png" id="5_6ht2r"]
+[ext_resource type="PackedScene" uid="uid://batf4mdu3hhrd" path="res://scenes/elements/coin.tscn" id="6_obrlw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8n3g"]
+line_spacing = 2.0
+font = ExtResource("3_tmhrx")
+font_size = 131
+font_color = Color(0.26666668, 0.1764706, 0.22745098, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 6
+stacked_outline_0/color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwv4j"]
+font_size = 216
+
+[sub_resource type="LabelSettings" id="LabelSettings_vflsi"]
+font_size = 116
+
+[sub_resource type="LabelSettings" id="LabelSettings_dekx4"]
+font_size = 160
+
+[node name="User" type="Control" unique_id=753229718]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lyf6b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1201759937]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 2747.0
+scale = Vector2(0.990794, 0.6984585)
+texture = ExtResource("2_tmhrx")
+
+[node name="Title" type="Label" parent="TextureRect" unique_id=164975365]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.97095
+offset_top = 366.52142
+offset_right = 239.02905
+offset_bottom = 528.3063
+grow_horizontal = 2
+text = "AVATAR"
+label_settings = SubResource("LabelSettings_s8n3g")
+
+[node name="Shop" type="Button" parent="TextureRect" unique_id=1134973158]
+layout_mode = 0
+offset_left = 524.8316
+offset_top = 1145.3794
+offset_right = 1600.8315
+offset_bottom = 1480.3794
+scale = Vector2(0.461469, 0.5925119)
+icon = ExtResource("3_jfsgg")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Shop" unique_id=2006956623]
+layout_mode = 0
+offset_left = 249.33255
+offset_top = 24.16349
+offset_right = 755.3325
+offset_bottom = 284.16348
+text = "LOJA"
+label_settings = SubResource("LabelSettings_wwv4j")
+
+[node name="Custom" type="Button" parent="TextureRect" unique_id=1776131656]
+layout_mode = 0
+offset_left = 476.3856
+offset_top = 1437.4512
+offset_right = 1477.3856
+offset_bottom = 1696.4512
+scale = Vector2(0.566314, 0.9573106)
+icon = ExtResource("4_4ds55")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Custom" unique_id=397411228]
+layout_mode = 0
+offset_left = 112.27932
+offset_top = 55.33606
+offset_right = 907.2793
+offset_bottom = 209.33606
+text = "PERSONALIZAR"
+label_settings = SubResource("LabelSettings_vflsi")
+
+[node name="Back" type="Button" parent="TextureRect" unique_id=231322588]
+layout_mode = 0
+offset_left = 214.9791
+offset_top = 2140.428
+offset_right = 1215.9791
+offset_bottom = 2399.428
+scale = Vector2(0.6401319, 0.93965167)
+icon = ExtResource("4_4ds55")
+flat = true
+
+[node name="Label" type="Label" parent="TextureRect/Back" unique_id=515251149]
+layout_mode = 0
+offset_left = 255.42432
+offset_top = 19.807781
+offset_right = 832.4243
+offset_bottom = 227.80779
+text = "VOLTAR"
+label_settings = SubResource("LabelSettings_dekx4")
+
+[node name="Character" type="TextureRect" parent="." unique_id=856809819]
+layout_mode = 0
+offset_left = -49.0
+offset_top = 503.9999
+offset_right = 292.0
+offset_bottom = 1004.9999
+scale = Vector2(1.5131963, 1.6286677)
+texture = ExtResource("5_6ht2r")
+
+[node name="Coin" parent="." unique_id=671021650 instance=ExtResource("6_obrlw")]
+layout_mode = 0
+offset_left = 535.00006
+offset_top = 613.0
+offset_right = 878.37976
+offset_bottom = 984.5952
+
+[connection signal="pressed" from="TextureRect/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="TextureRect/Custom" to="." method="_on_skin_pressed"]
+[connection signal="pressed" from="TextureRect/Back" to="." method="_on_button_pressed"]
