@@ -966,7 +966,7 @@ animation = &"idle_s"
 
 [node name="garden" type="AnimatedSprite2D" parent="." unique_id=110664871]
 visible = false
-scale = Vector2(2.4, 2.4)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_54unw")
 animation = &"idle_s"
 

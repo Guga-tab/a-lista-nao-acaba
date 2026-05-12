@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_i64fm"]
 font_size = 199
-font_color = Color(0.8901961, 0.67058825, 0.17254902, 1)
+font_color = Color(0.9647059, 0.7529412, 0.12156863, 1)
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)
 

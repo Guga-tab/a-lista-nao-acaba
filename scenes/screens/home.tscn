@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b4o65hf2pwtwi" path="res://scenes/buttons/config_button.tscn" id="15_aaxut"]
 [ext_resource type="PackedScene" uid="uid://myikxsive6gc" path="res://scenes/elements/player.tscn" id="16_bhaln"]
 [ext_resource type="AudioStream" uid="uid://b04mfdmkotnw7" path="res://assets/sounds/click_sound.mp3" id="17_vahvf"]
+[ext_resource type="FontFile" uid="uid://c1ojtu38844s8" path="res://fonts/Fredoka/static/Fredoka-Medium.ttf" id="18_vrxxn"]
 
 [sub_resource type="Theme" id="Theme_sf0on"]
 default_font = ExtResource("1_eiuvs")
@@ -28,13 +29,13 @@ default_font_size = 40
 default_font = ExtResource("1_eiuvs")
 default_font_size = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_o7pnx"]
-font = ExtResource("1_eiuvs")
+[sub_resource type="LabelSettings" id="LabelSettings_d6qb1"]
+font = ExtResource("18_vrxxn")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aish6"]
-font = ExtResource("1_eiuvs")
+font = ExtResource("18_vrxxn")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
@@ -157,11 +158,10 @@ theme = SubResource("Theme_ommbi")
 
 [node name="Calender" type="TextureRect" parent="." unique_id=2031594130]
 layout_mode = 0
-offset_left = 377.45905
-offset_top = 299.0
-offset_right = 877.45905
-offset_bottom = 799.0
-scale = Vector2(0.6390822, 0.7046018)
+offset_left = 314.0
+offset_top = 191.0
+offset_right = 814.0
+offset_bottom = 691.0
 texture = ExtResource("14_cvsp7")
 script = ExtResource("13_2mya4")
 
@@ -178,7 +178,7 @@ alignment = 1
 [node name="Day" type="Label" parent="Calender/VBoxContainer" unique_id=1381635584]
 layout_mode = 2
 text = "teste"
-label_settings = SubResource("LabelSettings_o7pnx")
+label_settings = SubResource("LabelSettings_d6qb1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
