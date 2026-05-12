@@ -195,3 +195,11 @@ offset_left = 26.0
 offset_top = 20.999985
 offset_right = 369.3797
 offset_bottom = 392.59515
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=810270072]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=685936756]
+polygon = PackedVector2Array(149, 1032, -8, 1032, 1076, 1035)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1700846769]
+polygon = PackedVector2Array(138, 1023, 129, 213, 974, 216, 977, 1029, 1045, 144, 143, 159, 1, 829)

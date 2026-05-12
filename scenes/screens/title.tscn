@@ -18,13 +18,81 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 15
 shadow_color = Color(0, 0, 0, 0.5137255)
 
+[sub_resource type="GDScript" id="GDScript_v7ot4"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_dc4i4"]
 font_size = 72
-font_color = Color(0.83132297, 0.8872117, 0.24586523, 1)
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
+
+[sub_resource type="GDScript" id="GDScript_y3dha"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_e54dn"]
 font_size = 72
-font_color = Color(0.83137256, 0.8862745, 0.24705882, 1)
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
 
 [node name="TitleScreen" type="Control" unique_id=26364525]
 layout_mode = 3
@@ -89,6 +157,8 @@ theme_override_constants/separation = 80
 [node name="PlayButton" parent="Bg/VBoxContainer" unique_id=137207077 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "TEXTO"
+flat = true
+script = SubResource("GDScript_v7ot4")
 
 [node name="Label" type="Label" parent="Bg/VBoxContainer/PlayButton" unique_id=1194344088]
 layout_mode = 1
@@ -109,6 +179,8 @@ label_settings = SubResource("LabelSettings_dc4i4")
 [node name="ExitButton" parent="Bg/VBoxContainer" unique_id=102119678 instance=ExtResource("4_ugltb")]
 layout_mode = 2
 text = "EXIT"
+flat = true
+script = SubResource("GDScript_y3dha")
 
 [node name="Label" type="Label" parent="Bg/VBoxContainer/ExitButton" unique_id=741820767]
 layout_mode = 1

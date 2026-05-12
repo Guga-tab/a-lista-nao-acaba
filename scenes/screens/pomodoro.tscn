@@ -25,9 +25,77 @@ font = ExtResource("10_mi0bl")
 font_size = 100
 font_color = Color(0.3647059, 0.2784314, 0.12941177, 1)
 
+[sub_resource type="GDScript" id="GDScript_u1oj8"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_v11oo"]
 font_size = 72
-font_color = Color(0.83137256, 0.8862745, 0.24705882, 1)
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
+
+[sub_resource type="GDScript" id="GDScript_mi0bl"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1oj8"]
 
@@ -45,7 +113,6 @@ script = ExtResource("2_gfyoc")
 layout_mode = 0
 offset_right = 1080.0
 offset_bottom = 2747.0
-scale = Vector2(1.0133935, 1)
 mouse_filter = 2
 texture = ExtResource("3_5kd53")
 
@@ -80,9 +147,9 @@ texture = ExtResource("9_ebi4v")
 
 [node name="ConfigButton" parent="Bg" unique_id=1908190728 instance=ExtResource("16_lmbwc")]
 layout_mode = 0
-offset_left = 785.4797
+offset_left = 796.0
 offset_top = 8.0
-offset_right = 1405.4797
+offset_right = 1416.0
 offset_bottom = 424.0
 
 [node name="ClockBg" type="TextureRect" parent="Bg" unique_id=228600750]
@@ -154,6 +221,7 @@ offset_top = 25.0
 offset_right = -20.599213
 offset_bottom = 109.0
 grow_horizontal = 2
+flat = true
 
 [node name="DnClock" type="Button" parent="Bg/ClockBg/UpDnClock" unique_id=1832646242]
 layout_mode = 1
@@ -164,6 +232,7 @@ offset_top = 270.0
 offset_right = -20.599083
 offset_bottom = 354.0
 grow_horizontal = 2
+flat = true
 
 [node name="StartButton" parent="Bg" unique_id=137207077 instance=ExtResource("11_mi0bl")]
 layout_mode = 0
@@ -172,6 +241,8 @@ offset_top = 1406.0
 offset_right = 735.506
 offset_bottom = 1546.0
 scale = Vector2(1.07, 1.221)
+flat = true
+script = SubResource("GDScript_u1oj8")
 
 [node name="Label" type="Label" parent="Bg/StartButton" unique_id=1652986373]
 layout_mode = 1
@@ -198,6 +269,8 @@ offset_top = 1635.0
 offset_right = 735.50635
 offset_bottom = 1775.0
 scale = Vector2(1.07, 1.221)
+flat = true
+script = SubResource("GDScript_mi0bl")
 
 [node name="Label" type="Label" parent="Bg/BackButton" unique_id=1962652061]
 layout_mode = 1

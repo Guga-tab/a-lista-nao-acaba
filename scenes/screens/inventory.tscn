@@ -17,10 +17,45 @@
 [sub_resource type="LabelSettings" id="LabelSettings_buby5"]
 font = ExtResource("5_k3ggv")
 font_size = 140
-font_color = Color(1, 0.87058824, 0.62352943, 1)
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
+
+[sub_resource type="GDScript" id="GDScript_ub08g"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_ty45s"]
 font_size = 148
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
 
 [node name="Inventory" type="Control" unique_id=1273420522]
 layout_mode = 3
@@ -355,6 +390,7 @@ offset_right = 1024.0
 offset_bottom = 1909.0
 icon = ExtResource("3_lb3qo")
 flat = true
+script = SubResource("GDScript_ub08g")
 
 [node name="Label" type="Label" parent="TextureRect/BackButton" unique_id=1854049831]
 layout_mode = 0

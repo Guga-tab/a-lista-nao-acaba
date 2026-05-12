@@ -18,12 +18,49 @@ stacked_outline_0/color = Color(1, 1, 1, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lyf6b"]
 font_size = 148
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vflsi"]
 font_size = 116
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
+
+[sub_resource type="GDScript" id="GDScript_lyf6b"]
+script/source = "extends Button
+
+@export var pressed_scale := Vector2(0.92, 0.92)
+@export var animation_speed := 0.08
+
+func _ready():
+	pivot_offset = size / 2
+
+	connect(\"button_down\", _on_button_down)
+	connect(\"button_up\", _on_button_up)
+	connect(\"mouse_exited\", _on_mouse_exited)
+
+
+func _on_button_down():
+	animate_to(pressed_scale)
+
+
+func _on_button_up():
+	animate_to(Vector2.ONE)
+
+
+func _on_mouse_exited():
+	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		animate_to(Vector2.ONE)
+
+
+func animate_to(target_scale: Vector2):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", target_scale, animation_speed)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_dekx4"]
 font_size = 148
+font_color = Color(0.49411765, 0.2627451, 0.1254902, 1)
 
 [node name="User" type="Control" unique_id=753229718]
 layout_mode = 3
@@ -53,8 +90,8 @@ label_settings = SubResource("LabelSettings_s8n3g")
 layout_mode = 0
 offset_left = 460.0
 offset_top = 660.0
-offset_right = 1660.0
-offset_bottom = 960.0
+offset_right = 1461.0
+offset_bottom = 940.0
 scale = Vector2(0.6, 0.8)
 icon = ExtResource("4_4ds55")
 flat = true
@@ -74,7 +111,7 @@ label_settings = SubResource("LabelSettings_lyf6b")
 layout_mode = 0
 offset_left = 468.00003
 offset_top = 914.0
-offset_right = 1668.0
+offset_right = 1469.0
 offset_bottom = 1214.0
 scale = Vector2(0.6, 0.8)
 icon = ExtResource("4_4ds55")
@@ -97,6 +134,7 @@ offset_right = 1024.0001
 offset_bottom = 1909.0
 icon = ExtResource("4_4ds55")
 flat = true
+script = SubResource("GDScript_lyf6b")
 
 [node name="Label" type="Label" parent="TextureRect/Back" unique_id=515251149]
 layout_mode = 0
