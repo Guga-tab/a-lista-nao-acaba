@@ -30,7 +30,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfqsk"]
-font_size = 160
+font_size = 148
 
 [node name="Store" type="Control" unique_id=250576756]
 layout_mode = 3
@@ -510,20 +510,19 @@ expand_mode = 1
 
 [node name="BackButton" type="Button" parent="TextureRect" unique_id=837219144]
 layout_mode = 0
-offset_left = 200.00002
-offset_top = 1723.0
-offset_right = 1201.0
-offset_bottom = 1982.0
-scale = Vector2(0.6556309, 0.72827035)
+offset_left = 23.0
+offset_top = 1650.0
+offset_right = 1024.0
+offset_bottom = 1909.0
 icon = ExtResource("5_evk6i")
 flat = true
 
 [node name="Label2" type="Label" parent="TextureRect/BackButton" unique_id=1648656607]
 layout_mode = 0
-offset_left = 255.42432
-offset_top = 19.807781
-offset_right = 832.4243
-offset_bottom = 227.80779
+offset_left = 270.0
+offset_top = 34.0
+offset_right = 847.0
+offset_bottom = 242.0
 text = "VOLTAR"
 label_settings = SubResource("LabelSettings_jfqsk")
 
