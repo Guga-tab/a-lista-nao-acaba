@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:assets/characters/animations/directions/east/frame_004.png.import
 uid="uid://bs1628drb4vqu"
 path="res://.godot/imported/frame_004.png-3f90180f76b0418bee955f55e44b1d88.ctex"
+=======
+uid="uid://dq77fme7vrwue"
+path="res://.godot/imported/frame_004.png-36b8587b6c56ffdbac9786ad4a2e5502.ctex"
+>>>>>>> 465ba2918d7f70746ebd760e32448d0e3d90ba9e:assets/characters/default_skin/animations/east/frame_004.png.import
 metadata={
 "vram_texture": false
 }

@@ -2,9 +2,20 @@ extends CharacterBody2D
 
 @export var speed: float = 250.0
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprites = {
+	"default": $default,
+	"garden": $garden,
+	"purple_pink": $purple_pink,
+	"natal": $natal,
+	"black_manba": $black_manba
+}
+
+var animated_sprite: AnimatedSprite2D
 
 var last_direction: Vector2 = Vector2.DOWN
+
+func _ready():
+	load_equipped_skin()
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -58,3 +69,21 @@ func play_idle():
 			animated_sprite.play("idle_s")
 		else:
 			animated_sprite.play("idle_n")
+			
+			
+func load_equipped_skin():
+
+	# pega skin equipada
+	var equipped_skin = UserService.get_equipped_skin()
+
+	# fallback
+	if equipped_skin == "" or equipped_skin == null:
+		equipped_skin = "default"
+
+	# esconde todos
+	for sprite in sprites.values():
+		sprite.visible = false
+
+	# ativa o equipado
+	animated_sprite = sprites[equipped_skin]
+	animated_sprite.visible = true

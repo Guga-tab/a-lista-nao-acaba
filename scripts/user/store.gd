@@ -24,8 +24,8 @@ func _ready() -> void:
 
 	_registrar_item(Cbuttons[0], "garden", "COINS")
 	_registrar_item(Cbuttons[1], "purple_pink", "COINS")
-	_registrar_item(Cbuttons[2], "natal", "STARS") 
-	_registrar_item(Cbuttons[3], "black_manba", "STARS")
+	_registrar_item(Cbuttons[2], "natal", "COINS") 
+	_registrar_item(Cbuttons[3], "black_manba", "COINS")
 
 	_registrar_item(Dbuttons[0], "bedroom", "COINS")
 	_registrar_item(Dbuttons[1], "living_room", "COINS")

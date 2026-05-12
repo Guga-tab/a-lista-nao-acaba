@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:assets/characters/animations/north.png.import
 uid="uid://bk4rdqiiwpxbu"
 path="res://.godot/imported/north.png-80120ba950500b38b8c52627ce753d5f.ctex"
+=======
+uid="uid://bw3kgiiaj3n3r"
+path="res://.godot/imported/north.png-5e5418802935a5b31b00c4c8e1e5229e.ctex"
+>>>>>>> 465ba2918d7f70746ebd760e32448d0e3d90ba9e:assets/characters/default_skin/north.png.import
 metadata={
 "vram_texture": false
 }

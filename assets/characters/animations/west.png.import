@@ -2,8 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD:assets/characters/animations/west.png.import
 uid="uid://4wnor0bqclys"
 path="res://.godot/imported/west.png-34c292483be121dd948d985198000d25.ctex"
+=======
+uid="uid://bkyr43dpra2q5"
+path="res://.godot/imported/west.png-13368df0dc36c54be7b974db499dec78.ctex"
+>>>>>>> 465ba2918d7f70746ebd760e32448d0e3d90ba9e:assets/characters/default_skin/west.png.import
 metadata={
 "vram_texture": false
 }
